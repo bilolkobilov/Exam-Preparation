@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Mathematics Midterm Exam Prep</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            line-height: 2rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-top: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            list-style-position: inside;
+        }
+        li {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #4b5563;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        th {
+            font-weight: 600;
+            color: #374151;
+        }
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background-color: #f3f4f6;
+            color: #1e293b;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        .accordion-button:hover {
+            background-color: #e0e7eb;
+        }
+        .accordion-button.active {
+            background-color: #d1d5db;
+            border-bottom-color: transparent;
+        }
+        .accordion-content {
+            padding: 0rem 1rem 1rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0.375rem;
+            display: none;
+            margin-bottom: 1rem;
+        }
+        .accordion-content.show {
+            display: block;
+        }
+        .table-of-contents {
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 2rem;
+            background-color: #f8fafc;
+        }
+        .table-of-contents h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+            color: #2563eb;
+        }
+        .code-block {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            color: #242424;
+        }
+        .important-box {
+            background-color: #fef08a;
+            padding: 1rem;
+            border: 1px solid #fde047;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .tip-box {
+            background-color: #ecfdf5;
+            padding: 1rem;
+            border: 1px solid #a7f3d0;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .table-of-contents {
+                display: none;
+            }
+            h1 {
+                font-size: 2rem;
+                line-height: 2.25rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
+            h3 {
+                font-size: 1.125rem;
+                line-height: 1.5rem;
+            }
+            p, li {
+                font-size: 0.95rem;
+                line-height: 1.6rem;
+            }
+            .code-block {
+                font-size: 0.8rem;
+                line-height: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-4 text-gray-900">Applied Mathematics Midterm Exam Preparation Guide</h1>
+
+        <div class="table-of-contents">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Table of Contents</h2>
+            <ul>
+                <li><a href="#module-i">Module I: Jacobi and Bisection Method</a></li>
+                <li><a href="#introduction-numerical-methods">1. Introduction to Numerical Methods</a></li>
+                <li><a href="#jacobi-method">2. Jacobi Method</a></li>
+                <li><a href="#bisection-method">3. Bisection Method</a></li>
+                <li><a href="#module-ii">Module II: Numerical Differentiation and Integration</a></li>
+                <li><a href="#numerical-differentiation">4. Numerical Differentiation</a></li>
+                <li><a href="#numerical-integration">5. Numerical Integration</a></li>
+            </ul>
+        </div>
+
+        <section id="module-i" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module I: Jacobi and Bisection Method</h2>
+        </section>
+
+        <section id="introduction-numerical-methods" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">1. Introduction to Numerical Methods</h3>
+            <p>
+                Numerical methods are techniques used to approximate solutions to mathematical problems.  These methods are essential when exact solutions are difficult or impossible to obtain.  They are widely used in engineering, physics, economics, and computer science.
+            </p>
+            <p>
+                Iterative methods are a type of numerical method that generates a sequence of approximations that get progressively closer to the true solution.  Starting with an initial guess, the method refines the approximation in each step until a desired level of accuracy is reached.
+            </p>
+        </section>
+
+        <section id="jacobi-method" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">2. Jacobi Method</h3>
+            <p>
+                The Jacobi method is an iterative technique for solving a system of linear equations.  It's named after the mathematician Carl Gustav Jacob Jacobi.  This method is relatively easy to understand and implement.
+            </p>
+            <p>
+                Consider a system of linear equations:
+            </p>
+            \[
+            \begin{aligned}
+                a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= b_1 \\
+                a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= b_2 \\
+                \vdots \\
+                a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &= b_n
+            \end{aligned}
+            \]
+            <p>
+                The Jacobi method solves for each variable \(x_i\) in terms of the other variables.  The iterative formula is:
+            </p>
+            \[
+             x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x_j^{(k)} \right), \quad i = 1, 2, \ldots, n
+            \]
+            <p>
+                Where:
+            </p>
+            <ul>
+                <li>\(x_i^{(k+1)}\) is the new approximation of \(x_i\) at iteration \(k+1\).</li>
+                <li>\(x_j^{(k)}\) are the previous approximations of \(x_j\) at iteration \(k\).</li>
+                <li>\(a_{ij}\) are the coefficients of the system of equations.</li>
+                <li>\(b_i\) are the constants on the right-hand side of the equations.</li>
+            </ul>
+            <p>
+                <strong>Step-by-step derivation:</strong>
+            </p>
+            <ol>
+                <li>Start with the given system of equations.</li>
+                <li>Solve each equation for one variable in terms of the others.
+                    \[
+                    x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x_j \right)
+                    \]
+                </li>
+                <li>Make an initial guess for the values of \(x_i^{(0)}\).</li>
+                <li>Iteratively compute new approximations using the formula:
+                     \[
+                     x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x_j^{(k)} \right)
+                     \]
+                </li>
+                <li>Repeat the iteration until the solution converges (i.e., the difference between successive approximations is smaller than a specified tolerance).</li>
+            </ol>
+
+            <p>
+                <strong>Convergence criteria:</strong>
+            </p>
+             <p>
+                The Jacobi method converges if the system of equations is diagonally dominant. A matrix is diagonally dominant if the absolute value of each diagonal element is greater than the sum of the absolute values of the other elements in the same row:
+            </p>
+            \[
+            |a_{ii}| > \sum_{j=1, j \neq i}^{n} |a_{ij}|, \quad \text{for all } i = 1, 2, \ldots, n
+            \]
+
+            <p><strong>Sample problem:</strong></p>
+            <p>Solve the following system of equations using the Jacobi method:</p>
+            \[
+            \begin{aligned}
+                5x_1 - 2x_2 + 3x_3 &= 12 \\
+                -3x_1 + 8x_2 - x_3 &= -25 \\
+                2x_1 + 3x_2 + 10x_3 &= 15
+            \end{aligned}
+            \]
+
+            <p><strong>Step-by-step solution:</strong></p>
+            <ol>
+                <li>Rewrite the equations to solve for each variable:</li>
+                \[
+                \begin{aligned}
+                    x_1 &= \frac{1}{5} (12 + 2x_2 - 3x_3) \\
+                    x_2 &= \frac{1}{8} (-25 + 3x_1 + x_3) \\
+                    x_3 &= \frac{1}{10} (15 - 2x_1 - 3x_2)
+                \end{aligned}
+                \]
+                <li>Initial guess: \(x_1^{(0)} = 0, x_2^{(0)} = 0, x_3^{(0)} = 0\)</li>
+                <li>Iteration 1:</li>
+                \[
+                 \begin{aligned}
+                    x_1^{(1)} &= \frac{1}{5} (12 + 2(0) - 3(0)) = 2.4 \\
+                    x_2^{(1)} &= \frac{1}{8} (-25 + 3(0) + 0) = -3.125 \\
+                    x_3^{(1)} &= \frac{1}{10} (15 - 2(0) - 3(0)) = 1.5
+                 \end{aligned}
+                \]
+                <li>Iteration 2:</li>
+                \[
+                 \begin{aligned}
+                    x_1^{(2)} &= \frac{1}{5} (12 + 2(-3.125) - 3(1.5)) = 0.175 \\
+                    x_2^{(2)} &= \frac{1}{8} (-25 + 3(2.4) + 1.5) = -2.0375 \\
+                    x_3^{(2)} &= \frac{1}{10} (15 - 2(2.4) - 3(-3.125)) = 2.1075
+                 \end{aligned}
+                \]
+                <li>Continue iterations until convergence. After several iterations, the solution converges to approximately:
+                    \(x_1 \approx 1, x_2 \approx -3, x_3 \approx 2\)</li>
+            </ol>
+        </section>
+
+        <section id="bisection-method" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">3. Bisection Method</h3>
+            <p>
+                The Bisection Method is a simple and robust numerical technique for finding the root of a continuous function.  It is based on the Intermediate Value Theorem, which states that if a continuous function \(f(x)\) changes sign on an interval \([a, b]\), then there must be at least one root in that interval.
+            </p>
+            <p>
+                <strong>Mathematical formulation:</strong>
+            </p>
+            <p>
+                Given a continuous function \(f(x)\) and an interval \([a, b]\) such that \(f(a) \cdot f(b) < 0\), the bisection method iteratively narrows the interval to find the root.
+            </p>
+            <ol>
+                <li>Calculate the midpoint \(c\) of the interval \([a, b]\):
+                    \[
+                    c = \frac{a + b}{2}
+                    \]
+                </li>
+                <li>Evaluate \(f(c)\).</li>
+                <li>If \(f(c) = 0\), then \(c\) is the root.</li>
+                <li>If \(f(a) \cdot f(c) < 0\), the root lies in the interval \([a, c]\). Set \(b = c\).</li>
+                <li>If \(f(b) \cdot f(c) < 0\), the root lies in the interval \([c, b]\). Set \(a = c\).</li>
+                <li>Repeat steps 1-5 until the interval \([a, b]\) is sufficiently small or \(f(c)\) is sufficiently close to zero.</li>
+            </ol>
+
+            <p>
+                <strong>Conditions for convergence and stopping criteria:</strong>
+            </p>
+            <ul>
+                <li><strong>Convergence:</strong> The bisection method is guaranteed to converge if \(f(x)\) is continuous on \([a, b]\) and \(f(a) \cdot f(b) < 0\).</li>
+                <li><strong>Stopping criteria:</strong>
+                    <ul>
+                        <li>The interval width \((b - a)\) is less than a specified tolerance \(\epsilon\): \(b - a < \epsilon\).</li>
+                        <li>The absolute value of \(f(c)\) is less than a specified tolerance \(\epsilon\): \(|f(c)| < \epsilon\).</li>
+                        <li>A maximum number of iterations is reached.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Example problem:</strong></p>
+            <p>Find the root of the equation:</p>
+            \[
+            f(x) = x^3 - x - 2
+            \]
+
+            <p><strong>Step-by-step numerical solution using the Bisection Method:</strong></p>
+            <ol>
+                <li>Initial interval: \([a, b] = [1, 2]\). \(f(1) = -2\), \(f(2) = 4\). \(f(1) \cdot f(2) < 0\), so a root exists in \([1, 2]\).</li>
+                <li>Iteration 1:
+                    <ul>
+                        <li>\(c = \frac{1 + 2}{2} = 1.5\)</li>
+                        <li>\(f(1.5) = (1.5)^3 - 1.5 - 2 = -0.125\)</li>
+                        <li>\(f(1) \cdot f(1.5) > 0\), so the root is in \([1.5, 2]\).  Set \(a = 1.5\), \(b = 2\).</li>
+                    </ul>
+                </li>
+                <li>Iteration 2:
+                    <ul>
+                         <li>\(c = \frac{1.5 + 2}{2} = 1.75\)</li>
+                         <li>\(f(1.75) = (1.75)^3 - 1.75 - 2 = 1.609375\)</li>
+                         <li>\(f(1.5) \cdot f(1.75) < 0\), so the root is in \([1.5, 1.75]\). Set \(a = 1.5\), \(b = 1.75\).</li>
+                    </ul>
+                </li>
+                <li>Iteration 3:
+                    <ul>
+                        <li>\(c = \frac{1.5 + 1.75}{2} = 1.625\)</li>
+                        <li>\(f(1.625) = (1.625)^3 - 1.625 - 2 = 0.6796875\)</li>
+                        <li>\(f(1.5) \cdot f(1.625) < 0\), so the root is in \([1.5, 1.625]\). Set \(a = 1.5\), \(b = 1.625\).</li>
+                    </ul>
+                </li>
+                <li>Continue iterations until the interval is small enough. After several iterations, the root is approximately 1.521.</li>
+            </ol>
+        </section>
+
+        <section id="module-ii" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module II: Numerical Differentiation and Integration</h2>
+        </section>
+
+        <section id="numerical-differentiation" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">4. Numerical Differentiation</h3>
+            <p>
+                Numerical differentiation is the process of approximating the derivative of a function using numerical methods.  It is used when the function is difficult or impossible to differentiate analytically, or when the function is only known at discrete points.
+            </p>
+            <p>
+                <strong>Forward difference formula:</strong>
+            </p>
+            <p>
+                The forward difference formula approximates the derivative of a function \(f(x)\) at a point \(x\) using the function value at \(x\) and \(x + h\), where \(h\) is a small step size.
+            </p>
+            \[
+            f'(x) \approx \frac{f(x + h) - f(x)}{h}
+            \]
+
+            <p>
+                <strong>Backward difference formula:</strong>
+            </p>
+             <p>
+                The backward difference formula approximates the derivative of a function \(f(x)\) at a point \(x\) using the function value at \(x\) and \(x - h\), where \(h\) is a small step size.
+            </p>
+            \[
+            f'(x) \approx \frac{f(x) - f(x - h)}{h}
+            \]
+
+            <p>
+                <strong>Central difference formula:</strong>
+            </p>
+            <p>
+                The central difference formula approximates the derivative of a function \(f(x)\) at a point \(x\) using the function values at \(x - h\) and \(x + h\).  It is generally more accurate than the forward or backward difference formulas.
+            </p>
+            \[
+            f'(x) \approx \frac{f(x + h) - f(x - h)}{2h}
+            \]
+
+            <p><strong>Sample problem:</strong></p>
+            <p>
+                Compute the derivative of the function \(f(x) = x^2\) at \(x = 2\) using the central difference formula with \(h = 0.1\).
+            </p>
+
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>Given: \(f(x) = x^2\), \(x = 2\), \(h = 0.1\)</li>
+                <li>Apply the central difference formula:</li>
+                \[
+                f'(2) \approx \frac{f(2 + 0.1) - f(2 - 0.1)}{2(0.1)}
+                \]
+                <li>Calculate \(f(2.1)\) and \(f(1.9)\):</li>
+                \[
+                 \begin{aligned}
+                    f(2.1) &= (2.1)^2 = 4.41 \\
+                    f(1.9) &= (1.9)^2 = 3.61
+                 \end{aligned}
+                \]
+                <li>Substitute the values into the formula:</li>
+                \[
+                f'(2) \approx \frac{4.41 - 3.61}{0.2} = \frac{0.8}{0.2} = 4
+                \]
+                <li>The exact derivative of \(f(x) = x^2\) is \(f'(x) = 2x\), so \(f'(2) = 4\). The central difference approximation is accurate in this case.</li>
+            </ol>
+        </section>
+
+        <section id="numerical-integration" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">5. Numerical Integration</h3>
+            <p>
+                Numerical integration is the process of approximating the definite integral of a function.  It is used when the function is difficult or impossible to integrate analytically, or when the function is only known at discrete points.
+            </p>
+            <p>
+                <strong>Trapezoidal Rule:</strong>
+            </p>
+            <p>
+                The Trapezoidal Rule approximates the definiteintegral by dividing the area under the curve into trapezoids.
+            </p>
+            <p>
+                The formula for the Trapezoidal Rule is:
+            </p>
+            \[
+            \int_a^b f(x) \, dx \approx \frac{b - a}{2} [f(a) + f(b)]
+            \]
+            <p>
+                For \(n\) subintervals, the composite Trapezoidal Rule is:
+            </p>
+            \[
+            \int_a^b f(x) \, dx \approx \frac{h}{2} \left[ f(x_0) + 2 \sum_{i=1}^{n-1} f(x_i) + f(x_n) \right]
+            \]
+            <p>
+                Where \(h = \frac{b - a}{n}\) and \(x_i = a + ih\).
+            </p>
+
+            <p>
+                <strong>Simpson's Rule:</strong>
+            </p>
+            <p>
+                Simpson's Rule approximates the definite integral by dividing the area under the curve into parabolic segments.  It is generally more accurate than the Trapezoidal Rule.
+            </p>
+            <p>
+                The formula for Simpson's Rule is:
+            </p>
+             \[
+            \int_a^b f(x) \, dx \approx \frac{h}{3} [f(a) + 4f(a + h) + f(b)]
+            \]
+            <p>
+                Where \(h = \frac{b - a}{2}\).
+            </p>
+            <p>
+                For \(n\) subintervals (where \(n\) must be even), the composite Simpson's Rule is:
+            </p>
+            \[
+            \int_a^b f(x) \, dx \approx \frac{h}{3} \left[ f(x_0) + 4 \sum_{i=1, i \text{ odd}}^{n-1} f(x_i) + 2 \sum_{i=2, i \text{ even}}^{n-2} f(x_i) + f(x_n) \right]
+            \]
+             <p>
+                Where \(h = \frac{b - a}{n}\) and \(x_i = a + ih\).
+            </p>
+
+            <p><strong>Example 1: Trapezoidal Rule</strong></p>
+            <p>
+                Approximate the integral \(\int_0^1 x^2 \, dx\) using the Trapezoidal Rule with \(n = 4\) subintervals.
+            </p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                <li>Given: \(f(x) = x^2\), \(a = 0\), \(b = 1\), \(n = 4\)</li>
+                <li>Calculate \(h\): \(h = \frac{b - a}{n} = \frac{1 - 0}{4} = 0.25\)</li>
+                 <li>Calculate the \(x_i\) values:
+                    \[
+                    \begin{aligned}
+                        x_0 &= 0 \\
+                        x_1 &= 0.25 \\
+                        x_2 &= 0.5 \\
+                        x_3 &= 0.75 \\
+                        x_4 &= 1
+                    \end{aligned}
+                    \]
+                </li>
+                <li>Calculate the \(f(x_i)\) values:
+                    \[
+                    \begin{aligned}
+                        f(x_0) &= 0^2 = 0 \\
+                        f(x_1) &= (0.25)^2 = 0.0625 \\
+                        f(x_2) &= (0.5)^2 = 0.25 \\
+                        f(x_3) &= (0.75)^2 = 0.5625 \\
+                        f(x_4) &= 1^2 = 1
+                    \end{aligned}
+                    \]
+                </li>
+                <li>Apply the Trapezoidal Rule formula:</li>
+                \[
+                \begin{aligned}
+                \int_0^1 x^2 \, dx &\approx \frac{0.25}{2} [0 + 2(0.0625 + 0.25 + 0.5625) + 1] \\
+                                    &= 0.125 [0 + 2(0.875) + 1] \\
+                                    &= 0.125 [1.75 + 1] \\
+                                    &= 0.125(2.75) = 0.34375
+                \end{aligned}
+                \]
+            </ol>
+
+            <p><strong>Example 2: Simpson's Rule</strong></p>
+            <p>
+                Approximate the integral \(\int_0^1 x^2 \, dx\) using Simpson's Rule with \(n = 4\) subintervals.
+            </p>
+            <p><strong>Solution:</strong></p>
+            <ol>
+                 <li>Given: \(f(x) = x^2\), \(a = 0\), \(b = 1\), \(n = 4\)</li>
+                <li>Calculate \(h\): \(h = \frac{b - a}{n} = \frac{1 - 0}{4} = 0.25\)</li>
+                <li>Calculate the \(x_i\) values:
+                    \[
+                    \begin{aligned}
+                        x_0 &= 0 \\
+                        x_1 &= 0.25 \\
+                        x_2 &= 0.5 \\
+                        x_3 &= 0.75 \\
+                        x_4 &= 1
+                    \end{aligned}
+                    \]
+                </li>
+                <li>Calculate the \(f(x_i)\) values:
+                    \[
+                    \begin{aligned}
+                        f(x_0) &= 0^2 = 0 \\
+                        f(x_1) &= (0.25)^2 = 0.0625 \\
+                        f(x_2) &= (0.5)^2 = 0.25 \\
+                        f(x_3) &= (0.75)^2 = 0.5625 \\
+                        f(x_4) &= 1^2 = 1
+                    \end{aligned}
+                    \]
+                </li>
+                <li>Apply Simpson's Rule formula:</li>
+                 \[
+                 \begin{aligned}
+                 \int_0^1 x^2 \, dx &\approx \frac{0.25}{3} [f(0) + 4f(0.25) + 2f(0.5) + 4f(0.75) + f(1)] \\
+                                     &\approx \frac{0.25}{3} [0 + 4(0.0625) + 2(0.25) + 4(0.5625) + 1] \\
+                                     &\approx \frac{0.25}{3} [0 + 0.25 + 0.5 + 2.25 + 1] \\
+                                     &\approx \frac{0.25}{3} [4] \\
+                                     &\approx 0.3333
+                 \end{aligned}
+                 \]
+            </ol>
+        </section>
+    </div>
+
+    <script>
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+             document.querySelectorAll('pre code').forEach((el) => {
+                 hljs.highlightElement(el);
+             });
+         });
+    </script>
+</body>
+</html>

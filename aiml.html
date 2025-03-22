@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & ML Midterm Exam Prep</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #1e293b; /* Slightly darker heading color */
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.25rem; /* slightly larger h1 */
+            line-height: 2.5rem;
+        }
+        h2 {
+            font-size: 1.75rem; /* slightly larger h2 */
+            line-height: 2rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.25rem; /* slightly larger h3 */
+            line-height: 1.75rem;
+            margin-top: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.75rem; /* Increased line height for better readability */
+            color: #4b5563; /* Slightly darker body text */
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            list-style-position: inside;
+        }
+        li {
+            font-size: 1rem;
+            line-height: 1.75rem; /* Increased line height for lists too */
+            color: #4b5563;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        th {
+            font-weight: 600;
+            color: #374151; /* Darker header in table */
+        }
+        tbody tr:hover {
+            background-color: #f9fafb; /* Slight hover background */
+        }
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background-color: #f3f4f6; /* Lighter background for accordion button */
+            color: #1e293b; /* Darker text for button */
+            font-weight: 500; /* Medium font weight for button */
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem; /* Rounded corners for button */
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        .accordion-button:hover {
+            background-color: #e0e7eb; /* Slightly darker hover for button */
+        }
+        .accordion-button.active {
+            background-color: #d1d5db; /* Active state background for button */
+            border-bottom-color: transparent;
+        }
+        .accordion-content {
+            padding: 0rem 1rem 1rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0.375rem; /* Rounded corners for content */
+            display: none;
+            margin-bottom: 1rem;
+        }
+        .accordion-content.show {
+            display: block;
+        }
+        .table-of-contents {
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 2rem;
+            background-color: #f8fafc; /* Lighter background for TOC */
+        }
+        .table-of-contents h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b; /* Darker heading in TOC */
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #3b82f6; /* Blue color for links */
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+            color: #2563eb; /* Darker blue on hover */
+        }
+        .code-block {
+            background-color: #f0f0f0; /* Lighter code block background */
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            color: #242424;
+        }
+        .important-box {
+            background-color: #fef08a; /* Light yellow for important box */
+            padding: 1rem;
+            border: 1px solid #fde047; /* Yellow border */
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b; /* Darker text in important box */
+        }
+        .tip-box {
+            background-color: #ecfdf5; /* Light green for tip box */
+            padding: 1rem;
+            border: 1px solid #a7f3d0; /* Green border */
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .table-of-contents {
+                display: none; /* Hide TOC on small screens */
+            }
+            h1 {
+                font-size: 2rem;
+                line-height: 2.25rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
+            h3 {
+                font-size: 1.125rem;
+                line-height: 1.5rem;
+            }
+            p, li {
+                font-size: 0.95rem; /* Slightly smaller font on mobile */
+                line-height: 1.6rem;
+            }
+            .code-block {
+                font-size: 0.8rem;
+                line-height: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-4 text-gray-900">AI & ML Midterm Exam Preparation Guide</h1>
+
+        <div class="table-of-contents">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Table of Contents</h2>
+            <ul>
+                <li><a href="#defining-artificial-intelligence">1. Defining Artificial Intelligence</a></li>
+                <li><a href="#defining-ai-techniques">2. Defining AI Techniques</a></li>
+                <li><a href="#predicate-logic-and-knowledge-representation">3. Using Predicate Logic and Representing Knowledge as Rules</a></li>
+                <li><a href="#representing-simple-facts-in-logic">4. Representing Simple Facts in Logic</a></li>
+                <li><a href="#computable-functions-and-predicates">5. Computable Functions and Predicates</a></li>
+                <li><a href="#procedural-vs-declarative-knowledge">6. Procedural vs Declarative Knowledge</a></li>
+                <li><a href="#logic-programming">7. Logic Programming</a></li>
+                <li><a href="#mathematical-foundations">8. Mathematical Foundations: Matrix Theory and Statistics for ML</a></li>
+                <li><a href="#machines-learning-from-data">9. Idea of Machines Learning from Data</a></li>
+                 <li><a href="#classification-of-problems">10. Classification of Problems</a></li>
+                <li><a href="#supervised-and-unsupervised-learning">11. Supervised and Unsupervised Learning</a></li>
+                <li><a href="#regression-and-classification">12. Regression and Classification</a></li>
+                <li><a href="#linear-regression-model-representation">13. Linear Regression: Model Representation for Single Variable</a></li>
+                <li><a href="#single-variable-cost-function">14. Single Variable Cost Function</a></li>
+            </ul>
+        </div>
+
+        <section id="defining-artificial-intelligence" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">1. Defining Artificial Intelligence</h2>
+            <p>
+                Artificial Intelligence (AI) is a field of study that enables machines to simulate human intelligence.
+                It involves the development of computer systems capable of performing tasks that typically require human
+                intelligence, such as learning, problem-solving, decision-making, and language understanding.
+            </p>
+            <p>
+                Real-world examples of AI include:
+            </p>
+            <ul>
+                <li>Self-driving cars (e.g., Tesla Autopilot)</li>
+                <li>Chatbots (e.g., ChatGPT, Replika)</li>
+                <li>Medical diagnosis systems</li>
+                <li>Recommendation systems (e.g., Netflix, Amazon)</li>
+            </ul>
+            <p>
+                There are two main types of AI:
+            </p>
+            <ul>
+                <li><strong>Strong AI (or Artificial General Intelligence - AGI):</strong> A hypothetical form of AI
+                    that possesses human-level cognitive abilities.  It can understand, learn, and apply knowledge across
+                    a wide range of tasks, much like a human.  Strong AI does not currently exist.
+                </li>
+                <li><strong>Weak AI (or Narrow AI):</strong> AI that is designed and trained to perform a specific task.
+                    Most AI systems today, such as virtual assistants (Siri, Alexa), recommendation systems, and
+                    image recognition software, are examples of weak AI.
+                </li>
+            </ul>
+        </section>
+
+        <section id="defining-ai-techniques" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">2. Defining AI Techniques</h2>
+            <p>
+                AI encompasses a wide range of techniques, including:
+            </p>
+            <div class="accordion">
+                <div class="accordion-button">
+                    Search Algorithms
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Search algorithms are used to find solutions to problems by exploring a space of possible options.
+                    </p>
+                    <ul>
+                        <li><strong>A* Search:</strong> An informed search algorithm that uses heuristics to guide the search
+                            process.
+                        </li>
+                        <li><strong>Minimax:</strong> A decision-making algorithm used in game theory for two-player games.
+                        </li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><code>
+# Python example of A* search (simplified)
+def a_star_search(graph, start, goal):
+    # Implementation (omitted for brevity)
+    pass
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Expert Systems
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Expert systems are computer programs designed to simulate the decision-making ability of a human
+                        expert in a specific domain.
+                    </p>
+                    <ul>
+                        <li><strong>MYCIN:</strong> An early expert system designed to diagnose bacterial infections.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Machine Learning
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Machine learning (ML) is a type of AI that allows computers to learn from data without being
+                        explicitly programmed.
+                    </p>
+                    <ul>
+                        <li><strong>Supervised Learning:</strong> The algorithm learns from labeled data.</li>
+                        <li><strong>Unsupervised Learning:</strong> The algorithm learns from unlabeled data.</li>
+                        <li><strong>Reinforcement Learning:</strong> An agent learns to behave in an environment by
+                            performing actions and receiving rewards or penalties.
+                        </li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><code>
+# Python example of supervised learning (using scikit-learn)
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+# X = features, y = labels
+# model.fit(X, y)
+# predictions = model.predict(X_test)
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Natural Language Processing (NLP)
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Natural Language Processing (NLP) is a field of AI that enables computers to understand,
+                        interpret, and generate human language.
+                    </p>
+                    <ul>
+                        <li><strong>Chatbots:</strong> Programs designed to simulate conversation with human users (e.g.,
+                            ChatGPT).
+                        </li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><code>
+# Python example using a library like Hugging Face Transformers (conceptual)
+# from transformers import pipeline
+# chatbot = pipeline('conversational')
+# response = chatbot("Hello, how are you?")
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="predicate-logic-and-knowledge-representation" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">3. Using Predicate Logic and Representing Knowledge as Rules</h2>
+            <p>
+                First-order logic (FOL), also known as predicate logic, is a formal system used in AI to represent
+                knowledge. It extends propositional logic by allowing variables, quantifiers (∀ for all, ∃ for some),
+                and predicates.
+            </p>
+            <p>
+                Example of FOL:
+            </p>
+            <ul>
+                <li>∀x (Human(x) → Mortal(x))  (For all x, if x is a human, then x is mortal)</li>
+                <li>∃x (Student(x) ∧ Smart(x)) (There exists an x such that x is a student and x is smart)</li>
+            </ul>
+
+            <p>
+                Prolog is a logic programming language often used to implement AI systems based on predicate logic.
+            </p>
+            <p>
+                Prolog example:
+            </p>
+            <div class="code-block">
+                <pre><code>
+parent(john, mary).  % john is a parent of mary.
+parent(john, david).
+parent(jane, mary).
+parent(jane, david).
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y). % Rule for grandparent
+                </code></pre>
+            </div>
+            <p>
+                In this Prolog example,  `parent(john, mary)` is a fact, and `grandparent(X, Y) :- parent(X, Z), parent(Z, Y)`
+                is a rule.  The rule states that X is a grandparent of Y if X is a parent of Z, and Z is a parent of Y.
+            </p>
+
+        </section>
+
+        <section id="representing-simple-facts-in-logic" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">4. Representing Simple Facts in Logic</h2>
+            <p>
+                Knowledge representation in logic involves expressing facts and rules in a formal language that a computer
+                can understand and process.  Facts are basic truths about the world.
+            </p>
+            <p>
+                Examples of representing simple facts:
+            </p>
+            <ul>
+                <li>Fact: "The sky is blue."  Representation in Prolog:  `sky_color(blue).`</li>
+                <li>Fact: "John is a student." Representation in FOL: `Student(john).`</li>
+                <li>Fact: "Mary is a doctor and works at General Hospital." Representation in FOL: `Doctor(mary) ∧ WorksAt(mary, general_hospital).`</li>
+            </ul>
+            <p>
+                Rules define relationships between facts or how new facts can be derived from existing ones.
+            </p>
+
+        </section>
+
+        <section id="computable-functions-and-predicates" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">5. Computable Functions and Predicates</h2>
+            <p>
+                In the context of AI and logic, computable functions and predicates are fundamental concepts.
+            </p>
+            <ul>
+                <li><strong>Computable Function:</strong> A function that can be evaluated by a Turing machine or,
+                    equivalently, by an algorithm.  A function is computable if there exists an algorithm that can take
+                    any valid input and produce the corresponding output in a finite number of steps.
+                </li>
+                <li><strong>Predicate:</strong> A function that returns a truth value (true or false).  In logic,
+                    predicates are used to express properties of objects or relationships between them.
+                </li>
+            </ul>
+            <p>
+                <strong>Turing Computability:</strong> The concept of Turing computability is central to understanding the
+                limits of what can be computed by machines.  The Church-Turing thesis states that any function that is
+                "naturally regarded as computable" can be computed by a Turing machine.
+            </p>
+            <p>
+                Example of a computable function in Python:
+            </p>
+            <div class="code-block">
+                <pre><code>
+def add(x, y):
+    """
+    This function takes two numbers as input and returns their sum.
+    It is a computable function because it can be implemented as an algorithm.
+    """
+    return x + y
+
+result = add(5, 3)  # result will be 8
+                </code></pre>
+            </div>
+
+        </section>
+
+        <section id="procedural-vs-declarative-knowledge" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">6. Procedural vs Declarative Knowledge</h2>
+            <p>
+                In AI, knowledge can be represented in two main ways: procedural and declarative.
+            </p>
+            <ul>
+                <li><strong>Procedural Knowledge:</strong> Knowledge about how to do things.  It is represented as a set of
+                    instructions or a sequence of steps for solving a problem.  It focuses on the process of achieving a
+                    result.
+                </li>
+                <li><strong>Declarative Knowledge:</strong> Knowledge about what is true.  It is represented as a set of
+                    facts and relationships, without specifying how to use them.  It focuses on describing the problem
+                    or the domain.
+                </li>
+            </ul>
+            <p>
+                Examples:
+            </p>
+            <ul>
+                <li><strong>Procedural:</strong>
+                    <ul>
+                        <li>A recipe for baking a cake (sequence of steps)</li>
+                        <li>A computer program that calculates the factorial of a number (algorithm)</li>
+                    </ul>
+                </li>
+                <li><strong>Declarative:</strong>
+                    <ul>
+                         <li>The statement "The capital of France is Paris."</li>
+                         <li>A database containing facts about customers and their orders.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="logic-programming" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">7. Logic Programming</h2>
+            <p>
+                Logic programming is a programming paradigm based on formal logic.  It uses logical statements to
+                represent knowledge and rules, and uses a logical inference engine to derive conclusions.
+            </p>
+            <p>
+                <strong>Prolog:</strong> Prolog is a prominent logic programming language.  It is used for AI applications
+                such as:
+            </p>
+            <ul>
+                <li>Knowledge representation and reasoning</li>
+                <li>Expert systems</li>
+                <li>Natural language processing</li>
+                <li>Database querying</li>
+            </ul>
+
+            <p>
+                Sample Prolog program:
+            </p>
+            <div class="code-block">
+                <pre><code>
+% Facts:
+male(john).
+male(david).
+female(mary).
+female(jane).
+parent(john, mary).  % john is a parent of mary
+parent(john, david).
+parent(jane, mary).
+parent(jane, david).
+
+% Rules:
+father(X, Y) :- male(X), parent(X, Y).
+mother(X, Y) :- female(X), parent(X, Y).
+sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y. % X and Y are siblings if they have the same parent and are not the same person.
+                </code></pre>
+            </div>
+            <p>
+                In this program:
+            </p>
+            <ul>
+                <li>`male(john).`, `female(mary).`, etc., are facts.</li>
+                <li>`father(X, Y) :- male(X), parent(X, Y).` is a rule.  It states that X is the father of Y if X is male and X is a parent of Y.</li>
+                <li>`\`= is the "not equals" operator.</li>
+            </ul>
+        </section>
+
+        <section id="mathematical-foundations" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">8. Mathematical Foundations: Matrix Theory and Statistics for ML</h2>
+            <p>
+                Matrix theory and statistics are essential mathematical foundations for machine learning.
+            </p>
+            <ul>
+                <li><strong>Matrix Theory:</strong>
+                    <ul>
+                        <li>Matrix operations (addition, multiplication, transposition, inversion) are fundamental to many ML algorithms.</li>
+                        <li>Matrices are used to represent data (e.g., feature matrices), linear transformations, and the weights in neural networks.</li>
+                        <li>Eigenvalues and eigenvectors are used in dimensionality reduction techniques like Principal Component Analysis (PCA).</li>
+                    </ul>
+                </li>
+                <li><strong>Statistics:</strong>
+                    <ul>
+                        <li>Descriptive statistics (mean, median, standard deviation) are used to understand and summarize data.</li>
+                        <li>Probability theory is essential for understanding the uncertainty in data and model predictions.</li>
+                        <li>Inferential statistics (hypothesis testing, confidence intervals) are used to draw conclusions about populations from sample data.</li>
+                        <li>Distributions (normal, binomial, Poisson) are used to model data and make predictions.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                Python code for matrix multiplication using NumPy:
+            </p>
+            <div class="code-block">
+                <pre><code>
+import numpy as np
+
+# Define two matrices as NumPy arrays
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+# Perform matrix multiplication using np.matmul()
+C = np.matmul(A, B)
+
+# Print the result
+print(C)
+# Output:
+# [[19 22]
+#  [43 50]]
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="machines-learning-from-data" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">9. Idea of Machines Learning from Data</h2>
+            <p>
+                Machine learning algorithms learn patterns and relationships from data without being explicitly programmed.
+                They use historical data (training data) to build a model, which can then be used to make predictions or
+                decisions on new, unseen data.
+            </p>
+
+            <p>
+                Machine Learning Pipeline:
+</p>
+             <ol>
+                <li><strong>Data Collection:</strong> Gathering relevant data.</li>
+                <li><strong>Data Preprocessing:</strong> Cleaning, transforming, and preparing the data for training.</li>
+                <li><strong>Model Selection:</strong> Choosing an appropriate ML algorithm.</li>
+                <li><strong>Training:</strong> Training the model on the training data.</li>
+                <li><strong>Evaluation:</strong> Evaluating the model's performance on unseen data (test data).</li>
+                <li><strong>Deployment:</strong> Using the model to make predictions or decisions in the real world.</li>
+                <li><strong>Monitoring and Maintenance:</strong> Continuously monitoring the model's performance and retraining as needed.</li>
+            </ol>
+        </section>
+
+        <section id="classification-of-problems" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">10. Classification of Problems</h2>
+             <p>
+                Machine learning problems can be broadly classified into three categories:
+            </p>
+            <ul>
+                <li><strong>Supervised Learning:</strong> The algorithm learns from labeled data, where the input features
+                    and the corresponding output labels are provided.
+                </li>
+                <li><strong>Unsupervised Learning:</strong> The algorithm learns from unlabeled data, where only the input
+                    features are provided, and the algorithm must discover patterns or structures in the data.
+                </li>
+                <li><strong>Reinforcement Learning:</strong> An agent learns to interact with an environment by performing
+                    actions and receiving rewards or penalties.  The goal is to learn a policy that maximizes the
+                    cumulative reward.
+                </li>
+            </ul>
+        </section>
+
+        <section id="supervised-and-unsupervised-learning" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">11. Supervised and Unsupervised Learning</h2>
+            <p>
+                Detailed comparison:
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Supervised Learning</th>
+                        <th>Unsupervised Learning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data</td>
+                        <td>Labeled (input features and output labels)</td>
+                        <td>Unlabeled (only input features)</td>
+                    </tr>
+                    <tr>
+                        <td>Goal</td>
+                        <td>Predict output labels for new inputs</td>
+                        <td>Discover patterns or structure in the data</td>
+                    </tr>
+                    <tr>
+                        <td>Examples</td>
+                        <td>Regression, classification</td>
+                        <td>Clustering, dimensionality reduction</td>
+                    </tr>
+                    <tr>
+                        <td>Algorithms</td>
+                        <td>Linear Regression, Logistic Regression, Decision Trees, Support Vector Machines, Neural Networks</td>
+                        <td>K-Means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Supervised Learning Example (Python):
+            </p>
+            <div class="code-block">
+                <pre><code>
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# Sample data (replace with your actual data)
+X = [[0, 0], [1, 0], [0, 1], [1, 1]]  # Input features
+y = [0, 1, 1, 0]  # Output labels
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create a Logistic Regression model
+model = LogisticRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model's accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
+                </code></pre>
+            </div>
+
+            <p>
+                Unsupervised Learning Example (Python):
+            </p>
+            <div class="code-block">
+                <pre><code>
+from sklearn.cluster import KMeans
+import numpy as np
+
+# Sample data (replace with your actual data)
+X = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.6], [9, 11]])
+
+# Create a K-Means clustering model with 2 clusters
+kmeans = KMeans(n_clusters=2, random_state=42)
+
+# Fit the model to the data
+kmeans.fit(X)
+
+# Get the cluster labels for each data point
+labels = kmeans.labels_
+print("Cluster labels:", labels)
+
+# Get the cluster centers
+centers = kmeans.cluster_centers_
+print("Cluster centers:", centers)
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="regression-and-classification" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">12. Regression and Classification</h2>
+            <p>
+                Regression and classification are two types of supervised learning problems.
+            </p>
+            <ul>
+                <li><strong>Regression:</strong> Predicts a continuous output variable.</li>
+                <li><strong>Classification:</strong> Predicts a categorical output variable.</li>
+            </ul>
+
+            <p>
+                Linear Regression vs. Logistic Regression:
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Linear Regression</th>
+                        <th>Logistic Regression</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Output Variable Type</td>
+                        <td>Continuous</td>
+                        <td>Categorical</td>
+                    </tr>
+                    <tr>
+                        <td>Goal</td>
+                        <td>Model the relationship between input features and a continuous output</td>
+                        <td>Predict the probability of an instance belonging to a certain class</td>
+                    </tr>
+                    <tr>
+                        <td>Typical Applications</td>
+                        <td>Predicting house prices, stock prices, temperature</td>
+                        <td>Email spam detection, customer churn prediction, image classification</td>
+                    </tr>
+                    <tr>
+                        <td>Output Range</td>
+                        <td>-∞ to +∞</td>
+                        <td>0 to 1 (probability)</td>
+                    </tr>
+                    <tr>
+                        <td>Model Output</td>
+                        <td> прямой выход  (y = mx + b)</td>
+                        <td>Probability of a class (using sigmoid function)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Python examples:
+            </p>
+            <div class="code-block">
+                <pre><code>
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, accuracy_score
+import numpy as np
+
+# Sample data
+# Regression data
+X_regression = np.array([[1], [2], [3], [4], [5]])
+y_regression = np.array([2, 4, 5, 4, 5])
+# Classification data
+X_classification = np.array([[1, 0], [2, 0], [3, 1], [4, 1], [5, 1]])
+y_classification = np.array([0, 0, 1, 1, 1])
+
+# Split data
+X_train_reg, X_test_reg, y_train_reg, y_test_reg = train_test_split(X_regression, y_regression, test_size=0.2, random_state=42)
+X_train_cls, X_test_cls, y_train_cls, y_test_cls = train_test_split(X_classification, y_classification, test_size=0.2, random_state=42)
+
+# Linear Regression
+model_regression = LinearRegression()
+model_regression.fit(X_train_reg, y_train_reg)
+y_pred_reg = model_regression.predict(X_test_reg)
+mse = mean_squared_error(y_test_reg, y_pred_reg)
+print(f"Linear Regression MSE: {mse}")
+
+# Logistic Regression
+model_classification = LogisticRegression()
+model_classification.fit(X_train_cls, y_train_cls)
+y_pred_cls = model_classification.predict(X_test_cls)
+accuracy = accuracy_score(y_test_cls, y_pred_cls)
+print(f"Logistic Regression Accuracy: {accuracy}")
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="linear-regression-model-representation" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">13. Linear Regression: Model Representation for Single Variable</h2>
+            <p>
+                In linear regression with a single variable (also called simple linear regression), the goal is to find a
+                linear relationship between the input variable (x) and the output variable (y).
+            </p>
+            <p>
+                The model is represented by the equation:
+            </p>
+            <p>
+                \( h_\theta(x) = \theta_0 + \theta_1x \)
+            </p>
+            <p>
+                Where:
+            </p>
+            <ul>
+                <li>\( h_\theta(x) \) is the predicted output (hypothesis) for a given input x.</li>
+                <li>\( x \) is the input variable.</li>
+                <li>\( \theta_0 \) is the y-intercept (the value of h when x is 0).</li>
+                <li>\( \theta_1 \) is the slope of the line (the change in h for a one-unit change in x).</li>
+            </ul>
+
+            <p>
+                Python implementation with data visualization:
+            </p>
+            <div class="code-block">
+                <pre><code>
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+x = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)  # Input variable (reshape for scikit-learn)
+y = np.array([2, 4, 5, 4, 5])  # Output variable
+
+# Create a Linear Regression model
+model = LinearRegression()
+
+# Train the model
+model.fit(x, y)
+
+# Get the parameters (theta_0 and theta_1)
+theta_0 = model.intercept_
+theta_1 = model.coef_[0]
+
+print(f"Theta_0 (Intercept): {theta_0}")
+print(f"Theta_1 (Slope): {theta_1}")
+
+# Make predictions
+x_test = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)
+y_pred = model.predict(x_test)
+
+# Plot the data and the regression line
+plt.scatter(x, y, color='blue', label='Actual data')
+plt.plot(x_test, y_pred, color='red', label='Linear Regression')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Linear Regression')
+plt.legend()
+plt.show()
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="single-variable-cost-function" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">14. Single Variable Cost Function</h2>
+            <p>
+                The cost function measures how well the linear regression model fits the training data.  For single
+                variable linear regression, the most common cost function is the Mean Squared Error (MSE).
+            </p>
+            <p>
+                The MSE is calculated as the average of the squared differences between the predicted values and the
+                actual values.
+            </p>
+            <p>
+                Mathematical equation:
+            </p>
+            <p>
+                 \( J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 \)
+            </p>
+            <p>
+                Where:
+            </p>
+            <ul>
+                <li>\( J(\theta) \) is the cost function.</li>
+                <li>\( m \) is the number of training examples.</li>
+                <li>\( h_\theta(x^{(i)}) \) is the predicted output for the i-th input example \( x^{(i)} \).</li>
+                <li>\( y^{(i)} \) is the actual output for the i-th input example \( x^{(i)} \).</li>
+                 <li>\( \theta \) represents the parameters of the model (\( \theta_0 \) and \( \theta_1 \) in simple linear regression).</li>
+            </ul>
+
+            <p>
+                Python implementation:
+            </p>
+            <div class="code-block">
+                <pre><code>
+import numpy as np
+
+def compute_cost(x, y, theta):
+    """
+    Computes the Mean Squared Error (MSE) cost function for linear regression
+    with one variable.
+
+    Args:
+        x: Input variable (numpy array of shape (m,)).
+        y: Output variable (numpy array of shape (m,)).
+        theta: Parameters of the model (numpy array of shape (2,)).
+               theta[0] is the intercept, theta[1] is the slope.
+
+    Returns:
+        J: The cost (MSE) for the given data and parameters.
+    """
+    m = len(y)  # Number of training examples
+    h = theta[0] + theta[1] * x  # Predicted values
+    squared_errors = (h - y) ** 2
+    J = (1 / (2 * m)) * np.sum(squared_errors)
+    return J
+
+# Sample data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 5, 4, 5])
+theta = np.array([0, 1])  # Initial parameters (theta_0 = 0, theta_1 = 1)
+
+# Compute the cost
+cost = compute_cost(x, y, theta)
+print(f"Cost with initial parameters: {cost}")
+
+# Example with different parameters
+theta = np.array([0.5, 1.5])
+cost = compute_cost(x, y, theta)
+print(f"Cost with theta = [0.5, 1.5]: {cost}")
+                </code></pre>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

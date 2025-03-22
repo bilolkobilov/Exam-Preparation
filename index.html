@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Preparation Materials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --hover-transition: all 0.3s ease;
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .header-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .exam-schedule {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            transition: var(--hover-transition);
+        }
+        
+        .exam-schedule:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .exam-schedule h2 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .exam-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .exam-list li {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--hover-transition);
+        }
+        
+        .exam-list li:hover {
+            background-color: var(--light-bg);
+            padding-left: 20px;
+        }
+        
+        .exam-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .exam-date {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .subject-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: var(--hover-transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .subject-card h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subject-date {
+            color: #666;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .subject-date i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--hover-transition);
+            text-align: center;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px 0;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--hover-transition);
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Timer Section */
+        .timer-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+        
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .timer-item {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            min-width: 80px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timer-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            transition: var(--hover-transition);
+        }
+        
+        .dark-mode-toggle:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .subject-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .timer-container {
+                flex-wrap: wrap;
+            }
+            
+            .timer-item {
+                min-width: 70px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .subject-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .exam-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .exam-date {
+                margin-top: 5px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 0;
+            }
+            
+            .timer-number {
+                font-size: 1.5rem;
+            }
+            
+            .timer-item {
+                padding: 10px;
+                min-width: 60px;
+            }
+        }
+
+        /* Optional Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .exam-schedule,
+        .dark-mode .subject-card,
+        .dark-mode .timer-section {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3 {
+            color: #4cc9f0;
+        }
+        
+        .dark-mode .exam-list li {
+            border-bottom-color: #333;
+        }
+        
+        .dark-mode .exam-list li:hover {
+            background-color: #2a2a2a;
+        }
+        
+        .dark-mode .dark-mode-toggle {
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .footer {
+            border-top-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="darkModeToggle" class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <h1>Exam Preparation Materials</h1>
+            <p class="header-subtitle">Comprehensive study resources to help you prepare for your upcoming exams</p>
+        </header>
+        
+        <div class="timer-section">
+            <h2>Countdown to First Exam</h2>
+            <div class="timer-container">
+                <div class="timer-item">
+                    <div id="days" class="timer-number">0</div>
+                    <div class="timer-label">Days</div>
+                </div>
+                <div class="timer-item">
+                    <div id="hours" class="timer-number">0</div>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-item">
+                    <div id="minutes" class="timer-number">0</div>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-item">
+                    <div id="seconds" class="timer-number">0</div>
+                    <div class="timer-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exam-schedule">
+            <h2>Midterm Exam Schedule</h2>
+            <ul class="exam-list">
+                <li>
+                    <span>AI/ML Midterm Exam</span>
+                    <span class="exam-date">March 24 (Monday)</span>
+                </li>
+                <li>
+                    <span>Operating System Midterm Exam</span>
+                    <span class="exam-date">March 24 (Monday)</span>
+                </li>
+                <li>
+                    <span>Java Midterm Exam</span>
+                    <span class="exam-date">March 25 (Tuesday)</span>
+                </li>
+                <li>
+                    <span>ITAB Midterm Exam</span>
+                    <span class="exam-date">March 26 (Wednesday)</span>
+                </li>
+                <li>
+                    <span>Applied Math Midterm Exam</span>
+                    <span class="exam-date">March 27 (Thursday)</span>
+                </li>
+                <li>
+                    <span>Discrete Math Midterm Exam</span>
+                    <span class="exam-date">March 28 (Friday)</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="subject-grid">
+            <div class="subject-card">
+                <h3>AI/ML</h3>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 24 (Monday)</p>
+                <a href="aiml.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="subject-card">
+                <h3>Operating System</h3>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 24 (Monday)</p>
+                <a href="os.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="subject-card">
+                <h3>Java</h3>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 25 (Tuesday)</p>
+                <a href="java.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="subject-card">
+                <h3>ITAB</h3>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 26 (Wednesday)</p>
+                <a href="itab.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="subject-card">
+                <h3>Applied Math</h3>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 27 (Thursday)</p>
+                <a href="math242.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="subject-card">
+                <h3>Discrete Math</h3>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 28 (Friday)</p>
+                <a href="csit206.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Developed by: <a href="https://github.com/bilolkobilov" target="_blank">bilolkobilov <i class="fab fa-github"></i></a></p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateTimer() {
+            const examDate = new Date('2025-03-24T00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = examDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerText = days;
+                document.getElementById('hours').innerText = hours;
+                document.getElementById('minutes').innerText = minutes;
+                document.getElementById('seconds').innerText = seconds;
+            } else {
+                document.getElementById('days').innerText = '0';
+                document.getElementById('hours').innerText = '0';
+                document.getElementById('minutes').innerText = '0';
+                document.getElementById('seconds').innerText = '0';
+            }
+        }
+        
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        // Initialize the timer and update every second
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>

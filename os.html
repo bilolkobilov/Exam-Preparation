@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Midterm Exam Prep</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            line-height: 2rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-top: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            list-style-position: inside;
+        }
+        li {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #4b5563;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        th {
+            font-weight: 600;
+            color: #374151;
+        }
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background-color: #f3f4f6;
+            color: #1e293b;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        .accordion-button:hover {
+            background-color: #e0e7eb;
+        }
+        .accordion-button.active {
+            background-color: #d1d5db;
+            border-bottom-color: transparent;
+        }
+        .accordion-content {
+            padding: 0rem 1rem 1rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0.375rem;
+            display: none;
+            margin-bottom: 1rem;
+        }
+        .accordion-content.show {
+            display: block;
+        }
+        .table-of-contents {
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 2rem;
+            background-color: #f8fafc;
+        }
+        .table-of-contents h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+            color: #2563eb;
+        }
+        .code-block {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            color: #242424;
+        }
+        .important-box {
+            background-color: #fef08a;
+            padding: 1rem;
+            border: 1px solid #fde047;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .tip-box {
+            background-color: #ecfdf5;
+            padding: 1rem;
+            border: 1px solid #a7f3d0;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .table-of-contents {
+                display: none;
+            }
+            h1 {
+                font-size: 2rem;
+                line-height: 2.25rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
+            h3 {
+                font-size: 1.125rem;
+                line-height: 1.5rem;
+            }
+            p, li {
+                font-size: 0.95rem;
+                line-height: 1.6rem;
+            }
+            .code-block {
+                font-size: 0.8rem;
+                line-height: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-4 text-gray-900">Operating Systems Midterm Exam Preparation Guide</h1>
+
+        <div class="table-of-contents">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Table of Contents</h2>
+            <ul>
+                <li><a href="#operating-system-and-its-function">1. Operating System and Its Function</a></li>
+                <li><a href="#evolution-of-operating-systems">2. Evolution of Operating Systems</a></li>
+                <li><a href="#types-of-operating-systems">3. Types of Operating Systems</a></li>
+                <li><a href="#system-protection">4. System Protection</a></li>
+                <li><a href="#operating-system-structure-and-services">5. Operating System Structure and Services</a></li>
+                <li><a href="#system-programs-and-calls">6. System Programs and Calls</a></li>
+                <li><a href="#process-concept">7. Process Concept</a></li>
+                <li><a href="#process-states-and-state-model">8. Process States and State Model</a></li>
+                <li><a href="#process-scheduling">9. Process Scheduling</a></li>
+                <li><a href="#job-and-process-synchronization">10. Job and Process Synchronization</a></li>
+                <li><a href="#threads-and-threading-models">11. Threads and Threading Models</a></li>
+                <li><a href="#cpu-scheduling">12. CPU Scheduling</a></li>
+                <li><a href="#job-scheduling-functions">13. Job Scheduling Functions</a></li>
+                <li><a href="#multiprocessor-scheduling">14. Multiprocessor Scheduling</a></li>
+            </ul>
+        </div>
+
+        <section id="operating-system-and-its-function" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">1. Operating System and Its Function</h2>
+            <p>
+                An operating system (OS) is system software that manages computer hardware and software resources and
+                provides common services for computer programs. It acts as an intermediary between the user and the
+                computer hardware.
+            </p>
+            <p>
+                Primary OS functions include:
+            </p>
+            <ul>
+                <li><strong>Process Management:</strong> Managing the execution of processes, including creation,
+                    scheduling, and termination.
+                </li>
+                <li><strong>Memory Management:</strong> Allocating and managing computer memory, including RAM and virtual
+                    memory.
+                </li>
+                <li><strong>File Management:</strong> Organizing and managing files and directories on storage devices.</li>
+                <li><strong>Security:</strong> Providing mechanisms for protecting system resources and user data from
+                    unauthorized access.
+                </li>
+                 <li><strong>Networking:</strong> Facilitating communication between computers over networks.</li>
+                 <li><strong>Device Drivers:</strong> Managing and controlling hardware devices.</li>
+            </ul>
+            <p>
+                Examples of operating systems:
+            </p>
+            <ul>
+                <li>Microsoft Windows (desktop, server)</li>
+                <li>macOS (desktop)</li>
+                <li>Linux (server, desktop, embedded)</li>
+                <li>Android (mobile)</li>
+                <li>iOS (mobile)</li>
+            </ul>
+        </section>
+
+        <section id="evolution-of-operating-systems" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">2. Evolution of Operating Systems</h2>
+            <p>
+                The evolution of operating systems reflects the advancements in computer hardware and the changing needs
+                of users and applications.
+            </p>
+            <ul>
+                <li><strong>Batch Processing Systems:</strong> Early systems that executed jobs in batches without user
+                    interaction.
+                </li>
+                <li><strong>Time-Sharing Systems:</strong> Allowed multiple users to share the computer simultaneously by
+                    switching between processes rapidly.
+                </li>
+                <li><strong>Multiprogramming Systems:</strong> Improved CPU utilization by running multiple processes
+                    concurrently.
+                </li>
+                <li><strong>Real-Time Systems:</strong> Designed for applications with strict time constraints, such as
+                    industrial control systems.
+                </li>
+                <li><strong>Distributed Systems:</strong> Manage a group of independent computers and make them appear as a
+                    single system.
+                </li>
+                <li><strong>Modern Operating Systems:</strong> Combine features from various predecessors, supporting
+                    graphical user interfaces, multitasking, networking, and more.
+                </li>
+            </ul>
+            <p>
+                 Monolithic kernels, where the entire OS resides in the kernel space, were common in early OS designs.  Microkernels, on the other hand, structure the OS by removing non-essential components from the kernel and implementing them as user-level processes.
+            </p>
+        </section>
+
+        <section id="types-of-operating-systems" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">3. Types of Operating Systems</h2>
+            <p>
+                Different types of operating systems are designed to meet specific requirements and serve different
+                purposes.
+            </p>
+            <div class="accordion">
+                <div class="accordion-button">
+                    Batch OS
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Batch OS executes jobs in batches without user interaction.
+                    </p>
+                    <ul>
+                        <li><strong>Characteristics:</strong> Simple, efficient for repetitive tasks, long turnaround time.</li>
+                        <li><strong>Examples:</strong> Mainframe systems processing payroll or large data sets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Time-Sharing OS
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Time-sharing OS allows multiple users to share the computer simultaneously.
+                    </p>
+                    <ul>
+                        <li><strong>Characteristics:</strong> Interactive, supports multitasking, fair resource allocation.</li>
+                        <li><strong>Examples:</strong> UNIX, Linux.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Real-Time OS
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Real-time OS is designed for applications with strict time constraints.
+                    </p>
+                    <ul>
+                        <li><strong>Characteristics:</strong> Time-critical, reliable, predictable.</li>
+                        <li><strong>Examples:</strong> VxWorks (embedded systems), QNX (automotive).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Distributed OS
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Distributed OS manages a group of independent computers and makes them appear as a single system.
+                    </p>
+                    <ul>
+                        <li><strong>Characteristics:</strong> Scalable, networked, resource sharing.</li>
+                        <li><strong>Examples:</strong> Apache Hadoop, Kubernetes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-button">
+                    Multiprocessor OS
+                    <span class="icon">&#9660;</span>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Multiprocessor OS supports systems with multiple CPUs.
+                    </p>
+                    <ul>
+                        <li><strong>Characteristics:</strong> Parallel processing, increased throughput, complex scheduling.</li>
+                        <li><strong>Examples:</strong> Linux, Windows Server.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="system-protection" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">4. System Protection</h2>
+            <p>
+                System protection is necessary to ensure the reliable and secure operation of a computer system.  The OS
+                provides mechanisms to control access to system resources and prevent unauthorized access, use, or
+                modification.
+            </p>
+            <p>
+                Mechanisms for system protection:
+            </p>
+            <ul>
+                <li><strong>User Authentication:</strong> Verifying the identity of users through usernames, passwords,
+                    biometrics, etc.
+                </li>
+                <li><strong>File Permissions:</strong> Controlling access to files and directories based on user identity or
+                    group membership (e.g., read, write, execute permissions in UNIX-like systems).
+                </li>
+                <li><strong>Access Control Lists (ACLs):</strong> More flexible than basic file permissions, allowing
+                    fine-grained control over access to resources.
+                </li>
+                <li><strong>Firewalls:</strong> Protecting the system from unauthorized network access.</li>
+                <li><strong>Encryption:</strong> Encoding data to prevent unauthorized access.</li>
+                <li><strong>Virtualization:</strong> Creating isolated environments to run applications, limiting the damage
+                    they can cause to the host system.
+                </li>
+            </ul>
+        </section>
+
+        <section id="operating-system-structure-and-services" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">5. Operating System Structure and Services</h2>
+            <p>
+                The structure of an OS determines how its components are organized.  Operating systems provide a set of
+                services to both users and applications.
+            </p>
+            <p>
+                OS Structures:
+            </p>
+            <ul>
+                <li><strong>Monolithic Kernel:</strong> All OS components reside in the kernel, providing direct access to
+                    hardware.
+                    <ul>
+                        <li><strong>Advantages:</strong> Simple structure, fast execution.</li>
+                        <li><strong>Disadvantages:</strong> Large size, difficult to maintain, a failure in one component can crash the entire system.</li>
+                    </ul>
+                </li>
+                <li><strong>Microkernel:</strong> The kernel provides minimal services (e.g., process management, memory
+                    management), and other OS functions are implemented as user-level processes.
+                    <ul>
+                        <li><strong>Advantages:</strong> Modular, more reliable, easier to extend.</li>
+                        <li><strong>Disadvantages:</strong> Increased overhead due to message passing between components, more complex design.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                Key OS Services:
+            </p>
+            <ul>
+                <li><strong>Process Management:</strong> Creating, scheduling, and terminating processes; providing mechanisms
+                    for process synchronization and communication.
+                </li>
+                <li><strong>Memory Management:</strong> Allocating and freeing memory; managing virtual memory.</li>
+                <li><strong>File System Management:</strong> Organizing, storing, and retrieving files; providing file access
+                    control.
+                </li>
+                <li><strong>I/O Management:</strong> Controlling input/output devices.</li>
+                <li><strong>Networking:</strong> Providing network communication capabilities.</li>
+                <li><strong>Protection and Security:</strong> Controlling access to system resources; providing security
+                    mechanisms.
+                </li>
+            </ul>
+        </section>
+
+        <section id="system-programs-and-calls" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">6. System Programs and Calls</h2>
+            <p>
+                System calls provide an interface between user-level processes and the operating system kernel. They allow
+                programs to request services from the OS, such as accessing hardware, managing files, and communicating
+                with other processes.
+            </p>
+            <p>
+                <strong>System Programs (or System Utilities):</strong> These are software programs that are part of the
+                operating system but are not part of the kernel. They provide a variety of functions to users and
+                applications, such as file management, system configuration, and program development tools. Examples
+                include file explorers, text editors, compilers, and debuggers.
+            </p>
+
+            <p>
+                Example of a system call in C:
+            </p>
+            <div class="code-block">
+                <pre><code>
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    // getpid() is a system call that returns the process ID of the calling process.
+    printf("Process ID: %d\n", getpid());
+    return 0;
+}
+                </code></pre>
+            </div>
+            <p>
+                In this example, `getpid()` is a system call.  When the program is executed, the `getpid()` function
+                invokes the corresponding system call in the OS kernel to retrieve the process ID.
+            </p>
+        </section>
+
+        <section id="process-concept" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">7. Process Concept</h2>
+            <p>
+                A process is an instance of a computer program that is being executed. It is a fundamental concept in
+                operating systems. The OS manages processes, allocating resources to them and scheduling their execution.
+            </p>
+            <p>
+                Key aspects of a process:
+            </p>
+            <ul>
+                <li><strong>Program Counter:</strong> Indicates the address of the next instruction to be executed.</li>
+                <li><strong>Stack:</strong> Contains temporary data, such as function parameters, return addresses, and local
+                    variables.
+                </li>
+                <li><strong>Data Section:</strong> Contains global variables and dynamically allocated memory.</li>
+                <li><strong>Text Section:</strong> Contains the program code.</li>
+                 <li><strong>CPU Registers:</strong> Hold the current activity.</li>
+            </ul>
+            <p>
+                Process management involves:
+            </p>
+            <ul>
+                <li><strong>Process Creation:</strong> The OS creates a new process, allocates resources, and initializes
+                    its control block (PCB).
+                </li>
+                <li><strong>Process Execution:</strong> The CPU executes the process's instructions.</li>
+                <li><strong>Process Termination:</strong> The OS reclaims the process's resources and removes its PCB.</li>
+                 <li><strong>Process Scheduling:</strong> The OS decides which process should be executed by the CPU.</li>
+                 <li><strong>Process Synchronization:</strong> The OS provides mechanisms for processes to coordinate and communicate with each other.</li>
+            </ul>
+        </section>
+
+        <section id="process-states-and-state-model" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">8. Process States and State Model</h2>
+            <p>
+                A process goes through different states during its lifecycle. The OS manages these states and transitions
+                between them.
+            </p>
+            <p>
+                Five process states:
+            </p>
+            <ul>
+                <li><strong>New:</strong> The process is being created.</li>
+                <li><strong>Ready:</strong> The process is waiting to be assigned to a processor.</li>
+                <li><strong>Running:</strong> Instructions are being executed by the CPU.</li>
+                <li><strong>Waiting (or Blocked):</strong> The process is waiting for some event to occur (e.g., I/O
+                    completion, signal).
+                </li>
+                <li><strong>Terminated:</strong> The process has finished execution.</li>
+            </ul>
+
+            <p>
+                State transition diagram:
+            </p>
+            <div style="text-align: center;">
+                <img src="https://www.researchgate.net/publication/332546783/figure/fig3/AS:749937696464896@1555810488119/Process-state-transition-diagram.png" alt="Process State Transition Diagram" style="max-width: 80%; height: auto;">
+                <p style="font-size: 0.9rem; color: #6b7280; margin-top: 0.5rem;">[Process State Transition Diagram]</p>
+            </div>
+            <p>
+                Transitions:
+            </p>
+            <ul>
+                <li><strong>Admitted:</strong> From New to Ready.</li>
+                <li><strong>Dispatch:</strong> From Ready to Running.</li>
+                <li><strong>Interrupt:</strong> From Running to Ready.</li>
+                <li><strong>I/O or Event Wait:</strong> From Running to Waiting.</li>
+                <li><strong>I/O or Event Completion:</strong> From Waiting to Ready.</li>
+                <li><strong>Exit:</strong> From Running to Terminated.</li>
+            </ul>
+        </section>
+
+        <section id="process-scheduling" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">9. Process Scheduling</h2>
+            <p>
+                Process scheduling is the activity of the operating system that manages the allocation of the CPU to
+                processes. The OS uses scheduling algorithms to determine which process should run at a given time.
+            </p>
+            <p>
+                Types of scheduling:
+            </p>
+            <ul>
+                <li><strong>Long-Term Scheduling (Job Scheduling):</strong> Selects processes from the job queue and loads
+                    them into memory for execution (controls the degree of multiprogramming).
+                </li>
+                <li><strong>Medium-Term Scheduling (Swapping):</strong> Removes processes from memory (swaps them out) to
+                    reduce the degree of multiprogramming or to free up memory. Later, the processes can be swapped back
+                    in.
+                </li>
+                <li><strong>Short-Term Scheduling (CPU Scheduling):</strong> Selects from among the processes in ready
+                    queue, and allocates the CPU to one of them.
+                </li>
+            </ul>
+
+            <p>
+                Scheduling criteria:
+            </p>
+            <ul>
+                <li><strong>CPU Utilization:</strong> Percentage of time the CPU is busy.</li>
+                <li><strong>Throughput:</strong> Number of processes completed per unit time.</li>
+                <li><strong>Turnaround Time:</strong> Total time taken to execute a process (completion time - arrival time).</li>
+                <li><strong>Waiting Time:</strong> Amount of time a process has been waiting in the ready queue.</li>
+                <li><strong>Response Time:</strong> Time from the submission of a request until the first response is
+                    produced.
+                </li>
+                 <li><strong>Fairness:</strong> Ensuring that each process gets a fair share of the CPU.</li>
+            </ul>
+        </section>
+
+        <section id="job-and-process-synchronization" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">10. Job and Process Synchronization</h2>
+            <p>
+                Process synchronization is necessary in a multitasking OS to coordinate the execution of multiple processes
+                that share resources. It ensures that shared resources are accessed in a controlled manner, preventing
+                data inconsistency and race conditions.
+            </p>
+            <p>
+                Synchronization mechanisms:
+            </p>
+            <ul>
+                <li><strong>Semaphores:</strong> Integer variables that are used to control access to shared resources.
+                    <ul>
+                        <li>`wait(S)`: Decrements the semaphore value.</li>
+                        <li>`signal(S)`: Increments the semaphore value.</li>
+                    </ul>
+                </li>
+                <li><strong>Mutexes (Mutual Exclusion):</strong> A special type of semaphore that provides exclusive
+                    access to a shared resource.
+                </li>
+                 <li><strong>Monitors:</strong>A higher-level synchronization construct that providesmutual exclusion and condition variables.</li>
+                 <li><strong>Condition Variables:</strong> Used with monitors to allow processes to wait for specific conditions to occur.</li>
+            </ul>
+
+            <p>
+                Example of semaphore usage in C:
+            </p>
+            <div class="code-block">
+                <pre><code>
+#include <pthread.h>
+#include <semaphore.h>
+#include <stdio.h>
+
+sem_t semaphore;  // Declare a semaphore variable
+
+void* thread_function(void* arg) {
+    sem_wait(&semaphore);  // Wait (decrement) the semaphore
+    printf("Thread %ld is running\n", pthread_self()); //pthread_self() returns the ID of the current thread.
+    // Simulate some work
+    for (int i = 0; i < 1000000; i++);
+    sem_post(&semaphore);  // Signal (increment) the semaphore
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2;
+    sem_init(&semaphore, 0, 1);  // Initialize the semaphore (0: not shared between processes, 1: initial value)
+    pthread_create(&t1, NULL, thread_function, NULL);  // Create thread 1
+    pthread_create(&t2, NULL, thread_function, NULL);  // Create thread 2
+    pthread_join(t1, NULL);  // Wait for thread 1 to finish
+    pthread_join(t2, NULL);  // Wait for thread 2 to finish
+    sem_destroy(&semaphore);  // Destroy the semaphore
+    return 0;
+}
+                </code></pre>
+            </div>
+            <p>
+                In this example, the semaphore is used to ensure that only one thread can access the shared resource (in
+                this case, the `printf` statement) at a time.
+            </p>
+        </section>
+
+        <section id="threads-and-threading-models" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">11. Threads and Threading Models</h2>
+            <p>
+                A thread is a lightweight unit of execution within a process.  A process can have multiple threads, allowing
+                it to perform multiple tasks concurrently.
+            </p>
+            <p>
+                User-level threads vs. Kernel-level threads:
+            </p>
+            <ul>
+                <li><strong>User-Level Threads:</strong> Managed by a thread library in user space. The kernel is not aware of
+                    their existence.
+                    <ul>
+                        <li><strong>Advantages:</strong> Fast to create and manage, low overhead.</li>
+                        <li><strong>Disadvantages:</strong> If one thread blocks, the entire process blocks; cannot take
+                            advantage of multiprocessors.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Kernel-Level Threads:</strong> Supported directly by the operating system kernel.
+                    <ul>
+                        <li><strong>Advantages:</strong> Can take advantage of multiprocessors; if one thread blocks, other
+                            threads in the process can continue to run.
+                        </li>
+                        <li><strong>Disadvantages:</strong> Slower to create and manage, higher overhead.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                Multithreading models:
+            </p>
+            <div style="text-align: center;">
+                <img src="https://www.researchgate.net/publication/346379550/figure/fig1/AS:974018400251914@1609235491930/Three-types-of-thread-models-Popular-operating-systems-5-22-24-adopt-the.ppm" alt="Threading Models" style="max-width: 80%; height: auto;">
+                <p  style="font-size: 0.9rem; color: #6b7280; margin-top: 0.5rem;">Threading Models</p>
+            </div>
+        </section>
+
+        <section id="cpu-scheduling" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">12. CPU Scheduling</h2>
+            <p>
+                CPU scheduling is the process of determining which process should be executed by the CPU at any given time.
+                The goal of CPU scheduling is to maximize CPU utilization and minimize metrics like turnaround time,
+                waiting time, and response time.
+            </p>
+            <p>
+                Scheduling algorithms:
+            </p>
+            <ul>
+                <li><strong>First-Come, First-Served (FCFS):</strong> Processes are executed in the order they arrive.
+                    <ul>
+                        <li><strong>Advantages:</strong> Simple to implement.</li>
+                        <li><strong>Disadvantages:</strong> Can lead to long waiting times for short processes if a long
+                            process arrives first (convoy effect).
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Shortest Job Next (SJN) / Shortest Remaining Time First (SRTF):</strong>
+                    <ul>
+                        <li>SJN: Selects the process with the shortest burst time to execute next.</li>
+                        <li>SRTF: Preemptive version of SJN; if a process arrives with a shorter remaining burst time than
+                            the currently executing process, the current process is preempted.
+                        </li>
+                        <li><strong>Advantages:</strong> Minimizes average waiting time.</li>
+                        <li><strong>Disadvantages:</strong> Requires knowledge of future burst times, can lead to starvation
+                            for long processes.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Round Robin (RR):</strong> Each process is given a fixed amount of CPU time called a time quantum.
+                    If the process does not complete within the time quantum, it is preempted and added to the end of the
+                    ready queue.
+                    <ul>
+                        <li><strong>Advantages:</strong> Fair, provides good response time.</li>
+                        <li><strong>Disadvantages:</strong> Performance depends on the size of the time quantum; large
+                            quantum leads to FCFS, small quantum increases context switching overhead.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Priority Scheduling:</strong> Processes are assigned priorities, and the process with the
+                    highest priority is executed first.
+                    <ul>
+                        <li><strong>Advantages:</strong> Can be used to implement different scheduling policies.</li>
+                        <li><strong>Disadvantages:</strong> Can lead to starvation for low-priority processes; priority
+                            inversion can occur.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Multilevel Queue Scheduling:</strong> The ready queue is divided into multiple queues, each
+                    with its own scheduling algorithm. Processes are assigned to a queue based on their properties (e.g.,
+                    foreground vs. background).
+                    <ul>
+                        <li><strong>Advantages:</strong> Flexible, can implement different scheduling policies for different
+                            types of processes.
+                        </li>
+                        <li><strong>Disadvantages:</strong> Complex to implement.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                Example of Round Robin scheduling implementation in C:
+            </p>
+            <div class="code-block">
+                <pre><code>
+#include <stdio.h>
+#include <stdbool.h>
+
+void roundRobin(int processes[], int n, int burstTime[], int quantum) {
+    int remainingTime[n]; // Array to store the remaining burst time for each process
+    for (int i = 0; i < n; i++)
+        remainingTime[i] = burstTime[i];
+
+    int time = 0; // Current time
+    bool done = false;
+
+    // Keep iterating until all processes are done
+    while (!done) {
+        done = true; // Assume all processes are done in this iteration
+
+        // Iterate through all processes
+        for (int i = 0; i < n; i++) {
+            // If the process has remaining burst time
+            if (remainingTime[i] > 0) {
+                done = false; // At least one process is not done
+                if (remainingTime[i] > quantum) {
+                    // If remaining time is greater than quantum, execute for quantum time
+                    time += quantum;
+                    remainingTime[i] -= quantum;
+                } else {
+                    // If remaining time is less than or equal to quantum, execute for remaining time
+                    time += remainingTime[i];
+                    remainingTime[i] = 0; // Process is done
+                    printf("Process %d executed. Time: %d\n", processes[i], time);
+                }
+            }
+        }
+    }
+    printf("Total execution time: %d\n", time);
+}
+
+int main() {
+    int processes[] = {1, 2, 3, 4}; // Process IDs
+    int burstTime[] = {10, 5, 8, 6}; // Burst times for each process
+    int quantum = 2; // Time quantum for Round Robin
+    roundRobin(processes, 4, burstTime, quantum);
+    return 0;
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="job-scheduling-functions" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">13. Job Scheduling Functions</h2>
+            <p>
+                Job scheduling functions in an OS involve managing the sequence and timing of job execution.  A "job" here
+                refers to a program or a set of programs that are submitted to the OS for processing.
+            </p>
+            <p>
+                Types of scheduling functions:
+            </p>
+            <ul>
+                <li><strong>Long-Term Scheduling (Job Scheduling):</strong>
+                    <ul>
+                        <li>Determines which jobs are admitted to the system for processing.</li>
+                        <li>Controls the degree of multiprogramming (the number of processes in memory).</li>
+                        <li>Selects jobs from a queue (e.g., a disk queue) and moves them to the ready queue in memory.</li>
+                        <li>Important in batch systems and time-sharing systems.</li>
+                    </ul>
+                </li>
+                <li><strong>Medium-Term Scheduling (Swapping):</strong>
+                    <ul>
+                        <li>Involves swapping processes out of memory and onto disk (and later swapping them back in).</li>
+                        <li>Used to manage the degree of multiprogramming and free up memory.</li>
+                        <li>May be used when memory is overcommitted or when a process is waiting for a long time.</li>
+                    </ul>
+                </li>
+                <li><strong>Short-Term Scheduling (CPU Scheduling):</strong>
+                    <ul>
+                        <li>Selects which process from the ready queue will be executed by the CPU next.</li>
+                        <li>Occurs very frequently (in the order of milliseconds).</li>
+                        <li>Aims to optimize CPU utilization and minimize response time.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="multiprocessor-scheduling" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">14. Multiprocessor Scheduling</h2>
+            <p>
+                Multiprocessor scheduling is more complex than single-processor scheduling because it involves allocating
+                processes to multiple CPUs. The goal is to utilize the processors efficiently and achieve high performance.
+            </p>
+            <p>
+                Approaches to multiprocessor scheduling:
+            </p>
+            <ul>
+                <li><strong>Symmetric Multiprocessing (SMP):</strong> Each processor is self-scheduling. All processors share
+                    a common ready queue, or each processor has its own private queue.
+                    <ul>
+                        <li><strong>Advantages:</strong> Flexible, can improve performance.</li>
+                        <li><strong>Disadvantages:</strong> More complex scheduling algorithms are needed, potential for
+                            load imbalance.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Asymmetric Multiprocessing (AMP):</strong> One processor (the master) is responsible for
+                    scheduling, I/O, and other system activities, while the other processors (the slaves) execute user
+                    programs.
+                    <ul>
+                        <li><strong>Advantages:</strong> Simpler to implement.</li>
+                        <li><strong>Disadvantages:</strong> Master processor can become a bottleneck, less flexible.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                Scheduling issues in multiprocessor systems:
+            </p>
+            <ul>
+                <li><strong>Load Balancing:</strong> Distributing the workload evenly across the processors to prevent some
+                    processors from being idle while others are overloaded.
+                    <ul>
+                        <li><strong>Push Migration:</strong> The OS periodically checks the load on each processor and moves
+                            processes from overloaded processors to less loaded ones.
+                        </li>
+                        <li><strong>Pull Migration:</strong> Idle processors take processes from the queues of busy
+                            processors.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Processor Affinity:</strong> The tendency of a process to continue running on the same processor
+                    to take advantage of cached data.
+                </li>
+                <li><strong>Gang Scheduling:</strong> A set of related threads may be scheduled to run on a set of processors
+                    at the same time. Useful for applications where communication between threads is frequent.
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

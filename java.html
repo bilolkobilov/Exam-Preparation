@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Midterm Exam Prep</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            line-height: 2rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-top: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            list-style-position: inside;
+        }
+        li {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #4b5563;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        th {
+            font-weight: 600;
+            color: #374151;
+        }
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background-color: #f3f4f6;
+            color: #1e293b;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        .accordion-button:hover {
+            background-color: #e0e7eb;
+        }
+        .accordion-button.active {
+            background-color: #d1d5db;
+            border-bottom-color: transparent;
+        }
+        .accordion-content {
+            padding: 0rem 1rem 1rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0.375rem;
+            display: none;
+            margin-bottom: 1rem;
+        }
+        .accordion-content.show {
+            display: block;
+        }
+        .table-of-contents {
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 2rem;
+            background-color: #f8fafc;
+        }
+        .table-of-contents h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        .table-of-contents a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+            color: #2563eb;
+        }
+        .code-block {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            color: #242424;
+        }
+        .important-box {
+            background-color: #fef08a;
+            padding: 1rem;
+            border: 1px solid #fde047;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .tip-box {
+            background-color: #ecfdf5;
+            padding: 1rem;
+            border: 1px solid #a7f3d0;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .table-of-contents {
+                display: none;
+            }
+            h1 {
+                font-size: 2rem;
+                line-height: 2.25rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+            }
+            h3 {
+                font-size: 1.125rem;
+                line-height: 1.5rem;
+            }
+            p, li {
+                font-size: 0.95rem;
+                line-height: 1.6rem;
+            }
+            .code-block {
+                font-size: 0.8rem;
+                line-height: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-4 text-gray-900">Java Midterm Exam Preparation Guide</h1>
+
+        <div class="table-of-contents">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Table of Contents</h2>
+            <ul>
+                <li><a href="#module-i">Module I</a></li>
+                <li><a href="#concepts-of-oop">1. Concepts of OOP (Object-Oriented Programming)</a></li>
+                <li><a href="#features-of-java">2. Features of Java</a></li>
+                <li><a href="#java-vs-cpp">3. How Java is Different from C++</a></li>
+                <li><a href="#data-types-control-statements">4. Data Types & Control Statements</a></li>
+                <li><a href="#identifiers-arrays-operators-classes-constructors">5. Identifiers, Arrays, Operators, Classes, and Constructors</a></li>
+                <li><a href="#inheritance-multilevel">6. Inheritance: Multilevel Hierarchy</a></li>
+                <li><a href="#method-overriding-abstract-final">7. Method Overriding, Abstract Classes, and Final Classes</a></li>
+                <li><a href="#string-class-operations">8. String Class & Various Types of String Operations</a></li>
+                 <li><a href="#runtime-polymorphism">9. Runtime Polymorphism</a></li>
+                <li><a href="#module-ii">Module II</a></li>
+                <li><a href="#packages">10. Defining, Implementing, and Importing Packages</a></li>
+                <li><a href="#interfaces-lambda">11. Interfaces: Functional Interface and Lambda Expression</a></li>
+                <li><a href="#errors-exceptions">12. Errors and Exception Handling</a></li>
+                <li><a href="#builtin-custom-exceptions">13. Java’s Built-in Exceptions and Custom Exceptions</a></li>
+                <li><a href="#exception-logging">14. Exception Logging</a></li>
+            </ul>
+        </div>
+
+        <section id="module-i" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module I</h2>
+        </section>
+
+        <section id="concepts-of-oop" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">1. Concepts of OOP (Object-Oriented Programming)</h3>
+            <p>
+                Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code:
+            </p>
+            <ul>
+                <li><strong>Encapsulation:</strong> Bundling data (attributes) and methods that operate on the data into a single unit (class).  It helps in data hiding.</li>
+                <li><strong>Abstraction:</strong>  Hiding complex implementation details and showing only the necessary features of an object.</li>
+                <li><strong>Inheritance:</strong>  A mechanism where a new class (subclass/derived class) inherits properties and behaviors from an existing class (superclass/base class).</li>
+                <li><strong>Polymorphism:</strong> The ability of a variable, function, or object to take on multiple forms.</li>
+            </ul>
+            <p>
+                Advantages of OOP over procedural programming:
+            </p>
+            <ul>
+                <li>Simpler software development and maintenance</li>
+                <li>Improved code reusability</li>
+                <li>Better data protection</li>
+                <li>Ability to model real-world objects more effectively</li>
+            </ul>
+            <p>Java code examples:</p>
+            <div class="code-block">
+<pre><code>
+// Encapsulation
+class Circle {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Abstraction
+abstract class Shape {
+    abstract double getArea();
+}
+
+class Rectangle extends Shape {
+    double width;
+    double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    double getArea() {
+        return width * height;
+    }
+}
+
+// Inheritance
+class Vehicle {
+    String modelName;
+    void start() {
+        System.out.println("Vehicle started");
+    }
+}
+
+class Car extends Vehicle{
+    String carName;
+}
+
+// Polymorphism
+class Animal {
+    void makeSound() {
+        System.out.println("Generic sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5);
+        System.out.println("Circle Area: " + circle.getArea());
+
+        Rectangle rectangle = new Rectangle(4, 6);
+        System.out.println("Rectangle Area: " + rectangle.getArea());
+
+        Animal myDog = new Dog();
+        myDog.makeSound(); // Calls the Dog's makeSound()
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="features-of-java" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">2. Features of Java</h3>
+            <p>
+                Key features of Java:
+            </p>
+            <ul>
+                <li><strong>Platform Independence:</strong> Java code can run on any platform with a JVM.  The Java Virtual Machine (JVM) is responsible for converting Java bytecode into machine code.</li>
+                <li><strong>Object-Oriented:</strong> Java is an OOP language.</li>
+                <li><strong>Multithreading:</strong> Supports concurrent execution of multiple threads.</li>
+                <li><strong>Memory Management (Garbage Collection):</strong> Automatic memory management.</li>
+                <li><strong>Exception Handling:</strong> Provides a mechanism to handle runtime errors.</li>
+            </ul>
+        </section>
+
+        <section id="java-vs-cpp" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">3. How Java is Different from C++</h3>
+            <p>
+                Comparison of Java and C++:
+            </p>
+            <ul>
+                <li><strong>Memory Management:</strong> Java has automatic garbage collection; C++ requires manual memory management.</li>
+                <li><strong>Syntax:</strong> Java's syntax is simpler and more consistent.</li>
+                <li><strong>Performance:</strong> C++ is generally faster due to direct hardware access.</li>
+                 <li><strong>Pointers:</strong> Java does not have explicit pointers. C++ uses pointers.</li>
+                <li><strong>Multiple Inheritance:</strong> Java doesn't support multiple inheritance of classes (but supports it through interfaces); C++ supports it.</li>
+                <li><strong>Exception Handling:</strong> Java has built-in exception handling; C++ has exception handling, but it's not as enforced.</li>
+            </ul>
+        </section>
+
+        <section id="data-types-control-statements" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">4. Data Types & Control Statements</h3>
+            <p>
+                Java Data Types:
+            </p>
+            <ul>
+                <li><strong>Primitive Data Types:</strong> `byte`, `short`, `int`, `long`, `float`, `double`, `boolean`, `char`.</li>
+                <li><strong>Non-Primitive Data Types:</strong> Classes, Objects, Arrays, Strings, Interfaces.</li>
+            </ul>
+            <p>
+                Control Statements:
+            </p>
+            <ul>
+                <li><strong>Conditional Statements:</strong> `if`, `else if`, `else`, `switch`.</li>
+                <li><strong>Loops:</strong> `for`, `while`, `do-while`.</li>
+            </ul>
+            <div class="code-block">
+<pre><code>
+// Example of control statements
+public class ControlStatements {
+    public static void main(String[] args) {
+        int x = 10;
+
+        if (x > 15) {
+            System.out.println("x is greater than 15");
+        } else if (x > 10) {
+            System.out.println("x is greater than 10");
+        } else {
+            System.out.println("x is not greater than 10");
+        }
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Iteration: " + i);
+        }
+
+        int y = 0;
+        while (y < 5) {
+            System.out.println("While loop: " + y);
+            y++;
+        }
+
+        int z = 0;
+        do {
+            System.out.println("Do-while loop: " + z);
+            z++;
+        } while (z < 5);
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="identifiers-arrays-operators-classes-constructors" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">5. Identifiers, Arrays, Operators, Classes, and Constructors</h3>
+            <p>
+                Identifiers:
+            </p>
+            <p>
+                A name given to a class, method, variable, or other user-defined item in a program.  Rules for defining identifiers:
+            </p>
+             <ul>
+                <li>They should not begin with a digit</li>
+                <li>They can contain letters, digits, underscores, and dollar signs</li>
+                <li>They are case-sensitive</li>
+            </ul>
+            <p>
+                Operators:
+            </p>
+            <ul>
+                <li><strong>Arithmetic Operators:</strong> `+`, `-`, `*`, `/`, `%`.</li>
+                <li><strong>Relational Operators:</strong> `==`, `!=`, `>`, `<`, `>=`, `<=`.</li>
+                <li><strong>Logical Operators:</strong> `&&`, `||`, `!`.</li>
+                <li><strong>Bitwise Operators:</strong> `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>`.</li>
+            </ul>
+            <p>
+                Arrays:
+            </p>
+            <p>
+                A collection of similar data type elements stored at contiguous memory locations.
+            </p>
+            <ul>
+                <li><strong>One-dimensional Array:</strong> `int[] arr = new int[5];`</li>
+                <li><strong>Multi-dimensional Array:</strong> `int[][] arr = new int[3][3];`</li>
+            </ul>
+            <p>
+                Classes:
+            </p>
+            <p>
+                A blueprint or template for creating objects.
+            </p>
+            <p>
+               Constructors:
+            </p>
+             <p>
+                Special methods used to initialize objects.
+            </p>
+            <ul>
+                <li><strong>Default Constructor:</strong> A constructor with no parameters.</li>
+                <li><strong>Parameterized Constructor:</strong> A constructor with parameters.</li>
+            </ul>
+            <div class="code-block">
+<pre><code>
+class MyClass {
+    int x;
+    int y;
+
+    // Default Constructor
+    MyClass() {
+        x = 0;
+        y = 0;
+    }
+
+    // Parameterized Constructor
+    MyClass(int a, int b) {
+        x = a;
+        y = b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int[] myArray = {1, 2, 3, 4, 5};
+        System.out.println(myArray[0]);
+
+        MyClass obj1 = new MyClass();  // Calls default constructor
+        MyClass obj2 = new MyClass(10, 20); // Calls parameterized constructor
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="inheritance-multilevel" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">6. Inheritance: Multilevel Hierarchy</h3>
+             <p>
+                Inheritance is a mechanism where a new class (subclass) inherits properties and behaviors from an existing class (superclass).
+             </p>
+            <ul>
+                <li><strong>Single Inheritance:</strong> A class inherits from only one superclass.</li>
+                <li><strong>Multilevel Inheritance:</strong> A class inherits from a subclass, which in turn inherits from another class.</li>
+                <li><strong>Hierarchical Inheritance:</strong> Multiple classes inherit from a single superclass.</li>
+            </ul>
+            <p>
+                The `super` keyword is used to call the constructor or method of the superclass.  Method overriding is when a subclass provides a different implementation of a method defined in its superclass.
+            </p>
+            <div class="code-block">
+<pre><code>
+class GrandParent {
+    String grandParentName = "GrandParent";
+}
+
+class Parent extends GrandParent {
+    String parentName = "Parent";
+}
+
+class Child extends Parent {
+    String childName = "Child";
+
+    public void displayDetails() {
+        System.out.println("GrandParent Name: " + grandParentName);
+        System.out.println("Parent Name: " + parentName);
+        System.out.println("Child Name: " + childName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.displayDetails();
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="method-overriding-abstract-final" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">7. Method Overriding, Abstract Classes, and Final Classes</h3>
+            <p>
+               Method Overriding:
+            </p>
+            <p>
+                When a subclass provides a different implementation of a method defined in its superclass.  It enables runtime polymorphism.
+            </p>
+            <p>
+                Abstract Classes:
+            </p>
+            <p>
+               A class that cannot be instantiated.  It may contain abstract methods (methods without implementation).
+            </p>
+            <p>
+                Final Classes:
+            </p>
+            <p>
+                A class that cannot be subclassed.  The `final` keyword can also be used with methods to prevent them from being overridden.
+            </p>
+            <div class="code-block">
+<pre><code>
+abstract class MyAbstractClass {
+    abstract void myMethod(); // Abstract method
+
+    void myNonAbstractMethod() {
+        System.out.println("Non-abstract method");
+    }
+}
+
+class MySubclass extends MyAbstractClass {
+    @Override
+    void myMethod() {
+        System.out.println("Implementation of myMethod in subclass");
+    }
+}
+
+final class MyFinalClass {
+    // This class cannot be subclassed
+}
+
+class MyClass {
+    final void myFinalMethod() {
+       //This method cannot be overridden
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       MySubclass obj = new MySubclass();
+       obj.myMethod();
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="string-class-operations" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">8. String Class & Various Types of String Operations</h3>
+            <p>
+                In Java, strings are immutable objects.  The `String` class is used to create and manipulate strings.
+            </p>
+            <p>
+                `StringBuilder` and `StringBuffer` are used for mutable strings. `StringBuilder` is faster but not thread-safe, while `StringBuffer` is thread-safe.
+            </p>
+            <p>
+                String Operations:
+             </p>
+             <ul>
+                <li>Concatenation</li>
+                <li>Comparison</li>
+                <li>Substring extraction</li>
+                <li>Searching</li>
+                <li>Replacing</li>
+             </ul>
+             <div class="code-block">
+<pre><code>
+public class StringOperations {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+
+        // Concatenation
+        String result = str1 + " " + str2;
+        System.out.println("Concatenation: " + result);
+
+        // Comparison
+        boolean isEqual = str1.equals("Hello");
+        System.out.println("Comparison: " + isEqual);
+
+        // Substring extraction
+        String sub = str2.substring(2, 5);
+        System.out.println("Substring: " + sub);
+
+        // Searching
+        int index = str1.indexOf("l");
+        System.out.println("Index of 'l': " + index);
+
+        // Replacing
+        String replaced = str1.replace("l", "p");
+        System.out.println("Replaced string: " + replaced);
+
+        //StringBuilder
+        StringBuilder sb = new StringBuilder("Hello");
+        sb.append(" World");
+        System.out.println("StringBuilder: " + sb.toString());
+
+        //StringBuffer
+        StringBuffer sbuf = new StringBuffer("Hello");
+        sbuf.append(" World");
+        System.out.println("StringBuffer: " + sbuf.toString());
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="runtime-polymorphism" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">9. Runtime Polymorphism</h3>
+            <p>
+               Runtime polymorphism, also known as dynamic polymorphism, is achieved through method overriding. The actual method to be called is determined at runtime.
+            </p>
+            <div class="code-block">
+<pre><code>
+class Superclass {
+    void display() {
+        System.out.println("Superclass display method");
+    }
+}
+
+class Subclass extends Superclass {
+    @Override
+    void display() {
+        System.out.println("Subclass display method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Superclass obj = new Subclass(); // Upcasting
+        obj.display(); // Calls Subclass's display() at runtime
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="module-ii" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module II</h2>
+        </section>
+
+        <section id="packages" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">10. Defining, Implementing, and Importing Packages</h3>
+            <p>
+                A package is a mechanism for organizing Java classes into namespaces.  Packages help in managing large codebases and preventing naming conflicts.
+            </p>
+            <p>
+                Defining a package:
+            </p>
+            <p>
+               Use the `package` keyword at the beginning of a Java file.
+            </p>
+            <p>
+                Importing a package:
+            </p>
+            <p>
+                Use the `import` keyword to use classes from a package.
+            </p>
+            <div class="code-block">
+<pre><code>
+// Defining a package: com.example.mypackage
+package com.example.mypackage;
+
+public class MyClass {
+    public void myMethod() {
+        System.out.println("MyClass from com.example.mypackage");
+    }
+}
+
+// Another file
+// Importing and using the package
+import com.example.mypackage.MyClass;
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.myMethod();
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="interfaces-lambda" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">11. Interfaces: Functional Interface and Lambda Expression</h3>
+            <p>
+                An interface is a collection of abstract methods.  It is used to achieve abstraction and multiple inheritance in Java.
+            </p>
+            <p>
+               Functional Interface:
+            </p>
+            <p>
+                An interface with a single abstract method.
+            </p>
+            <p>
+                Lambda Expression:
+            </p>
+            <p>
+               A concise way to represent an anonymous function.  It can be used to implement functional interfaces.
+            </p>
+            <div class="code-block">
+<pre><code>
+// Functional Interface
+interface MyInterface {
+    void myMethod();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Lambda Expression
+        MyInterface obj = () -> System.out.println("Lambda expression implementation");
+        obj.myMethod();
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="errors-exceptions" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">12. Errors and Exception Handling</h3>
+            <p>
+                Errors indicate serious problems that a reasonable application should not try to handle.  Exceptions are conditions that an application might want to handle.
+            </p>
+            <p>
+                Types of Exceptions:
+            </p>
+            <ul>
+                <li><strong>Checked Exceptions:</strong> Exceptions that are checked at compile time.  The compiler forces you to handle them.</li>
+                <li><strong>Unchecked Exceptions:</strong> Exceptions that are not checked at compile time.</li>
+            </ul>
+            <p>
+                Exception Handling Keywords:
+            </p>
+            <ul>
+                <li>`try`:  Encloses the code that might throw an exception.</li>
+                <li>`catch`:  Handles the exception.</li>
+                <li>`finally`:  A block that is always executed (after `try` and `catch` blocks).</li>
+                <li>`throw`:  Used to explicitly throw an exception.</li>
+                <li>`throws`:  Used in a method signature to declare that a method might throw an exception.</li>
+            </ul>
+            <div class="code-block">
+<pre><code>
+public class ExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0; // This will throw an ArithmeticException
+            System.out.println("Result: " + result); // This line will not be executed
+        } catch (ArithmeticException e) {
+            System.out.println("Caught ArithmeticException: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block executed");
+        }
+        System.out.println("Program continues...");
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="builtin-custom-exceptions" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">13. Java’s Built-in Exceptions and Custom Exceptions</h3>
+            <p>
+                Java provides many built-in exceptions, such as:
+            </p>
+            <ul>
+                <li>`NullPointerException`</li>
+                <li>`ArrayIndexOutOfBoundsException`</li>
+                <li>`IOException`</li>
+                <li>`ClassNotFoundException`</li>
+            </ul>
+            <p>
+                Custom Exceptions:
+            </p>
+            <p>
+               You can create your own exception classes by extending the `Exception` class or its subclasses.
+            </p>
+            <div class="code-block">
+<pre><code>
+// Custom Exception
+class MyException extends Exception {
+    public MyException(String message) {
+        super(message);
+    }
+}
+
+public class CustomException {
+    public static void main(String[] args) {
+        try {
+            validateAge(15);
+        } catch (MyException e) {
+            System.out.println("Caught MyException: " + e.getMessage());
+        }
+    }
+
+    static void validateAge(int age) throws MyException {
+        if (age < 18) {
+            throw new MyException("Age must be 18 or older");
+        } else {
+            System.out.println("Age is valid");
+        }
+    }
+}
+</code></pre>
+            </div>
+        </section>
+
+        <section id="exception-logging" class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">14. Exception Logging</h3>
+            <p>
+                Logging exceptions is crucial for debugging and monitoring applications.  Java provides the `java.util.logging` package.  Log4j is another popular logging framework.
+            </p>
+            <div class="code-block">
+<pre><code>
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
+public class LoggingExample {
+    private static final Logger LOGGER = Logger.getLogger(LoggingExample.class.getName());
+
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            LOGGER.log(Level.SEVERE, "ArithmeticException occurred", e);
+        }
+    }
+}
+</code></pre>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html>
