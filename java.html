@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Midterm Exam Prep</title>
+    <title>Java Midterm Exam Preparation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -199,99 +199,51 @@
         <div class="table-of-contents">
             <h2 class="text-2xl font-semibold mb-4 text-gray-900">Table of Contents</h2>
             <ul>
-                <li><a href="#module-i">Module I</a></li>
-                <li><a href="#concepts-of-oop">1. Concepts of OOP (Object-Oriented Programming)</a></li>
-                <li><a href="#features-of-java">2. Features of Java</a></li>
-                <li><a href="#java-vs-cpp">3. How Java is Different from C++</a></li>
-                <li><a href="#data-types-control-statements">4. Data Types & Control Statements</a></li>
-                <li><a href="#identifiers-arrays-operators-classes-constructors">5. Identifiers, Arrays, Operators, Classes, and Constructors</a></li>
-                <li><a href="#inheritance-multilevel">6. Inheritance: Multilevel Hierarchy</a></li>
-                <li><a href="#method-overriding-abstract-final">7. Method Overriding, Abstract Classes, and Final Classes</a></li>
-                <li><a href="#string-class-operations">8. String Class & Various Types of String Operations</a></li>
-                 <li><a href="#runtime-polymorphism">9. Runtime Polymorphism</a></li>
-                <li><a href="#module-ii">Module II</a></li>
-                <li><a href="#packages">10. Defining, Implementing, and Importing Packages</a></li>
-                <li><a href="#interfaces-lambda">11. Interfaces: Functional Interface and Lambda Expression</a></li>
-                <li><a href="#errors-exceptions">12. Errors and Exception Handling</a></li>
-                <li><a href="#builtin-custom-exceptions">13. Java’s Built-in Exceptions and Custom Exceptions</a></li>
-                <li><a href="#exception-logging">14. Exception Logging</a></li>
+                <li><a href="#conceptual-questions">Conceptual Questions</a></li>
+                <li><a href="#programming-questions">Programming Questions</a></li>
+                <li><a href="#scenario-based-questions">Scenario-Based Programming Questions</a></li>
             </ul>
         </div>
 
-        <section id="module-i" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module I</h2>
-        </section>
+        <section id="conceptual-questions" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Conceptual Questions</h2>
 
-        <section id="concepts-of-oop" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">1. Concepts of OOP (Object-Oriented Programming)</h3>
-            <p>
-                Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code:
-            </p>
-            <ul>
-                <li><strong>Encapsulation:</strong> Bundling data (attributes) and methods that operate on the data into a single unit (class).  It helps in data hiding.</li>
-                <li><strong>Abstraction:</strong>  Hiding complex implementation details and showing only the necessary features of an object.</li>
-                <li><strong>Inheritance:</strong>  A mechanism where a new class (subclass/derived class) inherits properties and behaviors from an existing class (superclass/base class).</li>
-                <li><strong>Polymorphism:</strong> The ability of a variable, function, or object to take on multiple forms.</li>
-            </ul>
-            <p>
-                Advantages of OOP over procedural programming:
-            </p>
-            <ul>
-                <li>Simpler software development and maintenance</li>
-                <li>Improved code reusability</li>
-                <li>Better data protection</li>
-                <li>Ability to model real-world objects more effectively</li>
-            </ul>
-            <p>Java code examples:</p>
-            <div class="code-block">
-<pre><code>
-// Encapsulation
-class Circle {
-    private double radius;
+            <div class="accordion-button">
+                1. What are the key features of Java that differentiate it from C++?
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Key differences between Java and C++:
+                </p>
+                <ul>
+                    <li><strong>Memory Management:</strong> Java has automatic garbage collection, which simplifies memory management for the programmer.  C++ requires manual memory management using <span class="font-mono">new</span> and <span class="font-mono">delete</span>, which can lead to memory leaks if not handled carefully.</li>
+                    <li><strong>Platform:</strong> Java is platform-independent.  A Java program can be compiled into bytecode, which can then be executed on any platform with a Java Virtual Machine (JVM). C++ code is typically compiled directly into machine code that is specific to a particular platform.</li>
+                    <li><strong>Pointers:</strong> Java does not support explicit pointers, reducing the risk of memory corruption and simplifying the language. C++ uses pointers extensively, providing more control but also increasing complexity and the potential for errors.</li>
+                    <li><strong>Multiple Inheritance:</strong> Java doesn't support multiple inheritance between classes to avoid the "diamond problem".  It uses interfaces to achieve similar functionality. C++ supports multiple inheritance, which can lead to more complex class hierarchies and potential ambiguity.</li>
+                    <li><strong>Exception Handling:</strong> Java has built-in exception handling with the <span class="font-mono">try-catch-finally</span> mechanism, making error handling more robust and easier to manage. C++ also has exception handling, but it's often considered less enforced and more verbose.</li>
+                </ul>
+            </div>
 
-    public Circle(double radius) {
-        this.radius = radius;
-    }
-
-    public double getArea() {
-        return Math.PI * radius * radius;
-    }
-}
-
-// Abstraction
-abstract class Shape {
-    abstract double getArea();
-}
-
-class Rectangle extends Shape {
-    double width;
-    double height;
-
-    public Rectangle(double width, double height) {
-        this.width = width;
-        this.height = height;
-    }
-
-    @Override
-    double getArea() {
-        return width * height;
-    }
-}
-
-// Inheritance
-class Vehicle {
-    String modelName;
-    void start() {
-        System.out.println("Vehicle started");
-    }
-}
-
-class Car extends Vehicle{
-    String carName;
-}
-
-// Polymorphism
+            <div class="accordion-button">
+                2. Explain the concept of Object-Oriented Programming (OOP) with examples.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects" that contain data (attributes) and code (methods).  Key OOP concepts:
+                </p>
+                <ul>
+                    <li><strong>Encapsulation:</strong> Bundling data and methods that operate on the data into a single unit (class). This restricts direct access to an object's data, preventing unintended modifications and improving data integrity.</li>
+                    <li><strong>Abstraction:</strong> Hiding complex implementation details and exposing only necessary features.  This simplifies the use of objects and reduces complexity for the user.</li>
+                    <li><strong>Inheritance:</strong> A mechanism where a new class (subclass) inherits properties and behaviors from an existing class (superclass). This promotes code reuse and the creation of hierarchical relationships between classes.</li>
+                    <li><strong>Polymorphism:</strong> The ability of an object to take on many forms.  This allows objects of different classes to be treated as objects of a common type, enabling flexibility and dynamic behavior.</li>
+                </ul>
+                <p>
+                    Example:
+                </p>
+                 <div class="code-block">
+                    <pre><code class="language-java">
 class Animal {
+    String name;
     void makeSound() {
         System.out.println("Generic sound");
     }
@@ -306,196 +258,57 @@ class Dog extends Animal {
 
 public class Main {
     public static void main(String[] args) {
-        Circle circle = new Circle(5);
-        System.out.println("Circle Area: " + circle.getArea());
-
-        Rectangle rectangle = new Rectangle(4, 6);
-        System.out.println("Rectangle Area: " + rectangle.getArea());
-
-        Animal myDog = new Dog();
-        myDog.makeSound(); // Calls the Dog's makeSound()
+        Dog myDog = new Dog(); // Polymorphism in action.  A Dog object is being referred to by an Animal reference.
+        myDog.name = "Buddy";
+        System.out.println(myDog.name + " says ");
+        myDog.makeSound(); // Calls overridden method.  The Dog class's makeSound() method is called, not the Animal class's.
     }
 }
-</code></pre>
+                    </code></pre>
+                </div>
             </div>
-        </section>
 
-        <section id="features-of-java" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">2. Features of Java</h3>
-            <p>
-                Key features of Java:
-            </p>
-            <ul>
-                <li><strong>Platform Independence:</strong> Java code can run on any platform with a JVM.  The Java Virtual Machine (JVM) is responsible for converting Java bytecode into machine code.</li>
-                <li><strong>Object-Oriented:</strong> Java is an OOP language.</li>
-                <li><strong>Multithreading:</strong> Supports concurrent execution of multiple threads.</li>
-                <li><strong>Memory Management (Garbage Collection):</strong> Automatic memory management.</li>
-                <li><strong>Exception Handling:</strong> Provides a mechanism to handle runtime errors.</li>
-            </ul>
-        </section>
-
-        <section id="java-vs-cpp" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">3. How Java is Different from C++</h3>
-            <p>
-                Comparison of Java and C++:
-            </p>
-            <ul>
-                <li><strong>Memory Management:</strong> Java has automatic garbage collection; C++ requires manual memory management.</li>
-                <li><strong>Syntax:</strong> Java's syntax is simpler and more consistent.</li>
-                <li><strong>Performance:</strong> C++ is generally faster due to direct hardware access.</li>
-                 <li><strong>Pointers:</strong> Java does not have explicit pointers. C++ uses pointers.</li>
-                <li><strong>Multiple Inheritance:</strong> Java doesn't support multiple inheritance of classes (but supports it through interfaces); C++ supports it.</li>
-                <li><strong>Exception Handling:</strong> Java has built-in exception handling; C++ has exception handling, but it's not as enforced.</li>
-            </ul>
-        </section>
-
-        <section id="data-types-control-statements" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">4. Data Types & Control Statements</h3>
-            <p>
-                Java Data Types:
-            </p>
-            <ul>
-                <li><strong>Primitive Data Types:</strong> `byte`, `short`, `int`, `long`, `float`, `double`, `boolean`, `char`.</li>
-                <li><strong>Non-Primitive Data Types:</strong> Classes, Objects, Arrays, Strings, Interfaces.</li>
-            </ul>
-            <p>
-                Control Statements:
-            </p>
-            <ul>
-                <li><strong>Conditional Statements:</strong> `if`, `else if`, `else`, `switch`.</li>
-                <li><strong>Loops:</strong> `for`, `while`, `do-while`.</li>
-            </ul>
-            <div class="code-block">
-<pre><code>
-// Example of control statements
-public class ControlStatements {
-    public static void main(String[] args) {
-        int x = 10;
-
-        if (x > 15) {
-            System.out.println("x is greater than 15");
-        } else if (x > 10) {
-            System.out.println("x is greater than 10");
-        } else {
-            System.out.println("x is not greater than 10");
-        }
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Iteration: " + i);
-        }
-
-        int y = 0;
-        while (y < 5) {
-            System.out.println("While loop: " + y);
-            y++;
-        }
-
-        int z = 0;
-        do {
-            System.out.println("Do-while loop: " + z);
-            z++;
-        } while (z < 5);
-    }
-}
-</code></pre>
+            <div class="accordion-button">
+                3. Describe the role of constructors in Java. How is it different from a regular method?
             </div>
-        </section>
-
-        <section id="identifiers-arrays-operators-classes-constructors" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">5. Identifiers, Arrays, Operators, Classes, and Constructors</h3>
-            <p>
-                Identifiers:
-            </p>
-            <p>
-                A name given to a class, method, variable, or other user-defined item in a program.  Rules for defining identifiers:
-            </p>
-             <ul>
-                <li>They should not begin with a digit</li>
-                <li>They can contain letters, digits, underscores, and dollar signs</li>
-                <li>They are case-sensitive</li>
-            </ul>
-            <p>
-                Operators:
-            </p>
-            <ul>
-                <li><strong>Arithmetic Operators:</strong> `+`, `-`, `*`, `/`, `%`.</li>
-                <li><strong>Relational Operators:</strong> `==`, `!=`, `>`, `<`, `>=`, `<=`.</li>
-                <li><strong>Logical Operators:</strong> `&&`, `||`, `!`.</li>
-                <li><strong>Bitwise Operators:</strong> `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>`.</li>
-            </ul>
-            <p>
-                Arrays:
-            </p>
-            <p>
-                A collection of similar data type elements stored at contiguous memory locations.
-            </p>
-            <ul>
-                <li><strong>One-dimensional Array:</strong> `int[] arr = new int[5];`</li>
-                <li><strong>Multi-dimensional Array:</strong> `int[][] arr = new int[3][3];`</li>
-            </ul>
-            <p>
-                Classes:
-            </p>
-            <p>
-                A blueprint or template for creating objects.
-            </p>
-            <p>
-               Constructors:
-            </p>
-             <p>
-                Special methods used to initialize objects.
-            </p>
-            <ul>
-                <li><strong>Default Constructor:</strong> A constructor with no parameters.</li>
-                <li><strong>Parameterized Constructor:</strong> A constructor with parameters.</li>
-            </ul>
-            <div class="code-block">
-<pre><code>
-class MyClass {
-    int x;
-    int y;
-
-    // Default Constructor
-    MyClass() {
-        x = 0;
-        y = 0;
-    }
-
-    // Parameterized Constructor
-    MyClass(int a, int b) {
-        x = a;
-        y = b;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        int[] myArray = {1, 2, 3, 4, 5};
-        System.out.println(myArray[0]);
-
-        MyClass obj1 = new MyClass();  // Calls default constructor
-        MyClass obj2 = new MyClass(10, 20); // Calls parameterized constructor
-    }
-}
-</code></pre>
+            <div class="accordion-content">
+                 <p>
+                    **Role of Constructors:**
+                </p>
+                <ul>
+                    <li>Constructors are special methods used to initialize objects of a class.  They ensure that an object is in a valid state when it is created.</li>
+                    <li>They are called automatically when an object is created using the <span class="font-mono">new</span> keyword.  The <span class="font-mono">new</span> keyword allocates memory for the object, and then the constructor is invoked to initialize that memory.</li>
+                    <li>The primary purpose of a constructor is to set the initial state of an object by assigning values to its instance variables.  This ensures that the object's attributes have meaningful values when the object is first used.</li>
+                 </ul>
+                 <p>
+                    **Differences from Regular Methods:**
+                 </p>
+                 <ul>
+                    <li><strong>Name:</strong> A constructor's name must be the same as the class name, while a regular method can have any valid name.  This naming convention allows the JVM to identify constructors.</li>
+                    <li><strong>Return Type:</strong> Constructors do not have a return type (not even <span class="font-mono">void</span>), while regular methods must have a return type or <span class="font-mono">void</span>.  Constructors do not return a value; their purpose is to initialize the object's state.</li>
+                    <li><strong>Invocation:</strong> Constructors are implicitly invoked when an object is created using the <span class="font-mono">new</span> keyword, while regular methods must be explicitly called using the object or class name.</li>
+                    <li><strong>Purpose:</strong> Constructors are specifically for initializing object state, while regular methods perform general operations or define the behavior of the object.</li>
+                 </ul>
             </div>
-        </section>
 
-        <section id="inheritance-multilevel" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">6. Inheritance: Multilevel Hierarchy</h3>
-             <p>
-                Inheritance is a mechanism where a new class (subclass) inherits properties and behaviors from an existing class (superclass).
-             </p>
-            <ul>
-                <li><strong>Single Inheritance:</strong> A class inherits from only one superclass.</li>
-                <li><strong>Multilevel Inheritance:</strong> A class inherits from a subclass, which in turn inherits from another class.</li>
-                <li><strong>Hierarchical Inheritance:</strong> Multiple classes inherit from a single superclass.</li>
-            </ul>
-            <p>
-                The `super` keyword is used to call the constructor or method of the superclass.  Method overriding is when a subclass provides a different implementation of a method defined in its superclass.
-            </p>
-            <div class="code-block">
-<pre><code>
+            <div class="accordion-button">
+                4. What is inheritance? Explain multilevel inheritance with an example.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    **Inheritance** is a mechanism in which one class acquires the properties and methods of another class.  It is a fundamental concept in OOP that promotes code reuse and the creation of hierarchical relationships between classes.
+                </p>
+                <p>
+                    The class that inherits is called the subclass (or derived class, or child class), and the class whose properties are inherited is called the superclass (or base class, or parent class).
+                </p>
+                <p>
+                   **Multilevel inheritance** is a type of inheritance where a subclass inherits from a class that itself inherits from another class.  It forms a chain of inheritance, where a class inherits properties from its immediate parent class, which in turn inherits from its parent class, and so on.
+                </p>
+                <p>
+                    Example:
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
 class GrandParent {
     String grandParentName = "GrandParent";
 }
@@ -506,362 +319,614 @@ class Parent extends GrandParent {
 
 class Child extends Parent {
     String childName = "Child";
-
-    public void displayDetails() {
-        System.out.println("GrandParent Name: " + grandParentName);
-        System.out.println("Parent Name: " + parentName);
-        System.out.println("Child Name: " + childName);
+    void displayDetails() {
+        System.out.println("GrandParent: " + grandParentName);
+        System.out.println("Parent: " + parentName);
+        System.out.println("Child: " + childName);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Child child = new Child();
-        child.displayDetails();
+        Child c = new Child(); // Creates an object of the Child class.
+        c.displayDetails();    // Calls the displayDetails() method of the Child class.
     }
 }
-</code></pre>
+                    </code></pre>
+                </div>
+                <p>
+                    In this example, <span class="font-mono">Child</span> inherits from <span class="font-mono">Parent</span>, and <span class="font-mono">Parent</span> inherits from <span class="font-mono">GrandParent</span>.  The <span class="font-mono">Child</span> class inherits properties from both <span class="font-mono">Parent</span> and <span class="font-mono">GrandParent</span>.
+                </p>
             </div>
-        </section>
 
-        <section id="method-overriding-abstract-final" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">7. Method Overriding, Abstract Classes, and Final Classes</h3>
-            <p>
-               Method Overriding:
-            </p>
-            <p>
-                When a subclass provides a different implementation of a method defined in its superclass.  It enables runtime polymorphism.
-            </p>
-            <p>
-                Abstract Classes:
-            </p>
-            <p>
-               A class that cannot be instantiated.  It may contain abstract methods (methods without implementation).
-            </p>
-            <p>
-                Final Classes:
-            </p>
-            <p>
-                A class that cannot be subclassed.  The `final` keyword can also be used with methods to prevent them from being overridden.
-            </p>
-            <div class="code-block">
-<pre><code>
-abstract class MyAbstractClass {
-    abstract void myMethod(); // Abstract method
-
-    void myNonAbstractMethod() {
-        System.out.println("Non-abstract method");
-    }
-}
-
-class MySubclass extends MyAbstractClass {
-    @Override
-    void myMethod() {
-        System.out.println("Implementation of myMethod in subclass");
-    }
-}
-
-final class MyFinalClass {
-    // This class cannot be subclassed
-}
-
-class MyClass {
-    final void myFinalMethod() {
-       //This method cannot be overridden
-    }
-}
-
-public class Main {
+            <div class="accordion-button">
+                5. How do arrays work in Java? Explain different types of arrays with examples.
+            </div>
+            <div class="accordion-content">
+                 <p>
+                    **Arrays in Java:**
+                 </p>
+                 <ul>
+                    <li>An array is a collection of elements of the same data type, stored in contiguous memory locations.  This contiguous storage allows for efficient access to elements using their index.</li>
+                    <li>Arrays provide a way to store and access multiple values of the same type using a single variable name.  Instead of declaring multiple variables, you can use a single array to store a collection of related data.</li>
+                    <li>In Java, arrays are objects.  This means that they are instances of a class and have associated methods and properties.</li>
+                 </ul>
+                 <p>
+                    **Types of Arrays:**
+                 </p>
+                 <ul>
+                    <li>**Single-Dimensional Arrays:** A linear array that stores elements in a single row.  Elements are accessed using a single index.</li>
+                    <li>**Multidimensional Arrays:** An array of arrays, used to store elements in a table-like structure (rows and columns).  Elements are accessed using multiple indices (e.g., row and column index for a 2D array).</li>
+                 </ul>
+                 <p>Examples:</p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+public class ArrayExamples {
     public static void main(String[] args) {
-       MySubclass obj = new MySubclass();
-       obj.myMethod();
+        // Single-Dimensional Array
+        int[] numbers = new int[5]; // Declares an integer array of size 5.  All elements are initialized to 0 by default.
+        numbers[0] = 10;
+        numbers[1] = 20;
+        numbers[2] = 30;
+        numbers[3] = 40;
+        numbers[4] = 50;
+        System.out.println("Single-Dimensional Array:");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " "); // Accessing elements using index i.
+        }
+        System.out.println();
+
+        // Another way to initialize a single-dimensional array
+        String[] names = {"Alice", "Bob", "Charlie"}; // Declares and initializes a String array.
+        System.out.println("Names Array:");
+        for (String name : names) {
+            System.out.print(name + " "); // Using an enhanced for loop to iterate through the array.
+        }
+        System.out.println();
+
+        // Multidimensional Array (2D Array)
+        int[][] matrix = new int[3][3]; // Declares a 2D array (3 rows, 3 columns).  All elements are initialized to 0 by default.
+        matrix[0][0] = 1;
+        matrix[0][1] = 2;
+        matrix[0][2] = 3;
+        matrix[1][0] = 4;
+        matrix[1][1] = 5;
+        matrix[1][2] = 6;
+        matrix[2][0] = 7;
+        matrix[2][1] = 8;
+        matrix[2][2] = 9;
+
+        System.out.println("2D Array (Matrix):");
+        for (int i = 0; i < matrix.length; i++) { // Iterating through rows.
+            for (int j = 0; j < matrix[i].length; j++) { // Iterating through columns for each row.
+                System.out.print(matrix[i][j] + " "); // Accessing elements using row index i and column index j.
+            }
+            System.out.println();
+        }
+
+       // Another way to initialize 2D array
+        int[][] table = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };  // Declares and initializes a 2D array.
+
+        System.out.println("2D Array (Table):");
+        for (int i = 0; i < table.length; i++) {
+            for (int j = 0; j < table[i].length; j++) {
+                System.out.print(table[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
-</code></pre>
+                    </code></pre>
+                </div>
             </div>
-        </section>
 
-        <section id="string-class-operations" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">8. String Class & Various Types of String Operations</h3>
-            <p>
-                In Java, strings are immutable objects.  The `String` class is used to create and manipulate strings.
-            </p>
-            <p>
-                `StringBuilder` and `StringBuffer` are used for mutable strings. `StringBuilder` is faster but not thread-safe, while `StringBuffer` is thread-safe.
-            </p>
-            <p>
-                String Operations:
-             </p>
-             <ul>
-                <li>Concatenation</li>
-                <li>Comparison</li>
-                <li>Substring extraction</li>
-                <li>Searching</li>
-                <li>Replacing</li>
-             </ul>
-             <div class="code-block">
-<pre><code>
+            <div class="accordion-button">
+                6. Discuss the different types of string operations available in Javaâ€™s String class.
+            </div>
+            <div class="accordion-content">
+                <p>
+                  Java's String class provides numerous methods for string manipulation. Here are some common string operations:
+                </p>
+                <ul>
+                    <li><strong>Concatenation:</strong> Combining two or more strings.  Example:  <span class="font-mono">concat()</span>, or using the <span class="font-mono">+</span> operator.  The <span class="font-mono">+</span> operator is overloaded in Java to perform string concatenation.</li>
+                     <li><strong>Length:</strong> Finding the number of characters in a string. Example: <span class="font-mono">length()</span>.  This method returns the number of characters in the string.</li>
+                    <li><strong>Case Conversion:</strong> Converting a string to uppercase or lowercase. Example: <span class="font-mono">toUpperCase()</span>, <span class="font-mono">toLowerCase()</span>. These methods create new String objects with the converted case.</li>
+                    <li><strong>Substring:</strong> Extracting a portion of a string. Example: <span class="font-mono">substring()</span>.  This method returns a new String object containing a part of the original string.</li>
+                    <li><strong>Comparison:</strong> Comparing two strings for equality. Example: <span class="font-mono">equals()</span>, <span class="font-mono">equalsIgnoreCase()</span>.  The <span class="font-mono">equals()</span> method compares the content of the strings, while <span class="font-mono">equalsIgnoreCase()</span> compares the content ignoring case.</li>
+                    <li><strong>Searching:</strong> Finding the index of a character or substring within a string. Example: <span class="font-mono">indexOf()</span>, <span class="font-mono">lastIndexOf()</span>.  <span class="font-mono">indexOf()</span> returns the first occurrence, and  <span class="font-mono">lastIndexOf()</span> returns the last occurrence.</li>
+                    <li><strong>Trimming:</strong> Removing leading and trailing whitespace from a string. Example: <span class="font-mono">trim()</span>.  This method returns a new String object with the whitespace removed.</li>
+                    <li><strong>Replacing:</strong> Replacing characters or substrings within a string. Example: <span class="font-mono">replace()</span>, <span class="font-mono">replaceAll()</span>.  <span class="font-mono">replace()</span> replaces all occurrences of a character or substring, while <span class="font-mono">replaceAll()</span> uses regular expressions for more complex replacements.</li>
+                </ul>
+                 <p>
+                    Example:
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
 public class StringOperations {
     public static void main(String[] args) {
         String str1 = "Hello";
         String str2 = "World";
 
         // Concatenation
-        String result = str1 + " " + str2;
-        System.out.println("Concatenation: " + result);
+        String result1 = str1 + " " + str2;
+        String result2 = str1.concat(" " + str2);
+        System.out.println("Concatenation (+): " + result1);
+        System.out.println("Concatenation (concat()): " + result2);
+
+        // Length
+        int length1 = str1.length();
+        int length2 = str2.length();
+        System.out.println("Length of str1: " + length1);
+        System.out.println("Length of str2: " + length2);
+
+        // Case conversion
+        String upperStr1 = str1.toUpperCase();
+        String lowerStr2 = str2.toLowerCase();
+        System.out.println("Uppercase of str1: " + upperStr1);
+        System.out.println("Lowercase of str2: " + lowerStr2);
+
+        // Substring
+        String sub1 = str1.substring(1, 4); // Extract "ell" (characters from index 1 to 3).
+        System.out.println("Substring of str1: " + sub1);
 
         // Comparison
-        boolean isEqual = str1.equals("Hello");
-        System.out.println("Comparison: " + isEqual);
-
-        // Substring extraction
-        String sub = str2.substring(2, 5);
-        System.out.println("Substring: " + sub);
+        boolean isEqual1 = str1.equals("Hello");
+        boolean isEqual2 = str1.equals("hello");
+        boolean isEqual3 = str1.equalsIgnoreCase("hello");
+        System.out.println("str1 equals 'Hello': " + isEqual1);
+        System.out.println("str1 equals 'hello': " + isEqual2);
+        System.out.println("str1 equalsIgnoreCase 'hello': " + isEqual3);
 
         // Searching
-        int index = str1.indexOf("l");
-        System.out.println("Index of 'l': " + index);
+        int indexOfO = str1.indexOf("o"); // Find the index of the first 'o'.
+        int lastIndexOfL = str1.lastIndexOf("l"); // Find the index of the last 'l'.
+        System.out.println("Index of 'o' in str1: " + indexOfO);
+        System.out.println("Last index of 'l' in str1: " + lastIndexOfL);
+
+        // Trimming
+        String str3 = "   Trim me   ";
+        String trimmedStr3 = str3.trim();
+        System.out.println("Original str3: '" + str3 + "'");
+        System.out.println("Trimmed str3: '" + trimmedStr3 + "'");
 
         // Replacing
-        String replaced = str1.replace("l", "p");
-        System.out.println("Replaced string: " + replaced);
-
-        //StringBuilder
-        StringBuilder sb = new StringBuilder("Hello");
-        sb.append(" World");
-        System.out.println("StringBuilder: " + sb.toString());
-
-        //StringBuffer
-        StringBuffer sbuf = new StringBuffer("Hello");
-        sbuf.append(" World");
-        System.out.println("StringBuffer: " + sbuf.toString());
+        String str4 = "Replace all 'l' with 'x'";
+        String replacedStr4 = str4.replace('l', 'x');
+        System.out.println("Replaced str4: " + replacedStr4);
     }
 }
 </code></pre>
+                </div>
             </div>
         </section>
 
-        <section id="runtime-polymorphism" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">9. Runtime Polymorphism</h3>
-            <p>
-               Runtime polymorphism, also known as dynamic polymorphism, is achieved through method overriding. The actual method to be called is determined at runtime.
-            </p>
-            <div class="code-block">
-<pre><code>
-class Superclass {
-    void display() {
-        System.out.println("Superclass display method");
-    }
-}
+        <section id="programming-questions" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Programming Questions</h2>
 
-class Subclass extends Superclass {
-    @Override
-    void display() {
-        System.out.println("Subclass display method");
-    }
-}
+            <div class="accordion-button">
+                7. Write a Java program to demonstrate constructor overloading.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+public class ConstructorOverloadingDemo {
+    private String name;
+    private int age;
 
-public class Main {
+    // Default constructor
+    public ConstructorOverloadingDemo() {
+        this.name = "Unknown";
+        this.age = 0;
+        System.out.println("Default Constructor called");
+    }
+
+    // Constructor with name parameter
+    public ConstructorOverloadingDemo(String name) {
+        this.name = name;
+        this.age = 0;
+        System.out.println("Constructor with name called");
+    }
+
+    // Constructor with name and age parameters
+    public ConstructorOverloadingDemo(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Constructor with name and age called");
+    }
+
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
     public static void main(String[] args) {
-        Superclass obj = new Subclass(); // Upcasting
-        obj.display(); // Calls Subclass's display() at runtime
+        ConstructorOverloadingDemo obj1 = new ConstructorOverloadingDemo(); // Calls the default constructor.
+        obj1.displayDetails();
+
+        ConstructorOverloadingDemo obj2 = new ConstructorOverloadingDemo("John"); // Calls the constructor with one String parameter.
+        obj2.displayDetails();
+
+        ConstructorOverloadingDemo obj3 = new ConstructorOverloadingDemo("Alice", 30); // Calls the constructor with a String and an int parameter.
+        obj3.displayDetails();
     }
 }
-</code></pre>
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                 <ul>
+                    <li>The <span class="font-mono">ConstructorOverloadingDemo</span> class has three constructors with different parameters.  This allows for creating objects with varying levels of initial information.</li>
+                    <li>The default constructor initializes the <span class="font-mono">name</span> to "Unknown" and <span class="font-mono">age</span> to 0.</li>
+                    <li>The constructor with one String parameter initializes the <span class="font-mono">name</span> and sets the <span class="font-mono">age</span> to 0.</li>
+                    <li>The constructor with both String and int parameters initializes both <span class="font-mono">name</span> and <span class="font-mono">age</span>.</li>
+                    <li>When an object is created, the appropriate constructor is called based on the arguments provided in the <span class="font-mono">new</span> expression.  The Java compiler determines which constructor to invoke based on the number and types of arguments.</li>
+                    <li>The output shows which constructor is called for each object and the resulting object state, demonstrating how different constructors can initialize objects differently.</li>
+                 </ul>
+            </div>
+
+            <div class="accordion-button">
+                8. Write a Java program to implement multilevel inheritance.
+            </div>
+            <div class="accordion-content">
+                 <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+class GrandParent {
+    String grandParentName;
+    GrandParent(String grandParentName) {
+        this.grandParentName = grandParentName;
+    }
+    void displayGrandParentInfo() {
+        System.out.println("GrandParent Name: " + grandParentName);
+    }
+}
+
+class Parent extends GrandParent {
+    String parentName;
+    Parent(String grandParentName, String parentName) {
+        super(grandParentName); // Calls the constructor of the GrandParent class.
+        this.parentName = parentName;
+    }
+     void displayParentInfo() {
+        super.displayGrandParentInfo(); // Calls the displayGrandParentInfo() method of the GrandParent class.
+        System.out.println("Parent Name: " + parentName);
+    }
+}
+
+class Child extends Parent {
+    String childName;
+    Child(String grandParentName, String parentName, String childName) {
+        super(grandParentName, parentName); // Calls the constructor of the Parent class.
+        this.childName = childName;
+    }
+    void displayChildInfo() {
+        super.displayParentInfo(); // Calls the displayParentInfo() method of the Parent class.
+        System.out.println("Child Name: " + childName);
+    }
+}
+
+public class MultilevelInheritanceDemo {
+    public static void main(String[] args) {
+        Child child = new Child("George", "Michael", "John"); // Creates a Child object, triggering the chain of constructor calls.
+        child.displayChildInfo(); // Calls the displayChildInfo() method of the Child object.
+    }
+}
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                <ul>
+                    <li>The <span class="font-mono">Child</span> class inherits from the <span class="font-mono">Parent</span> class, which inherits from the <span class="font-mono">GrandParent</span> class, forming a multilevel inheritance hierarchy.</li>
+                    <li>Each class constructor calls the constructor of its superclass using <span class="font-mono">super()</span> to initialize the inherited attributes.  This ensures that the attributes of all parent classes are properly initialized.</li>
+                    <li>For example, the <span class="font-mono">Child</span> constructor calls the <span class="font-mono">Parent</span> constructor, which in turn calls the <span class="font-mono">GrandParent</span> constructor.</li>
+                    <li>The <span class="font-mono">displayChildInfo()</span> method in the <span class="font-mono">Child</span> class can access members from the <span class="font-mono">Parent</span> and <span class="font-mono">GrandParent</span> classes due to inheritance.</li>
+                </ul>
+            </div>
+
+            <div class="accordion-button">
+                9. Write a Java program to demonstrate method overriding.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle started");
+    }
+}
+
+class Car extends Vehicle {
+    @Override //Good practice to use @Override annotation.  It helps the compiler detect errors if you don't override correctly.
+    void start() {
+        System.out.println("Car started");
+    }
+}
+
+public class MethodOverridingDemo {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle(); // Creates a Vehicle object.
+        Car car = new Car();             // Creates a Car object.
+
+        vehicle.start(); // Calls Vehicle's start() method.  Output: "Vehicle started"
+        car.start();     // Calls Car's start() method, which overrides the Vehicle's start() method.  Output: "Car started"
+
+        Vehicle vehicleCar = new Car(); // Polymorphism: A Vehicle reference pointing to a Car object.
+        vehicleCar.start(); // Calls Car's start() method because the actual object is a Car.  Output: "Car started"
+    }
+}
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                <ul>
+                  <li>The <span class="font-mono">Car</span> class inherits from the <span class="font-mono">Vehicle</span> class.</li>
+                  <li>The <span class="font-mono">Car</span> class overrides the <span class="font-mono">start()</span> method of the <span class="font-mono">Vehicle</span> class, providing its own specific implementation.</li>
+                  <li>When the <span class="font-mono">start()</span> method is called on a <span class="font-mono">Car</span> object, the overridden version in the <span class="font-mono">Car</span> class is executed.  This is determined at runtime, which is why it's called runtime polymorphism.</li>
+                  <li>The example also demonstrates polymorphism, where a <span class="font-mono">Vehicle</span> reference can point to a <span class="font-mono">Car</span> object.  In this case, the overridden method in <span class="font-mono">Car</span> is called because the actual object is of type <span class="font-mono">Car</span>.</li>
+                </ul>
+            </div>
+
+            <div class="accordion-button">
+                10. Write a Java program to perform the following string operations:
+                - Concatenation of two strings
+                - Finding the length of a string
+                - Converting a string to uppercase
+            </div>
+            <div class="accordion-content">
+                <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+public class StringOperationsDemo {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+
+        // Concatenation
+        String concatenatedString = str1 + " " + str2; // Using the + operator for concatenation.
+        System.out.println("Concatenated String: " + concatenatedString); // Output: Hello World
+
+        // Length
+        int lengthOfString1 = str1.length(); // Using the length() method to get the length of the string.
+        System.out.println("Length of str1: " + lengthOfString1);       // Output: 5
+
+        // Uppercase
+        String upperCaseString1 = str1.toUpperCase(); // Using the toUpperCase() method to convert the string to uppercase.
+        System.out.println("Uppercase of str1: " + upperCaseString1); // Output: HELLO
+    }
+}
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                <ul>
+                  <li>The program demonstrates three common string operations:</li>
+                  <li>Concatenation:  The <span class="font-mono">+</span> operator is used to concatenate (join) two strings, <span class="font-mono">str1</span> and <span class="font-mono">str2</span>, with a space in between.</li>
+                  <li>Length: The <span class="font-mono">length()</span> method is called on <span class="font-mono">str1</span> to determine the number of characters in the string.</li>
+                  <li>Uppercase: The <span class="font-mono">toUpperCase()</span> method is called on <span class="font-mono">str1</span> to create a new string with all the characters converted to uppercase.  The original string <span class="font-mono">str1</span> is not modified because strings are immutable in Java.</li>
+                </ul>
             </div>
         </section>
 
-        <section id="module-ii" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module II</h2>
-        </section>
+        <section id="scenario-based-questions" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Scenario-Based Programming Questions</h2>
 
-        <section id="packages" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">10. Defining, Implementing, and Importing Packages</h3>
-            <p>
-                A package is a mechanism for organizing Java classes into namespaces.  Packages help in managing large codebases and preventing naming conflicts.
-            </p>
-            <p>
-                Defining a package:
-            </p>
-            <p>
-               Use the `package` keyword at the beginning of a Java file.
-            </p>
-            <p>
-                Importing a package:
-            </p>
-            <p>
-                Use the `import` keyword to use classes from a package.
-            </p>
-            <div class="code-block">
-<pre><code>
-// Defining a package: com.example.mypackage
-package com.example.mypackage;
-
-public class MyClass {
-    public void myMethod() {
-        System.out.println("MyClass from com.example.mypackage");
-    }
-}
-
-// Another file
-// Importing and using the package
-import com.example.mypackage.MyClass;
-
-public class Main {
-    public static void main(String[] args) {
-        MyClass obj = new MyClass();
-        obj.myMethod();
-    }
-}
-</code></pre>
+            <div class="accordion-button">
+                 11. Bank Account System (Constructor Overloading)
             </div>
-        </section>
+            <div class="accordion-content">
+                <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+public class BankAccount {
+    private String accountHolderName;
+    private double balance;
+    private long accountNumber;
+    private static long nextAccountNumber = 1000; // Static variable to generate unique account numbers
 
-        <section id="interfaces-lambda" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">11. Interfaces: Functional Interface and Lambda Expression</h3>
-            <p>
-                An interface is a collection of abstract methods.  It is used to achieve abstraction and multiple inheritance in Java.
-            </p>
-            <p>
-               Functional Interface:
-            </p>
-            <p>
-                An interface with a single abstract method.
-            </p>
-            <p>
-                Lambda Expression:
-            </p>
-            <p>
-               A concise way to represent an anonymous function.  It can be used to implement functional interfaces.
-            </p>
-            <div class="code-block">
-<pre><code>
-// Functional Interface
-interface MyInterface {
-    void myMethod();
-}
+    // Constructor 1:  Name only, default balance
+    public BankAccount(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+        this.balance = 0.0;
+        this.accountNumber = nextAccountNumber++; // Assign unique account number and increment the static variable.
+    }
 
-public class Main {
+    // Constructor 2: Name and initial deposit
+    public BankAccount(String accountHolderName, double initialDeposit) {
+        this.accountHolderName = accountHolderName;
+        this.balance = initialDeposit;
+        this.accountNumber = nextAccountNumber++; // Assign unique account number and increment the static variable.
+    }
+
+    public void displayAccountDetails() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder Name: " + accountHolderName);
+        System.out.println("Balance: $" + balance);
+    }
+
     public static void main(String[] args) {
-        // Lambda Expression
-        MyInterface obj = () -> System.out.println("Lambda expression implementation");
-        obj.myMethod();
+        BankAccount account1 = new BankAccount("Alice Smith"); // Calls the constructor with only the name.
+        account1.displayAccountDetails();
+
+        BankAccount account2 = new BankAccount("Bob Johnson", 1000.0); // Calls the constructor with name and deposit.
+        account2.displayAccountDetails();
     }
 }
-</code></pre>
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                <ul>
+                  <li>The <span class="font-mono">BankAccount</span> class uses constructor overloading to provide flexibility in creating bank accounts.</li>
+                  <li>The first constructor takes only the account holder's name and sets the initial balance to 0.  It also assigns a unique account number using the <span class="font-mono">nextAccountNumber</span> static variable.</li>
+                  <li>The second constructor takes both the account holder's name and the initial deposit amount.  It also assigns a unique account number.</li>
+                  <li>The <span class="font-mono">nextAccountNumber</span> static variable is used to ensure that each account is assigned a unique account number.  The <span class="font-mono">++</span> operator increments the variable after it is used to assign the account number.</li>
+                  <li>The <span class="font-mono">displayAccountDetails()</span> method displays the account number, account holder name, and balance.</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="errors-exceptions" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">12. Errors and Exception Handling</h3>
-            <p>
-                Errors indicate serious problems that a reasonable application should not try to handle.  Exceptions are conditions that an application might want to handle.
-            </p>
-            <p>
-                Types of Exceptions:
-            </p>
-            <ul>
-                <li><strong>Checked Exceptions:</strong> Exceptions that are checked at compile time.  The compiler forces you to handle them.</li>
-                <li><strong>Unchecked Exceptions:</strong> Exceptions that are not checked at compile time.</li>
-            </ul>
-            <p>
-                Exception Handling Keywords:
-            </p>
-            <ul>
-                <li>`try`:  Encloses the code that might throw an exception.</li>
-                <li>`catch`:  Handles the exception.</li>
-                <li>`finally`:  A block that is always executed (after `try` and `catch` blocks).</li>
-                <li>`throw`:  Used to explicitly throw an exception.</li>
-                <li>`throws`:  Used in a method signature to declare that a method might throw an exception.</li>
-            </ul>
-            <div class="code-block">
-<pre><code>
-public class ExceptionHandling {
-    public static void main(String[] args) {
-        try {
-            int result = 10 / 0; // This will throw an ArithmeticException
-            System.out.println("Result: " + result); // This line will not be executed
-        } catch (ArithmeticException e) {
-            System.out.println("Caught ArithmeticException: " + e.getMessage());
-        } finally {
-            System.out.println("Finally block executed");
-        }
-        System.out.println("Program continues...");
-    }
-}
-</code></pre>
+            <div class="accordion-button">
+                12. Employee Management System (Multilevel Inheritance)
             </div>
-        </section>
+            <div class="accordion-content">
+                <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+class Employee {
+    String name;
+    int id;
+    String department;
 
-        <section id="builtin-custom-exceptions" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">13. Java’s Built-in Exceptions and Custom Exceptions</h3>
-            <p>
-                Java provides many built-in exceptions, such as:
-            </p>
-            <ul>
-                <li>`NullPointerException`</li>
-                <li>`ArrayIndexOutOfBoundsException`</li>
-                <li>`IOException`</li>
-                <li>`ClassNotFoundException`</li>
-            </ul>
-            <p>
-                Custom Exceptions:
-            </p>
-            <p>
-               You can create your own exception classes by extending the `Exception` class or its subclasses.
-            </p>
-            <div class="code-block">
-<pre><code>
-// Custom Exception
-class MyException extends Exception {
-    public MyException(String message) {
-        super(message);
+    public Employee(String name, int id, String department) {
+        this.name = name;
+        this.id = id;
+        this.department = department;
+    }
+
+    public void displayEmployeeDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Department: " + department);
     }
 }
 
-public class CustomException {
-    public static void main(String[] args) {
-        try {
-            validateAge(15);
-        } catch (MyException e) {
-            System.out.println("Caught MyException: " + e.getMessage());
-        }
+class FullTimeEmployee extends Employee {
+    double salary;
+
+    public FullTimeEmployee(String name, int id, String department, double salary) {
+        super(name, id, department); // Call the constructor of the Employee class to initialize inherited members.
+        this.salary = salary;
     }
 
-    static void validateAge(int age) throws MyException {
-        if (age < 18) {
-            throw new MyException("Age must be 18 or older");
+    public void displayFullTimeEmployeeDetails() {
+        super.displayEmployeeDetails(); // Call the displayEmployeeDetails() method of the Employee class.
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+class Manager extends FullTimeEmployee {
+    double bonus;
+
+    public Manager(String name, int id, String department, double salary, double bonus) {
+        super(name, id, department, salary); // Call the constructor of the FullTimeEmployee class.
+        this.bonus = bonus;
+    }
+
+    public void displayManagerDetails() {
+        super.displayFullTimeEmployeeDetails(); // Call the displayFullTimeEmployeeDetails() method of the FullTimeEmployee class.
+        System.out.println("Bonus: $" + bonus);
+    }
+}
+
+public class EmployeeManagementSystem {
+    public static void main(String[] args) {
+        Manager manager = new Manager("John Smith", 101, "Sales", 50000.0, 10000.0); // Creates a Manager object.
+        manager.displayManagerDetails(); // Calls the displayManagerDetails() method to show all the employee information.
+    }
+}
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                <ul>
+                  <li>  The program uses multilevel inheritance to model an employee hierarchy.</li>
+                  <li>  The <span class="font-mono">Employee</span> class is the base class, storing common employee information (name, ID, department).</li>
+                  <li>  The <span class="font-mono">FullTimeEmployee</span> class inherits from <span class="font-mono">Employee</span> and adds the <span class="font-mono">salary</span> attribute.</li>
+                  <li>  The <span class="font-mono">Manager</span> class inherits from <span class="font-mono">FullTimeEmployee</span> and adds the <span class="font-mono">bonus</span> attribute.</li>
+                  <li>  Each constructor uses <span class="font-mono">super()</span> to call the constructor of its superclass, ensuring that inherited attributes are initialized correctly.</li>
+                  <li>  Each display method calls the display method of its superclass to display the inherited information, promoting code reuse and a structured output.</li>
+                </ul>
+            </div>
+
+            <div class="accordion-button">
+                13. Student Result Processing (String Operations)
+            </div>
+            <div class="accordion-content">
+                <p>
+                    **Code:**
+                </p>
+                <div class="code-block">
+                    <pre><code class="language-java">
+import java.util.Scanner;
+
+public class StudentResultProcessor {
+
+    public static String getGrade(double marks) {
+        if (marks >= 90) {
+            return "A";
+        } else if (marks >= 80) {
+            return "B";
+        } else if (marks >= 70) {
+            return "C";
+        } else if (marks >= 60) {
+            return "D";
         } else {
-            System.out.println("Age is valid");
+            return "F";
         }
     }
-}
-</code></pre>
-            </div>
-        </section>
-
-        <section id="exception-logging" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">14. Exception Logging</h3>
-            <p>
-                Logging exceptions is crucial for debugging and monitoring applications.  Java provides the `java.util.logging` package.  Log4j is another popular logging framework.
-            </p>
-            <div class="code-block">
-<pre><code>
-import java.util.logging.Logger;
-import java.util.logging.Level;
-
-public class LoggingExample {
-    private static final Logger LOGGER = Logger.getLogger(LoggingExample.class.getName());
 
     public static void main(String[] args) {
-        try {
-            int result = 10 / 0;
-        } catch (ArithmeticException e) {
-            LOGGER.log(Level.SEVERE, "ArithmeticException occurred", e);
-        }
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter student's full name: ");
+        String fullName = scanner.nextLine(); // Reads the full name entered by the user.
+
+        System.out.print("Enter student's marks: ");
+        double marks = scanner.nextDouble(); // Reads the marks entered by the user.
+        scanner.nextLine(); // Consume the newline character left by nextDouble().  This is important to prevent issues with subsequent nextLine() calls.
+
+        // Extract first name
+        String firstName = fullName.split(" ")[0]; // Splits the full name by spaces and takes the first element (the first name).
+
+        // Convert name to uppercase
+        String upperCaseName = fullName.toUpperCase(); // Converts the full name to uppercase.
+
+        // Calculate grade
+        String grade = getGrade(marks); // Calls the getGrade() method to determine the grade based on the marks.
+
+        // Display results
+        System.out.println("First Name: " + firstName);
+        System.out.println("Uppercase Name: " + upperCaseName);
+        System.out.println("Grade: " + grade);
+
+        scanner.close(); // Closes the scanner to prevent resource leaks.  It's good practice to close resources when you're finished with them.
     }
 }
-</code></pre>
+                    </code></pre>
+                </div>
+                <p>
+                    **Explanation:**
+                </p>
+                <ul>
+                  <li>  The program takes student's full name and marks as input using the <span class="font-mono">Scanner</span> class.</li>
+                  <li>  It extracts the first name using the <span class="font-mono">split(" ")</span> method, which splits the string into an array of substrings based on spaces, and then accesses the first element of the array (index 0).</li>
+                  <li>  It converts the full name to uppercase using the <span class="font-mono">toUpperCase()</span> method.</li>
+                  <li>  It calculates the grade based on the marks using the <span class="font-mono">getGrade()</span> method, which returns a letter grade based on predefined ranges.</li>
+                  <li>  Finally, it displays the extracted first name, the uppercase version of the full name, and the calculated grade.</li>
+                </ul>
             </div>
         </section>
     </div>
