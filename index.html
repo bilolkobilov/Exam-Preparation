@@ -211,60 +211,6 @@
             color: var(--secondary-color);
         }
         
-        /* Timer Section */
-        .timer-section {
-            background-color: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            margin-bottom: 40px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-        }
-        
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .timer-item {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px;
-            border-radius: var(--border-radius);
-            min-width: 80px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .timer-number {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .timer-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-        
-        /* Dark mode toggle */
-        .dark-mode-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #333;
-            transition: var(--hover-transition);
-        }
-        
-        .dark-mode-toggle:hover {
-            color: var(--primary-color);
-        }
-        
         /* Media Queries */
         @media (max-width: 768px) {
             .subject-grid {
@@ -317,74 +263,13 @@
                 min-width: 60px;
             }
         }
-
-        /* Optional Dark Mode */
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .exam-schedule,
-        .dark-mode .subject-card,
-        .dark-mode .timer-section {
-            background-color: #1e1e1e;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        
-        .dark-mode h1,
-        .dark-mode h2,
-        .dark-mode h3 {
-            color: #4cc9f0;
-        }
-        
-        .dark-mode .exam-list li {
-            border-bottom-color: #333;
-        }
-        
-        .dark-mode .exam-list li:hover {
-            background-color: #2a2a2a;
-        }
-        
-        .dark-mode .dark-mode-toggle {
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .footer {
-            border-top-color: #333;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <button id="darkModeToggle" class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
             <h1>Exam Preparation Materials</h1>
-            <p class="header-subtitle">Comprehensive study resources to help you prepare for your upcoming exams</p>
         </header>
-        
-        <div class="timer-section">
-            <h2>Countdown to First Exam</h2>
-            <div class="timer-container">
-                <div class="timer-item">
-                    <div id="days" class="timer-number">0</div>
-                    <div class="timer-label">Days</div>
-                </div>
-                <div class="timer-item">
-                    <div id="hours" class="timer-number">0</div>
-                    <div class="timer-label">Hours</div>
-                </div>
-                <div class="timer-item">
-                    <div id="minutes" class="timer-number">0</div>
-                    <div class="timer-label">Minutes</div>
-                </div>
-                <div class="timer-item">
-                    <div id="seconds" class="timer-number">0</div>
-                    <div class="timer-label">Seconds</div>
-                </div>
-            </div>
-        </div>
         
         <div class="exam-schedule">
             <h2>Midterm Exam Schedule</h2>
@@ -399,7 +284,7 @@
                 </li>
                 <li>
                     <span>Java Midterm Exam</span>
-                    <span class="exam-date">March 25 (Tuesday)</span>
+                    <span class="exam-date">March 26 (Wednesday)</span>
                 </li>
                 <li>
                     <span>ITAB Midterm Exam</span>
@@ -431,7 +316,7 @@
             
             <div class="subject-card">
                 <h3>Java</h3>
-                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 25 (Tuesday)</p>
+                <p class="subject-date"><i class="far fa-calendar-alt"></i> March 26 (Wednesday)</p>
                 <a href="java.html" class="btn">Study Materials <i class="fas fa-arrow-right"></i></a>
             </div>
             
@@ -458,55 +343,5 @@
             <p>Developed by: <a href="https://github.com/bilolkobilov" target="_blank">bilolkobilov <i class="fab fa-github"></i></a></p>
         </div>
     </div>
-
-    <script>
-        // Countdown Timer
-        function updateTimer() {
-            const examDate = new Date('2025-03-24T00:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = examDate - now;
-            
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                document.getElementById('days').innerText = days;
-                document.getElementById('hours').innerText = hours;
-                document.getElementById('minutes').innerText = minutes;
-                document.getElementById('seconds').innerText = seconds;
-            } else {
-                document.getElementById('days').innerText = '0';
-                document.getElementById('hours').innerText = '0';
-                document.getElementById('minutes').innerText = '0';
-                document.getElementById('seconds').innerText = '0';
-            }
-        }
-        
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-        
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        // Initialize the timer and update every second
-        updateTimer();
-        setInterval(updateTimer, 1000);
-    </script>
 </body>
 </html>
