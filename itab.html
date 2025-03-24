@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Applications in Business Midterm Exam</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>IT Applications in Business Midterm Exam Preparation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -67,6 +71,40 @@
         tbody tr:hover {
             background-color: #f9fafb;
         }
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background-color: #f3f4f6;
+            color: #1e293b;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        .accordion-button:hover {
+            background-color: #e0e7eb;
+        }
+        .accordion-button.active {
+            background-color: #d1d5db;
+            border-bottom-color: transparent;
+        }
+        .accordion-content {
+            padding: 0rem 1rem 1rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0.375rem;
+            display: none;
+            margin-bottom: 1rem;
+        }
+        .accordion-content.show {
+            display: block;
+        }
         .table-of-contents {
             padding: 1rem;
             border: 1px solid #e5e7eb;
@@ -123,6 +161,22 @@
             margin-bottom: 1rem;
             color: #1e293b;
         }
+        /* Styles for diagrams and illustrations */
+        .diagram {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .diagram img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+        }
+        .diagram figcaption {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
 
         @media (max-width: 768px) {
             .container {
@@ -161,397 +215,378 @@
         <div class="table-of-contents">
             <h2 class="text-2xl font-semibold mb-4 text-gray-900">Table of Contents</h2>
             <ul>
-                <li><a href="#module1">Module I: World of Computers</a></li>
-                <li><a href="#module2">Module II: Computer Networks and Internet Technology</a></li>
+                <li><a href="#question1">1. What is Computer Software?</a></li>
+                <li><a href="#question2">2. Types of Storage in a Computer</a></li>
+                <li><a href="#question3">3. Central Processing Unit (CPU)</a></li>
+                <li><a href="#question4">4. Applications of Computers</a></li>
+                <li><a href="#question5">5. Working of an Internet Service Provider (ISP)</a></li>
+                <li><a href="#question6">6. URL, WWW, Multimedia</a></li>
+                <li><a href="#question7">7. File Transfer Protocol (FTP)</a></li>
+                <li><a href="#question8">8. E-commerce</a></li>
             </ul>
         </div>
 
-        <section id="module1" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module I: World of Computers</h2>
-            
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">1. Introduction to the World of Computers</h3>
-                
-                    <p><strong>Definition:</strong> A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. Computers are used in various aspects of business and daily life, from managing complex financial transactions to controlling industrial machinery and providing personalized communication and entertainment.</p>
-                    <p><strong>Evolution:</strong> The development of computers has occurred over many decades, with each stage marked by significant technological advancements:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Early Mechanical Devices:</strong> The abacus, one of the earliest computing devices, aided in basic arithmetic calculations.  The Pascaline and Difference Engine were mechanical calculators developed in the 17th and 19th centuries, respectively, representing early attempts at automating computation.</li>
-                        <li><strong>Digital Computers:</strong> The transition to digital computers began in the 20th century with the development of electronic components.  Early digital computers were massive and power-hungry, utilizing vacuum tubes.  Over time, they became smaller, more powerful, and more efficient with the invention of transistors and integrated circuits.  Today, microchips power computers that are ubiquitous in homes, businesses, and mobile devices.</li>
-                    </ul>
-                
+        <section id="question1" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">1. What is Computer Software?</h2>
+            <div class="accordion-button">
+                What is computer software? Explain the difference between hardware and software devices.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    <strong>Computer software</strong> is a set of instructions, data, or programs used to operate computers and execute specific tasks. It is a general term used to refer to applications, scripts, and programs that run on a device.
+                </p>
+                <p>
+                    Software can be categorized into two main types:
+                </p>
+                <ul>
+                    <li><strong>System Software:</strong> This type of software manages and controls the computer hardware, allowing other software to function properly. Examples include operating systems (like Windows, macOS, Linux), device drivers, and utility programs.</li>
+                    <li><strong>Application Software:</strong> This type of software is designed to perform specific tasks for the user. Examples include word processors (like Microsoft Word), web browsers (like Chrome, Firefox), and database management systems (like MySQL).</li>
+                </ul>
 
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">2. Basic Structure of Computer Systems</h3>
-                
-                    <p><strong>Key Hardware Components:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>CPU (Central Processing Unit):</strong> Often referred to as the "brain" of the computer, the CPU is responsible for executing instructions and performing calculations. It consists of the control unit, which manages the flow of instructions, and the arithmetic logic unit (ALU), which performs mathematical and logical operations.</li>
-                        <li><strong>RAM (Random Access Memory):</strong> RAM is a type of temporary storage that holds the data and instructions that the CPU is currently using.  It is volatile, meaning that data is lost when the power is turned off.  More RAM allows the computer to handle more tasks simultaneously and improves overall performance.</li>
-                        <li><strong>Storage:</strong> Long-term data storage devices store data persistently, even when the computer is powered off. Examples include hard disk drives (HDDs), solid-state drives (SSDs), and optical discs.  HDDs use magnetic platters to store data, while SSDs use flash memory, offering faster access times and greater durability.</li>
-                        <li><strong>Input Devices:</strong> Input devices are used to enter data and instructions into the computer. Common examples include the keyboard, mouse, scanner, and microphone.</li>
-                        <li><strong>Output Devices:</strong> Output devices display or present processed data to the user.  The most common output devices are the monitor, printer, and speakers.</li>
-                    </ul>
-                    <p><strong>Motherboard:</strong> The motherboard is the main circuit board of the computer. It provides the electrical connections and pathways for all the other components, including the CPU, RAM, and expansion cards, to communicate with each other.</p>
-                    <p><strong>Peripherals:</strong> Peripherals are external devices that connect to the computer to expand its functionality.  Examples include printers, scanners, external hard drives, and input devices like mice and keyboards.</p>
-                
+                <p>
+                    <strong>Interaction between Hardware and Software:</strong>
+                    Software provides the instructions that tell the hardware what to do. The hardware executes these instructions to perform tasks. For example, when you type on a keyboard (hardware), the word processor (software) receives the input, processes it, and displays it on the monitor (hardware).
+                </p>
 
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">3. Computers in Home</h3>
-                
-                    <p>Computers have become integral to home environments, supporting a wide range of activities:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Education:</strong> Online courses, educational software, and access to vast educational resources have made learning more accessible and interactive.</li>
-                        <li><strong>Communication:</strong> Email, social media platforms, and video conferencing tools have revolutionized how people connect and communicate with friends and family around the world.</li>
-                        <li><strong>Entertainment:</strong> Streaming services provide on-demand access to movies, music, and TV shows.  Gaming consoles and PCs offer immersive and interactive entertainment experiences.</li>
-                        <li><strong>Smart Appliances:</strong> Home automation systems and IoT (Internet of Things) devices allow users to control lighting, temperature, security, and other aspects of their homes remotely, increasing convenience and efficiency.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">4. Computers in Education</h3>
-                
-                    <p>Computers have transformed the landscape of education, enhancing both teaching and learning:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>E-learning Platforms:</strong> Platforms like Moodle, Coursera, and Khan Academy provide online courses and educational resources, making education more accessible and flexible.</li>
-                         <li><strong>Digital Libraries:</strong> Access to vast resources, including e-books, research papers, and multimedia content, supports in-depth learning and research.</li>
-                        <li><strong>Research Tools:</strong> Databases, analysis software, and online research tools enable students and researchers to gather and process information efficiently.</li>
-                        <li><strong>Learning Management Systems (LMS):</strong> Tools like Blackboard and Canvas help educators manage courses, track student progress, and facilitate communication.</li>
-                        <li><strong>MOOCs (Massive Open Online Courses):</strong> Online courses open to a large number of participants, often offered by universities and institutions, provide affordable and accessible higher education opportunities.</li>
-                        <li><strong>Virtual Labs:</strong> Simulated environments for experiments allow students to conduct experiments and learn scientific concepts in a safe and interactive manner.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">5. Computers in the Workplace</h3>
-                
-                    <p>Computers are indispensable in modern workplaces, driving efficiency, productivity, and decision-making:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Productivity:</strong> Word processing software, spreadsheets, and presentation tools have streamlined office tasks, enabling employees to create documents, analyze data, and deliver presentations efficiently.</li>
-                        <li><strong>Decision-Making:</strong> Data analysis tools and business intelligence software help organizations gather, process, and analyze large amounts of data to identify trends, patterns, and insights, supporting informed decision-making.</li>
-                        <li><strong>Business Operations:</strong> Automation of tasks, supply chain management systems, and customer relationship management (CRM) software have improved operational efficiency, reduced costs, and enhanced customer service.</li>
-                        <li><strong>Customer Service Automation:</strong> Chatbots, CRM systems, and automated support tools help businesses provide efficient and personalized customer service.</li>
-                        <li><strong>ERP Systems:</strong> Integrated business management software, such as SAP and Oracle, helps organizations manage various aspects of their operations, including finance, human resources, and supply chain.</li>
-                        <li><strong>Data Analytics:</strong> Tools for analyzing large datasets, including statistical software and machine learning platforms, enable businesses to extract valuable insights and make data-driven decisions.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">6. Computers on the Move</h3>
-                
-                    <p>Portable and handheld devices have extended computing beyond the desktop, enabling users to access information and perform tasks on the go:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Laptops:</strong> Portable computers that offer similar functionality to desktop computers, allowing users to work, study, and access entertainment from virtually anywhere.</li>
-                        <li><strong>Smartphones:</strong> Mobile phones with advanced computing capabilities, enabling users to communicate, access the internet, run applications, and perform a variety of tasks.</li>
-                        <li><strong>Tablets:</strong> Touchscreen devices that offer a balance between portability and screen size, suitable for tasks like reading, browsing the web, and watching videos.</li>
-                        <li><strong>Wearable Tech:</strong> Smartwatches, fitness trackers, and other wearable devices that provide health monitoring, communication, and other features, seamlessly integrating technology into everyday life.</li>
-                        <li><strong>Self-Service Kiosks:</strong> Interactive terminals in public places, such as airports, shopping malls, and government offices, that allow users to access information, purchase tickets, and perform other transactions independently.</li>
-                        <li><strong>GPS Applications:</strong> Navigation systems in vehicles and mobile devices that provide real-time directions and location-based services.</li>
-                        <li><strong>Mobile Computing:</strong> The ability to use computing devices while on the move, facilitated by wireless networks and portable devices, has transformed how people work, communicate, and access information.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">7. Generation of Computers</h3>
-                
-                    <p>The evolution of computers is often categorized into generations, each characterized by a significant technological advancement:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>1st Gen (Vacuum Tubes):</strong> Early computers like ENIAC and UNIVAC used bulky and unreliable vacuum tubes as their primary electronic components.  These computers were large, generated a lot of heat, and consumed a significant amount of power.</li>
-                        <li><strong>2nd Gen (Transistors):</strong> The invention of the transistor replaced vacuum tubes, leading to smaller, more reliable, and more energy-efficient computers.  This generation also saw the development of early programming languages and operating systems.</li>
-                        <li><strong>3rd Gen (Integrated Circuits):</strong> Integrated circuits (ICs), which contained multiple transistors on a single chip, further reduced the size and cost of computers while increasing their speed and efficiency.  This era saw the rise of minicomputers.</li>
-                        <li><strong>4th Gen (Microprocessors):</strong> The invention of the microprocessor, a single chip containing the entire CPU, led to the development of personal computers (PCs).  This generation also witnessed the growth of computer networks and the internet.</li>
-                        <li><strong>5th Gen (AI & Quantum Computing):</strong> The current generation is characterized by the development of artificial intelligence (AI), quantum computing, and other advanced technologies.  AI focuses on creating intelligent machines capable of learning and problem-solving, while quantum computing explores the use of quantum mechanics to perform complex calculations at unprecedented speeds.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">8. Types of Computers</h3>
-                
-                    <p>Computers can be classified based on their size, performance, and intended use, as well as the underlying technology they employ:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Classification based on size and performance:</strong></li>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><strong>Supercomputers:</strong> These are the most powerful computers, designed for complex scientific and engineering calculations, such as weather forecasting, climate modeling, and drug discovery.</li>
-                                <li><strong>Mainframes:</strong> Large, high-capacity computers used by organizations like banks and insurance companies for processing large volumes of data and supporting critical applications.</li>
-                                <li><strong>Minicomputers:</strong> Also known as mid-range computers, these systems are smaller and less powerful than mainframes but offer significant computing capabilities for small to medium-sized businesses and departments.</li>
-                                <li><strong>Microcomputers:</strong> These are the most common type of computers, including desktop computers, laptops, and workstations, used for personal and professional tasks.</li>
-                            </ul>
-                        
-                        <li><strong>Classification based on technology:</strong></li>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><strong>Analog Computers:</strong> These computers use continuous physical quantities, such as voltage or temperature, to represent data.  They are often used for specialized applications like controlling industrial processes.</li>
-                                <li><strong>Digital Computers:</strong> These computers use discrete numerical values (digits) to represent data.  They are versatile and widely used for a broad range of applications, including data processing, internet browsing, and running software.</li>
-                                <li><strong>Hybrid Computers:</strong> These computers combine features of both analog and digital computers, offering the ability to process both continuous and discrete data.  They are used in applications like medical imaging and scientific research.</li>
-                            </ul>
-                        
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">9. Hardware and Software</h3>
-                
-                    <p>A computer system consists of two fundamental components: hardware and software, which work together to perform computations and manage data:</p>
-                    <p><strong>Hardware:</strong> Physical components of a computer system that you can touch.</p>
-                    <p><strong>Software:</strong> A set of instructions that tells the hardware what to do.  It provides the logic and control that enable users to interact with the computer and run applications.</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Hardware Components:</strong>
-                            <ul class="list-disc list-inside ml-4">
-                                 <li><strong>Input:</strong> Devices like keyboards, mice, and scanners that allow users to enter data and instructions into the computer.</li>
-                                 <li><strong>Output:</strong> Devices like monitors, printers, and speakers that display or present processed data to the user.</li>
-                                  <li><strong>Processing:</strong> The CPU, which performs calculations and executes instructions.</li>
-                                  <li><strong>Storage:</strong> Devices like hard drives and SSDs that store data and instructions for later use.</li>
-                            </ul>
-                        </li>
-                        <li><strong>System Software:</strong> Software that manages and controls the computer's hardware and provides a platform for running application software.</li>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><strong>Operating systems (OS):</strong> Like Windows, macOS, and Linux, manage hardware resources, provide a user interface, and support the execution of applications.</li>
-                                <li><strong>Utilities:</strong> Programs that perform specific tasks related to computer maintenance and management, such as file management, disk defragmentation, and system diagnostics.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Application Software:</strong> Programs designed for specific tasks, allowing users to perform various activities.</li>
-                            <ul class="list-disc list-inside ml-4">
-                                 <li>Examples include word processors, web browsers, games, and productivity suites.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">10. Computer Peripherals & Memory Management</h3>
-                
-                    <p><strong>Computer Peripherals:</strong> Devices that connect to a computer to enhance its functionality and allow users to interact with the system or perform specific tasks.</p>
-                     <ul class="list-disc list-inside">
-                        <li>Examples: printers, scanners, external storage devices, webcams, and specialized input devices.</li>
-                     </ul>
-                    <p><strong>Types of Memory:</strong> Memory is a crucial component of a computer system that stores data and instructions.  It is broadly classified into primary and secondary memory:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Primary Memory (RAM):</strong> Also known as main memory, it is volatile, meaning it loses its data when the power is turned off.  It provides fast access to data that the CPU is actively using.</li>
-                        <li><strong>RAM (Random Access Memory):</strong> The most common type of primary memory, allowing the CPU to access any memory location directly, making it fast and efficient.</li>
-                        <li><strong>ROM (Read-Only Memory):</strong> Non-volatile memory that stores permanent instructions, such as the BIOS (Basic Input/Output System), which is essential for booting up the computer.</li>
-                        <li><strong>Cache Memory:</strong> A small amount of very fast memory that stores frequently accessed data, enabling the CPU to retrieve information quickly and improving overall system performance.</li>
-                        <li><strong>Secondary Storage:</strong> Non-volatile memory that provides long-term storage for data and programs.</li>
-                        <li><strong>HDD (Hard Disk Drive):</strong> Traditional storage devices that use magnetic platters to store data.  They offer high storage capacity at a relatively low cost but have slower access times compared to SSDs.</li>
-                        <li><strong>SSD (Solid State Drive):</strong> Storage devices that use flash memory to store data.  They offer significantly faster access times, greater durability, and lower power consumption compared to HDDs.</li>
-                        <li><strong>Cloud Storage:</strong> Remote storage accessible over the internet, providing scalability, accessibility, and data redundancy.</li>
-                         <li><strong>Virtual Memory & Paging:</strong> Techniques that allow the computer to use secondary storage (like a hard drive) as an extension of RAM.  The operating system divides memory into fixed-size blocks called pages, and when RAM is full, it swaps pages to the hard drive, creating the illusion of more memory.</li>
-                    </ul>
-                
-            
+                <p>
+                    <strong>Comparative Table: Hardware vs. Software</strong>
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Hardware</th>
+                            <th>Software</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Definition</td>
+                            <td>Physical components of a computer system</td>
+                            <td>Set of instructions that tell the hardware what to do</td>
+                        </tr>
+                        <tr>
+                            <td>Tangibility</td>
+                            <td>Tangible (can be touched)</td>
+                            <td>Intangible (cannot be touched)</td>
+                        </tr>
+                        <tr>
+                            <td>Lifespan</td>
+                            <td>Degrades over time</td>
+                            <td>Can be updated and has no physical degradation</td>
+                        </tr>
+                        <tr>
+                            <td>Examples</td>
+                            <td>CPU, monitor, keyboard, mouse</td>
+                            <td>Operating systems, applications, programs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section id="module2" class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-900">Module II: Computer Networks and Internet Technology</h2>
-            
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">1. Introduction to Computer Networks</h3>
-                
-                    <p><strong>Definition:</strong> A computer network is a set of interconnected devices, including computers, servers, and networking hardware, that can communicate and share resources, such as files, printers, and internet access.  These devices are connected through communication links, which can be physical cables or wireless connections.</p>
-                    <p><strong>Importance:</strong> Computer networks are fundamental to modern communication, enabling businesses to operate efficiently, individuals to connect and share information, and governments to provide services.  They facilitate:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Communication:</strong> Networks enable people to communicate via email, instant messaging, video conferencing, and social media.</li>
-                        <li><strong>Resource Sharing:</strong> Networks allow users to share hardware (like printers) and software (like applications and databases).</li>
-                        <li><strong>Access to Information:</strong> The internet, the world's largest network, provides access to a vast amount of information, online services, and educational resources.</li>
-                    </ul>
-                    <p><strong>Networking Basics:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Nodes:</strong> Devices on the network, such as computers, smartphones, servers, and printers, each with a unique address that allows them to be identified and communicate with other devices.</li>
-                        <li><strong>Links:</strong> The connections between nodes, which can be physical (cables) or wireless (radio waves, microwaves).</li>
-                        <li><strong>Bandwidth:</strong> The amount of data that can be transmitted over a network connection in a given period, typically measured in bits per second (bps).  Higher bandwidth allows for faster data transfer rates.</li>
-                        <li><strong>Latency:</strong> The delay between the time a data packet is sent and the time it is received, measured in milliseconds.  Low latency is crucial for real-time applications like video conferencing and online gaming.</li>
-                    </ul>
-                
+        <section id="question2" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">2. Types of Storage in a Computer</h2>
+            <div class="accordion-button">
+                Explain different types of storage in a computer.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    <strong>Storage</strong> in a computer refers to the various ways a computer system can hold data and information. It can be classified into primary, secondary, and tertiary storage.
+                </p>
 
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">2. Networking Components</h3>
-                
-                    <p><strong>Networking Hardware:</strong> Specialized hardware components are essential for building and managing computer networks:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Routers:</strong> Devices that forward data packets between different networks.  They examine the destination IP address of a packet and determine the best path to route it.  Routers connect LANs to WANs and are crucial for internet connectivity.</li>
-                        <li><strong>Switches:</strong> Devices that connect devices within the same local area network (LAN).  They forward data packets only to the intended recipient, improving network efficiency.  Switches operate at Layer 2 (Data Link Layer) of the OSI model.</li>
-                        <li><strong>Modems:</strong> Devices that convert digital signals from a computer into analog signals that can be transmitted over telephone lines or cable connections, and vice-versa.  They are used to connect computers to the internet.</li>
-                        <li><strong>Access Points:</strong> Devices that allow wireless devices, such as laptops, smartphones, and tablets, to connect to a wired network using Wi-Fi.  They act as a bridge between wireless and wired networks.</li>
-                        <li><strong>Firewalls:</strong> Security devices that protect networks from unauthorized access.  They can be hardware or software-based and monitor incoming and outgoing network traffic, blocking potentially malicious data packets based on predefined security rules.</li>
-                    </ul><h3 class="text-xl font-semibold mb-4 text-gray-900">3. Classification & Types of Networks</h3>
-                
-                    <p><strong>Types of Networks:</strong> Computer networks can be classified based on their geographical span and scale:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>PAN (Personal Area Network):</strong> A small network within a person's working area, typically a few meters in range.  Examples include Bluetooth connections between a smartphone and wireless headphones.</li>
-                        <li><strong>LAN (Local Area Network):</strong> A network confined to a limited geographical area, such as a home, office, or building.  LANs are used to connect computers and devices within a single location, enabling them to share resources.</li>
-                        <li><strong>MAN (Metropolitan Area Network):</strong> A network that spans a city or a large campus.  MANs are larger than LANs but smaller than WANs, often used by universities, government agencies, and telecommunication companies.</li>
-                        <li><strong>WAN (Wide Area Network):</strong> A network that covers a broad geographical area, such as a country or the entire globe.  The internet is the largest WAN.  WANs are used to connect LANs and MANs, enabling long-distance communication.</li>
-                        <li><strong>Wireless vs Wired Networks:</strong> Networks can use either wireless or physical connections to transmit data.</li>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><strong>Wired networks</strong> use physical cables, such as Ethernet cables, to connect devices.  They offer higher bandwidth and more reliable connections but lack the mobility of wireless networks.</li>
-                                <li><strong>Wireless networks</strong> use radio waves or microwaves to transmit data, providing greater mobility and flexibility.  Examples include Wi-Fi networks in homes and offices and cellular networks for mobile communication.</li>
-                            </ul>
-                        <li><strong>Cloud-based networking:</strong> Networks and network services that are hosted in the cloud, providing scalability, flexibility, and cost-effectiveness.</li>
-                        <li><strong>SDN (Software Defined Networking):</strong> A network architecture that separates the control plane (which makes decisions about how traffic is routed) from the data plane (which forwards traffic).  SDN allows network administrators to programmatically configure and manage networks, improving flexibility and agility.</li>
-                        <li><strong>VPNs (Virtual Private Networks):</strong> Technologies that create secure, encrypted connections over a public network, such as the internet.  VPNs allow users to access private networks remotely and securely, protecting sensitive data from eavesdropping.</li>
-                    </ul>
-                
+                <ul>
+                    <li><strong>Primary Storage (Main Memory):</strong>
+                        <ul>
+                            <li><strong>RAM (Random Access Memory):</strong> Volatile memory used to store data that the CPU is actively processing. It provides fast access but loses data when the power is off.</li>
+                            <li><strong>ROM (Read-Only Memory):</strong> Non-volatile memory that stores essential system instructions, like the BIOS. Data in ROM is typically written during manufacturing and cannot be easily modified.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Secondary Storage:</strong>
+                         <ul>
+                            <li><strong>HDD (Hard Disk Drive):</strong> Non-volatile storage device that stores data on magnetic disks. It provides high storage capacity at a relatively low cost.</li>
+                            <li><strong>SSD (Solid State Drive):</strong> Non-volatile storage device that uses flash memory to store data. It offers faster access speeds and better durability compared to HDDs.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tertiary Storage:</strong>
+                        <ul>
+                            <li><strong>Cloud Storage:</strong> Off-site storage maintained by a third party and accessed over the internet.  Provides scalability and accessibility.</li>
+                            <li><strong>Tape Drives:</strong> Sequential access storage used for archiving large amounts of data.</li>
+                        </ul>
+                    </li>
+                </ul>
 
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">4. Network Topologies</h3>
-                
-                    <p><strong>Network Topologies:</strong> The arrangement of network devices and connections, which influences network performance, reliability, and cost:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Bus Topology:</strong> A simple topology where all devices are connected to a single cable, called the bus.  Data is transmitted along the bus, and each device checks the destination address to see if it should receive the data.  Bus topologies are easy to implement but can be slow and unreliable if the bus cable fails.</li>
-                        <li><strong>Star Topology:</strong> A topology where all devices are connected to a central hub or switch.  Data is transmitted from the sending device to the hub, which then forwards it to the intended recipient.  Star topologies are more reliable than bus topologies, as a failure in one device or cable does not affect the rest of the network.</li>
-                        <li><strong>Ring Topology:</strong> A topology where devices are connected in a closed loop, with each device connected to two other devices.  Data travels around the ring in one direction.  Ring topologies can be efficient but a failure in any device or cable can disrupt the entire network.</li>
-                        <li><strong>Mesh Topology:</strong> A topology where each device is connected to every other device in the network.  Mesh topologies provide high reliability and redundancy, as there are multiple paths for data to travel.  However, they are complex and expensive to implement, especially for large networks.</li>
-                        <li><strong>Hybrid Topology:</strong> A combination of two or more different topologies.  For example, a network might combine a star topology for individual departments with a bus topology to connect the departments.  Hybrid topologies offer flexibility and can be tailored to the specific needs of an organization.</li>
-                    </ul>
-                
+                <div class="diagram">
+                    <img src="storage_hierarchy.png" alt="Storage Hierarchy Diagram">
+                    <figcaption>Hierarchy of Computer Storage</figcaption>
+                </div>
 
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">5. Communication Channels</h3>
-                
-                    <p><strong>Transmission Media:</strong> The physical pathways through which data is transmitted in a network.  They can be either wired or wireless:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Wired Transmission Media:</strong> Physical cables that guide data signals.</li>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><strong>Fiber Optics:</strong> Cables that transmit data as light pulses through glass or plastic fibers.  They offer extremely high bandwidth, low attenuation, and immunity to electromagnetic interference, making them ideal for long-distance, high-speed data transmission.</li>
-                                <li><strong>Coaxial Cable:</strong> Cables that consist of a central conductor surrounded by an insulating layer, a braided shield, and an outer jacket.  They are used for cable television and broadband internet connections, offering higher bandwidthand less susceptibility to interference than twisted-pair cables.</li>
-                                <li><strong>Twisted Pair Cable:</strong> Cables that consist of two insulated wires twisted together to reduce electromagnetic interference.  They are commonly used for telephone lines and Ethernet connections.  There are two main types: unshielded twisted pair (UTP) and shielded twisted pair (STP).</li>
-                            </ul>
-                        
-                        <li><strong>Wireless Transmission:</strong> Data transmission through the air using electromagnetic waves.</li>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><strong>Wi-Fi:</strong> A technology that uses radio waves to provide wireless high-speed internet and network connections.  It is commonly used in homes, offices, and public hotspots.</li>
-                                <li><strong>Bluetooth:</strong> A short-range wireless communication technology used to connect devices like smartphones, headphones, and keyboards.  It operates in the 2.4 GHz frequency band and offers low power consumption.</li>
-                                <li><strong>Satellite Communication:</strong> Uses satellites in Earth's orbit to transmit data over long distances.  It is used for applications like television broadcasting, global internet access, and communication in remote areas.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">6. Client-Server Architecture</h3>
-                
-                    <p><strong>Client-Server Model:</strong> A distributed network architecture where tasks and workloads are divided between service providers (servers) and service requesters (clients).  Servers provide resources and services, while clients request and consume those resources.</p>
-                    <p><strong>Client-Server vs. Peer-to-Peer:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Client-Server:</strong> Features a centralized architecture with dedicated servers that manage resources and provide services to multiple clients.  This model offers better security, scalability, and management but can be more expensive to set up and maintain.</li>
-                        <li><strong>Peer-to-Peer (P2P):</strong> A decentralized architecture where each device (peer) can act as both a client and a server, sharing resources directly with other peers.  P2P networks are simpler and less expensive to set up but can have issues with security, scalability, and management.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">7. LAN Concepts</h3>
-                
-                    <p><strong>Local Area Networks (LANs):</strong> Networks that connect devices within a limited geographical area, such as a home, office, or building.  LANs enable devices to communicate and share resources efficiently.</p>
-                    <p><strong>Business Applications:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>File sharing:</strong> LANs allow users to easily share files and documents stored on a central server or other computers.</li>
-                        <li><strong>Printer sharing:</strong> Multiple users can share a single printer connected to the LAN, reducing hardware costs.</li>
-                        <li><strong>Intranet:</strong> A private network within an organization that uses internet technologies to provide internal communication, access to company resources, and collaboration tools.</li>
-                    </ul>
-                    <p><strong>Key Technologies:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Ethernet:</strong> The dominant technology for wired LANs, using cables and switches to connect devices.  Ethernet standards define how data is transmitted over the network.</li>
-                        <li><strong>Wi-Fi:</strong> A technology for wireless LANs, using radio waves to connect devices without cables.  Wi-Fi networks provide flexibility and mobility, allowing users to connect from various locations within the LAN.</li>
-                        <li><strong>LAN Security:</strong> Measures to protect LANs from unauthorized access, including firewalls, intrusion detection systems, and access control mechanisms.  Securing a LAN is crucial to protect sensitive data and prevent network disruptions.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">8. Introduction to the Internet</h3>
-                
-                    <p><strong>Internet:</strong> A global network of interconnected computer networks that use the Internet Protocol Suite (TCP/IP) to communicate.  It is a decentralized and distributed system that allows users worldwide to access information, services, and communicate with each other.</p>
-                    <p><strong>History:</strong></p>
-                     <ul class="list-disc list-inside">
-                        <li>The internet evolved from ARPANET (Advanced Research Projects Agency Network), a research project funded by the U.S. Department of Defense in the late 1960s.  ARPANET was designed to create a robust and decentralized communication network that could withstand disruptions.</li>
-                     </ul>
-                    <p><strong>Key Concepts and common Myths:</strong></p>
-                    <ul class="list-disc list-inside">
-                         <li>The internet is characterized by its widespread accessibility, decentralized nature, and open standards, which allow anyone to connect and contribute.  A common myth is that the internet is controlled by a single entity; in reality, it is governed by various organizations and protocols.</li>
-                     </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">9. Difference Between Internet, Intranet, and Extranet</h3>
-                
-                    <p><strong>Key Differences:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Internet:</strong> A global, public network that connects billions of devices worldwide, providing access to a vast array of information and services.  It is open to anyone with an internet connection.</li>
-                        <li><strong>Intranet:</strong> A private network within an organization, using internet technologies (TCP/IP, web servers) to provide internal communication, access to company resources, and collaboration tools.  It is accessible only to authorized users within the organization.</li>
-                        <li><strong>Extranet:</strong> A network that allows controlled access to an intranet for external users, such as business partners, suppliers, or customers.  Extranets facilitate collaboration and information sharing between organizations while maintaining security.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">10. Domain Name System (DNS)</h3>
-                
-                    <p><strong>Domain Name System (DNS):</strong> A hierarchical and distributed naming system that translates human-readable domain names, such as "google.com," into numerical IP addresses, such as "172.217.160.142," which computers use to identify and communicate with each other on the internet.</p>
-                    <p><strong>How DNS Works:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li>Users enter domain names (e.g., google.com) into their web browsers or applications.</li>
-                        <li>DNS resolvers, typically provided by internet service providers (ISPs), query DNS servers to find the IP address associated with the domain name.</li>
-                        <li>DNS servers, organized in a hierarchical structure, store and manage domain name-to-IP address mappings.  The process involves querying root servers, top-level domain (TLD) servers (e.g., .com, .org), and authoritative name servers.</li>
-                        <li>Once the IP address is found, it is returned to the user's browser or application, allowing the device to connect to the corresponding web server.</li>
-                    </ul>
-                    <p><strong>Related Concepts:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>IP Addresses:</strong> Numerical labels assigned to each device on a network, enabling them to communicate with each other.  There are two versions: IPv4 (32-bit addresses) and IPv6 (128-bit addresses).</li>
-                        <li><strong>Domain Registration:</strong> The process of reserving a unique domain name through a domain name registrar.  This allows individuals and organizations to establish an online identity and create a website with a memorable address.</li>
-                        <li><strong>URL Structure:</strong> The format of web addresses, which consists of several parts, including the protocol (e.g., https://), the domain name (e.g., www.example.com), and the path to a specific resource (e.g., /page).</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">11. Internet Protocols & Addressing</h3>
-                
-                    <p><strong>IP Addressing:</strong> The system of assigning numerical labels (IP addresses) to devices on a network to enable them to communicate with each other.  There are two main versions of IP addressing:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>IPv4:</strong> The original 32-bit address format, which provides approximately 4.3 billion unique addresses.  Due to the rapid growth of the internet, IPv4 addresses are now largely exhausted.</li>
-                        <li><strong>IPv6:</strong> A newer 128-bit address format designed to replace IPv4, providing a vastly larger address space (approximately 340 undecillion addresses).  IPv6 offers improved security and routing capabilities.</li>
-                    </ul>
-                    <p><strong>Networking Protocols:</strong> A set of rules that govern how data is transmitted and received over a network.  Key protocols include:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>HTTP (Hypertext Transfer Protocol):</strong> The foundation of data communication for the World Wide Web, used to transfer hypertext documents (web pages) between web servers and browsers.</li>
-                        <li><strong>HTTPS (Secure HTTP):</strong> A secure version of HTTP that encrypts data transmission using SSL/TLS protocols, protecting sensitive information like passwords and credit card numbers.</li>
-                        <li><strong>FTP (File Transfer Protocol):</strong> A protocol used to transfer files between computers over a network, commonly used for uploading and downloading files from web servers.</li>
-                        <li><strong>TCP/IP (Transmission Control Protocol/Internet Protocol):</strong> The fundamental suite of protocols that govern communication on the internet.  TCP provides reliable, ordered, and error-checked delivery of data, while IP handles addressing and routing of data packets.</li>
-                        <li><strong>SMTP (Simple Mail Transfer Protocol):</strong> The standard protocol for sending emails between mail servers.</li>
-                        <li><strong>POP3 (Post Office Protocol version 3):</strong> A protocol used by email clients to retrieve emails from a mail server.  POP3 downloads emails to the client's device and typically deletes them from the server.</li>
-                        <li><strong>IMAP (Internet Message Access Protocol):</strong> A more advanced protocol for retrieving emails, allowing users to access and manage emails on the server without downloading them to their device.  IMAP supports features like folder management and synchronization across multiple devices.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">12. Services of the Internet</h3>
-                
-                    <p><strong>Essential Internet Services:</strong> The internet provides a wide range of services that have transformed communication, commerce, education, and entertainment:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Email:</strong> Electronic mail, a fast and convenient way to send and receive messages, documents, and files over the internet.</li>
-                        <li><strong>Web Browsing:</strong> Accessing websites and web pages using web browsers, allowing users to view information, interact with online applications, and navigate the World Wide Web.</li>
-                        <li><strong>Cloud Computing:</strong> On-demand access to computing resources, such as servers, storage, and software, over the internet.  Cloud computing enables businesses to scale their operations, reduce IT costs, and access powerful computing capabilities without investing in physical infrastructure.</li>
-                        <li><strong>E-Commerce:</strong> Online shopping and transactions, allowing users to buy and sell goods and services over the internet.  E-commerce has revolutionized retail, providing consumers with a wide selection of products, competitive prices, and the convenience of shopping from home.</li>
-                        <li><strong>Streaming:</strong> Delivering audio and video content over the internet, allowing users to access on-demand entertainment, live broadcasts, and multimedia content without downloading large files.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">13. Internet Support Technologies</h3>
-                
-                    <p>Technologies that enhance and support the functionality and performance of the internet:</p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>CDNs (Content Delivery Networks):</strong> Distributed networks of servers that store and deliver web content to users from locations geographically closer to them, reducing latency and improving website loading speeds.</li>
-                        <li><strong>VPNs (Virtual Private Networks):</strong> Technologies that create secure, encrypted connections over a public network, such as the internet.  VPNs allow users to access private networks remotely and securely, protecting sensitive data and ensuring online privacy.</li>
-                        <li><strong>IoT (Internet of Things):</strong> A network of interconnected devices, such as sensors, appliances, and vehicles, that collect and exchange data over the internet.  IoT enables automation, remote monitoring, and data-driven decision-making in various fields, including smart homes, healthcare, and manufacturing.</li>
-                    </ul>
-                
-
-                
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">14. Censorship & Privacy Issues</h3>
-                
-                    <p><strong>Key Concerns:</strong></p>
-                    <ul class="list-disc list-inside">
-                        <li><strong>Government Censorship:</strong> The control or suppression of information and online content by governments, often to restrict freedom of speech, control political dissent, or protect national security.</li>
-                        <li><strong>Data Surveillance:</strong> The monitoring and tracking of individuals' online activities, communications, and data by governments, corporations, or other entities.  Data surveillance raises concerns about privacy, civil liberties, and the potential for abuse.</li>
-                        <li><strong>Online Privacy Laws:</strong> Regulations and legal frameworks that govern the collection, use, and disclosure of personal data collected online.  Examples include GDPR (General Data Protection Regulation) and CCPA (California Consumer Privacy Act).</li>
-                        <li><strong>Ethical Concerns:</strong> The internet raises various ethical issues related to freedom of speech, access to information, data privacy, and the responsibility of online platforms.  These concerns require careful consideration and the development of ethical guidelines and policies.</li>
-                    </ul>
-                
-            
+                <p>
+                    <strong>Comparison of Storage Types:</strong>
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Storage Type</th>
+                            <th>Access Speed</th>
+                            <th>Cost</th>
+                            <th>Use Cases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RAM</td>
+                            <td>Very Fast</td>
+                            <td>High</td>
+                            <td>Active data processing, running applications</td>
+                        </tr>
+                        <tr>
+                            <td>ROM</td>
+                            <td>Fast</td>
+                            <td>Low</td>
+                            <td>Storing firmware and boot instructions</td>
+                        </tr>
+                        <tr>
+                            <td>HDD</td>
+                            <td>Slow</td>
+                            <td>Low</td>
+                            <td>Large-capacity storage for files and applications</td>
+                        </tr>
+                         <tr>
+                            <td>SSD</td>
+                            <td>Fast</td>
+                            <td>Medium to High</td>
+                            <td>Fast access to frequently used data, system boot drive</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Storage</td>
+                            <td>Medium</td>
+                            <td>Variable (subscription-based)</td>
+                            <td>Data backup, file sharing, remote access</td>
+                        </tr>
+                        <tr>
+                            <td>Tape Drives</td>
+                            <td>Very Slow (Sequential)</td>
+                            <td>Very Low</td>
+                            <td>Archiving large volumes of data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
-    </div>
-</body>
-</html>
+
+        <section id="question3" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">3. Central Processing Unit (CPU)</h2>
+            <div class="accordion-button">
+                Explain the Central Processing Unit (CPU) with a block diagram.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    The <strong>Central Processing Unit (CPU)</strong> is the primary component of a computer that processes instructions and performs calculations. It is often referred to as the "brain" of the computer.
+                </p>
+
+                <p>
+                    <strong>Components of the CPU:</strong>
+                </p>
+                <ul>
+                    <li><strong>Control Unit (CU):</strong> Directs the operations of the CPU by fetching instructions from memory, decoding them, and coordinating the execution of these instructions.</li>
+                    <li><strong>Arithmetic Logic Unit (ALU):</strong> Performs arithmetic operations (addition, subtraction, etc.) and logical operations (AND, OR, NOT).</li>
+                    <li><strong>Registers:</strong> Small, high-speed storage locations within the CPU used to hold data and instructions that are being actively processed.</li>
+                    <li><strong>Cache Memory:</strong> Small, fast memory that stores frequently accessed data and instructions, allowing the CPU to retrieve them quickly without accessing main memory.</li>
+                </ul>
+
+                <div class="diagram">
+                    <img src="cpu_block_diagram.png" alt="CPU Block Diagram">
+                    <figcaption>Central Processing Unit (CPU) Block Diagram</figcaption>
+                </div>
+
+                <p>
+                    <strong>Data Flow in the CPU:</strong>
+                </p>
+                <ol>
+                    <li>The Control Unit fetches an instruction from main memory.</li>
+                    <li>The Control Unit decodes the instruction to determine what operation needs to be performed.</li>
+                    <li>If the instruction involves data, the Control Unit retrieves the data from registers or main memory.</li>
+                    <li>The ALU performs the arithmetic or logical operation.</li>
+                    <li>The result is stored in a register or main memory.</li>
+                    <li>The Control Unit fetches the next instruction.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="question4" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">4. Applications of Computers</h2>
+            <div class="accordion-button">
+                Explain different applications of computers with examples.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Computers have become indispensable tools in various fields, revolutionizing the way we live, work, and interact. Here are some key applications:
+                </p>
+
+                <ul>
+                    <li><strong>Education:</strong>
+                        <p>Computers are used for online learning, educational software, research, and administrative tasks.  Digital learning platforms provide interactive and accessible education.  Virtual reality (VR) and augmented reality (AR) are increasingly used to enhance the learning experience.</p>
+                        <p>Example: Coursera, Khan Academy, virtual labs.</p>
+                    </li>
+                    <li><strong>Business:</strong>
+                        <p>Computers are used for managing operations, marketing, customer relationship management, accounting, and data analysis. E-commerce has transformed how businesses operate and reach customers.  Supply chain management systems rely heavily on computers.</p>
+                        <p>Example:  Salesforce (CRM), SAP (ERP), online advertising platforms.</p>
+                    </li>
+                    <li><strong>Healthcare:</strong>
+                        <p>Computers aid in medical diagnosis, patient monitoring, electronic health records, telemedicine, and research.  They help in analyzing medical images, developing new drugs, and personalizing treatment.</p>
+                        <p>Example:  Electronic Health Records (EHR) systems, MRI and CT scan machines, telemedicine platforms.</p>
+                    </li>
+                    <li><strong>Banking:</strong>
+                        <p>Computers facilitate online banking, automated teller machines (ATMs), electronic fund transfers, and fraud detection.  They provide customers with convenient access to financial services and improve the efficiency of banking operations.</p>
+                        <p>Example:  Online banking portals, mobile banking apps, ATM networks.</p>
+                    </li>
+                    <li><strong>Entertainment:</strong>
+                        <p>Computers are used for creating and consuming digital media, including music, movies, video games, and streaming services.  They power special effects in films, create immersive gaming experiences, and enable interactive entertainment.</p>
+                        <p>Example:  Netflix, Spotify, video game consoles, animation software.</p>
+                    </li>
+                </ul>
+
+                <div class="diagram">
+                    <img src="computer_applications_infographic.png" alt="Applications of Computers Infographic">
+                    <figcaption>Applications of Computers</figcaption>
+                </div>
+            </div>
+        </section>
+
+        <section id="question5" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">5. Working of an Internet Service Provider (ISP)</h2>
+            <div class="accordion-button">
+                Explain the working of an Internet Service Provider (ISP).
+            </div>
+            <div class="accordion-content">
+                <p>
+                    An <strong>Internet Service Provider (ISP)</strong> is an organization that provides services for accessing, using, or participating in the Internet. ISPs connect users to the internet through various technologies.
+                </p>
+
+                <p>
+                    <strong>Types of ISPs:</strong>
+                </p>
+                <ul>
+                    <li><strong>Dial-up:</strong> Uses telephone lines to establish a connection.  Slow and outdated.</li>
+                    <li><strong>Broadband:</strong> High-speed internet access using technologies like DSL, cable, or fiber.</li>
+                    <li><strong>Fiber:</strong> Uses fiber-optic cables to provide extremely high-speed internet access.</li>
+                    <li><strong>Satellite:</strong> Provides internet access via satellite, often used in rural or remote areas.</li>
+                </ul>
+
+                <div class="diagram">
+                    <img src="isp_network_diagram.png" alt="ISP Network Diagram">
+                    <figcaption>ISP Network Diagram</figcaption>
+                </div>
+
+                <p>
+                    <strong>How ISPs Work:</strong>
+                </p>
+                <ol>
+                    <li>Users connect their devices (computers, smartphones) to the ISP's network through a modem or router.</li>
+                    <li>The modem or router sends data requests to the ISP's servers.</li>
+                    <li>The ISP's servers route the data to the appropriate destination on the internet.</li>
+                    <li>The destination server sends the requested data back to the ISP.</li>
+                    <li>The ISP forwards the data to the user's device.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="question6" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">6. URL, WWW, Multimedia</h2>
+            <div class="accordion-button">
+                Explain the following terms: URL, WWW, Multimedia.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    <strong>URL (Uniform Resource Locator):</strong>
+                </p>
+                <p>
+                    A URL is the address of a specific resource on the World Wide Web. It provides a way to locate and access web pages, images, videos, and other online content.
+                </p>
+                 <p>
+                    <strong>Components of a URL:</strong>
+                 </p>
+                 <ul>
+                    <li><strong>Protocol:</strong>  Indicates how the data is transferred (e.g., HTTP, HTTPS).</li>
+                    <li><strong>Domain:</strong>  The name of the website (e.g., www.example.com).</li>
+                    <li><strong>Path:</strong>    Specifies the location of the resource on the server (e.g., /page1.html).</li>
+                 </ul>
+                <div class="diagram">
+                    <img src="url_diagram.png" alt="URL Diagram">
+                    <figcaption>Uniform Resource Locator (URL) Diagram</figcaption>
+                </div>
+
+                <p>
+                    <strong>WWW (World Wide Web):</strong>
+                </p>
+                <p>
+                    The World Wide Web is a system of interconnected documents and other resources, linked by hyperlinks and URLs, that are accessed via the Internet. It is a collection of web pages, images, videos, and other digital content that can be accessed using a web browser.  The WWW is built on top of the Internet.
+                </p>
+
+                <p>
+                    <strong>Multimedia:</strong>
+                </p>
+                <p>
+                    Multimedia is content that combines different forms of media, such as text, audio, images, video, and interactive elements.  It enhances communication and provides a richer user experience.
+                </p>
+                <p>
+                    <strong>Examples of Multimedia:</strong>
+                </p>
+                 <ul>
+                    <li>Images (JPEG, PNG)</li>
+                    <li>Audio (MP3, WAV)</li>
+                    <li>Video (MP4, AVI)</li>
+                    <li>Animations (GIF, WebM)</li>
+                    <li>Interactive content (games, simulations)</li>
+                 </ul>
+            </div>
+        </section>
+
+        <section id="question7" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">7. File Transfer Protocol (FTP)</h2>
+            <div class="accordion-button">
+                What is FTP? Explain with an example.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    <strong>File Transfer Protocol (FTP)</strong> is a standard network protocol used for transferring files between a client and a server over a computer network.  It is commonly used to upload files to a web server or download files from a server.
+                </p>
+
+                <p>
+                    <strong>How FTP Works:</strong>
+                </p>
+                <p>
+                    FTP involves two main components:
+                </p>
+                <ul>
+                    <li><strong>FTP Client:</strong> A software application installed on the user's computer used to connect to the FTP server.</li>
+                    <li><strong>FTP Server:</strong> A server that stores the files and allows clients to access them.</li>
+                </ul>
+
+                <p>
+                    **Step-by-Step Example of Uploading a File using FTP:**
+                </p>
+                 <ol>
+                    <li>The user opens an FTP client and enters the FTP server's address, username, and password.</li>
+                    <li>The FTP client establishes a connection with the FTP server.</li>
+                    <li>The user navigates to the local directory on their computer where the file to be uploaded is located.</li>
+                    <li>The user navigates to the directory on the FTP server where the file should be uploaded.</li>
+                    <li>The user selects the file to upload and initiates the upload process.</li>
+                    <li>The FTP client sends the file to the FTP server.</li>
+                    <li>The FTP server receives the file and stores it in the specified directory.</li>
+                    <li>The FTP client confirms that the file has been successfully uploaded.</li>
+                    <li>The user closes the FTP connection.</li>
+                 </ol>
+            </div>
+        </section>
+
+        <section id="question8" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900">8. E-commerce</h2>
+            <div class="accordion-button">
+                What is e-commerce? Explain the different types of e-commerce.
+            </div>
+            <div class="accordion-content">
+                <p>
+                    <strong>Electronic Commerce (E-commerce
+
