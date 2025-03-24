@@ -233,19 +233,44 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    <strong>Computer software</strong> is a set of instructions, data, or programs used to operate computers and execute specific tasks. It is a general term used to refer to applications, scripts, and programs that run on a device.
+                    <strong>Computer software</strong> comprises the set of instructions, data, or programs that a computer uses to operate and perform specific tasks. It's the non-tangible component of a computer system, contrasting with the physical hardware.
                 </p>
                 <p>
-                    Software can be categorized into two main types:
+                    Software is broadly categorized into two types:
                 </p>
                 <ul>
-                    <li><strong>System Software:</strong> This type of software manages and controls the computer hardware, allowing other software to function properly. Examples include operating systems (like Windows, macOS, Linux), device drivers, and utility programs.</li>
-                    <li><strong>Application Software:</strong> This type of software is designed to perform specific tasks for the user. Examples include word processors (like Microsoft Word), web browsers (like Chrome, Firefox), and database management systems (like MySQL).</li>
+                    <li><strong>System Software:</strong> This category includes programs that manage and integrate computer hardware and provide an environment for application software to run.
+                        <ul>
+                            <li><strong>Operating Systems (OS):</strong> The most fundamental system software, managing hardware resources and providing services like memory management, process scheduling, and input/output control.
+                                <p>Example: Windows 10, macOS Monterey, Ubuntu Linux.</p>
+                            </li>
+                            <li><strong>Device Drivers:</strong> Software that enables communication between the OS and specific hardware devices.
+                                <p>Example: Printer drivers, graphics card drivers, USB drivers.</p>
+                            </li>
+                            <li><strong>Utility Programs:</strong> Tools that perform specific tasks related to system management, maintenance, or optimization.
+                                 <p>Example: Disk defragmenters, antivirus software, file compression tools.</p>
+                        </ul>
+                    </li>
+                    <li><strong>Application Software:</strong>  This category includes programs designed to perform specific tasks for the user, addressing their needs.
+                        <ul>
+                            <li><strong>Productivity Software:</strong> Applications used for creating documents, presentations, spreadsheets, etc.
+                                <p>Example: Microsoft Office Suite (Word, PowerPoint, Excel), Google Workspace.</p>
+                            </li>
+                            <li><strong>Communication Software:</strong> Applications that enable communication and collaboration.
+                                <p>Example: Email clients (Outlook, Gmail), video conferencing tools (Zoom, Microsoft Teams).</p>
+                            </li>
+                            <li><strong>Entertainment Software:</strong> Applications for leisure and enjoyment.
+                                <p>Example: Video games, media players (VLC), streaming services (Netflix).</p>
+                            </li>
+                            <li><strong>Business Software:</strong> Applications designed for specific business functions.
+                                <p>Example: Customer Relationship Management (CRM) systems, Enterprise Resource Planning (ERP) systems.</p>
+                        </ul>
+                    </li>
                 </ul>
 
                 <p>
                     <strong>Interaction between Hardware and Software:</strong>
-                    Software provides the instructions that tell the hardware what to do. The hardware executes these instructions to perform tasks. For example, when you type on a keyboard (hardware), the word processor (software) receives the input, processes it, and displays it on the monitor (hardware).
+                    Software provides the instructions that dictate how hardware should function.  The hardware carries out these instructions to perform desired operations.  For instance, when you open a web browser (software), the OS (software) instructs the CPU (hardware) to allocate memory and process the browser's code.  The browser then sends signals to the network interface card (hardware) to retrieve data from the internet.  The monitor (hardware) displays the retrieved information, guided by the graphics card (hardware) and its driver (software).
                 </p>
 
                 <p>
@@ -262,23 +287,28 @@
                     <tbody>
                         <tr>
                             <td>Definition</td>
-                            <td>Physical components of a computer system</td>
-                            <td>Set of instructions that tell the hardware what to do</td>
+                            <td>Physical components of a computer system.</td>
+                            <td>Set of instructions that tell the hardware what to do.</td>
                         </tr>
                         <tr>
                             <td>Tangibility</td>
-                            <td>Tangible (can be touched)</td>
-                            <td>Intangible (cannot be touched)</td>
+                            <td>Tangible (can be touched).</td>
+                            <td>Intangible (cannot be touched).</td>
                         </tr>
                         <tr>
                             <td>Lifespan</td>
-                            <td>Degrades over time</td>
-                            <td>Can be updated and has no physical degradation</td>
+                            <td>Degrades over time due to physical wear and tear.</td>
+                            <td>Can be updated and has no physical degradation; obsolescence is due to technology changes.</td>
                         </tr>
                         <tr>
                             <td>Examples</td>
-                            <td>CPU, monitor, keyboard, mouse</td>
-                            <td>Operating systems, applications, programs</td>
+                            <td>CPU, monitor, keyboard, mouse, hard drive, RAM.</td>
+                            <td>Operating systems (Windows, Linux), applications (Word, Excel), programs, scripts.</td>
+                        </tr>
+                        <tr>
+                            <td>Dependency</td>
+                            <td>Cannot function without software to provide instructions.</td>
+                            <td>Cannot function without hardware to execute the instructions.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -292,26 +322,83 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    <strong>Storage</strong> in a computer refers to the various ways a computer system can hold data and information. It can be classified into primary, secondary, and tertiary storage.
+                    <strong>Computer storage</strong> refers to the technologies and devices used to retain digital data.  Storage is classified by its accessibility, speed, cost, and volatility.
                 </p>
 
+                <p>
+                    The main categories of computer storage are:
+                </p>
                 <ul>
-                    <li><strong>Primary Storage (Main Memory):</strong>
+                    <li><strong>Primary Storage (Main Memory):</strong> This is the computer's working memory, providing fast access to data that the CPU is currently using.  It is essential for the execution of programs.
                         <ul>
-                            <li><strong>RAM (Random Access Memory):</strong> Volatile memory used to store data that the CPU is actively processing. It provides fast access but loses data when the power is off.</li>
-                            <li><strong>ROM (Read-Only Memory):</strong> Non-volatile memory that stores essential system instructions, like the BIOS. Data in ROM is typically written during manufacturing and cannot be easily modified.</li>
+                            <li><strong>RAM (Random Access Memory):</strong>
+                                <ul>
+                                     <li>Volatile memory; data is lost when the power is turned off.</li>
+                                     <li>Used to store data and instructions that the CPU actively needs.</li>
+                                     <li>Faster access speed compared to secondary storage.</li>
+                                     <li>Types:
+                                        <ul>
+                                            <li>SRAM (Static RAM): Faster and more expensive; used for CPU cache.</li>
+                                            <li>DRAM (Dynamic RAM): Slower and cheaper; used for main system memory.  Further divided into DDR, DDR2, DDR3, DDR4, DDR5.</li>
+                                        </ul>
+                                     </li>
+                                     <li>Example:  A computer with 16GB DDR4 RAM. When you open a document in a word processor, the document data is loaded into RAM for quick access by the CPU.</li>
+                                </ul>
+                            </li>
+                            <li><strong>ROM (Read-Only Memory):</strong>
+                                <ul>
+                                    <li>Non-volatile memory; data is retained even when the power is off.</li>
+                                    <li>Stores firmware, which contains essential instructions for booting up the computer and controlling basic hardware functions.</li>
+                                    <li>Data is typically written during manufacturing and is not easily modified.
+                                    </li>
+                                    <li>Types: PROM, EPROM, EEPROM, Flash ROM.</li>
+                                    <li>Example:  The BIOS (Basic Input/Output System) chip on the motherboard stores instructions for starting the computer and loading the operating system.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li><strong>Secondary Storage:</strong>
-                         <ul>
-                            <li><strong>HDD (Hard Disk Drive):</strong> Non-volatile storage device that stores data on magnetic disks. It provides high storage capacity at a relatively low cost.</li>
-                            <li><strong>SSD (Solid State Drive):</strong> Non-volatile storage device that uses flash memory to store data. It offers faster access speeds and better durability compared to HDDs.</li>
+                    <li><strong>Secondary Storage:</strong> Non-volatile storage used for long-term storage of data, even when the computer is turned off.  It has a larger capacity and is less expensive than primary storage.
+                        <ul>
+                            <li><strong>HDD (Hard Disk Drive):</strong>
+                                <ul>
+                                    <li>Stores data magnetically on rotating disks.</li>
+                                    <li>High storage capacity at a low cost per gigabyte.</li>
+                                    <li>Slower access speed compared to SSDs.</li>
+                                    <li>Mechanical components make it more susceptible to damage.</li>
+                                    <li>Example: A 4TB HDD used to store a large library of movies, music, and documents.</li>
+                                </ul>
+                            </li>
+                            <li><strong>SSD (Solid State Drive):</strong>
+                                <ul>
+                                    <li>Stores data in non-volatile flash memory.</li>
+                                    <li>Faster access speeds, lower latency, and greater durability compared to HDDs.</li>
+                                    <li>More expensive per gigabyte than HDDs.</li>
+                                    <li>No moving parts, making it more resistant to physical shock.</li>
+                                    <li>Example: A 500GB SSD used as the primary system drive for fast boot times and application loading.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li><strong>Tertiary Storage:</strong>
+                    <li><strong>Tertiary Storage:</strong>  Provides long-term storage for large volumes of data, typically used for archiving and backup.
                         <ul>
-                            <li><strong>Cloud Storage:</strong> Off-site storage maintained by a third party and accessed over the internet.  Provides scalability and accessibility.</li>
-                            <li><strong>Tape Drives:</strong> Sequential access storage used for archiving large amounts of data.</li>
+                            <li><strong>Cloud Storage:</strong>
+                                <ul>
+                                    <li>Off-site storage maintained by third-party providers (e.g., Amazon, Google, Microsoft).</li>
+                                    <li>Data is accessed over the internet.</li>
+                                    <li>Offers scalability, accessibility, and data redundancy.</li>
+                                     <li>Cost is based on storage used and data transfer.</li>
+                                    <li>Example:  Storing company data on Google Drive, Amazon S3, or Microsoft Azure.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Tape Drives:</strong>
+                                <ul>
+                                    <li>Stores data on magnetic tape.</li>
+                                    <li>Very high storage capacity at a low cost.</li>
+                                    <li>Sequential access, making it slow for random access.</li>
+                                    <li>Primarily used for long-term archiving and backups of massive datasets.</li>
+                                    <li>Example:  A company backing up its entire database on magnetic tapes for disaster recovery.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -330,6 +417,7 @@
                             <th>Storage Type</th>
                             <th>Access Speed</th>
                             <th>Cost</th>
+                            <th>Volatility</th>
                             <th>Use Cases</th>
                         </tr>
                     </thead>
@@ -338,37 +426,43 @@
                             <td>RAM</td>
                             <td>Very Fast</td>
                             <td>High</td>
-                            <td>Active data processing, running applications</td>
+                            <td>Volatile</td>
+                            <td>Active data processing, running applications, short-term storage of running programs</td>
                         </tr>
                         <tr>
                             <td>ROM</td>
                             <td>Fast</td>
                             <td>Low</td>
-                            <td>Storing firmware and boot instructions</td>
+                            <td>Non-volatile</td>
+                            <td>Storing firmware and boot instructions, permanent storage of essential system software</td>
                         </tr>
                         <tr>
                             <td>HDD</td>
                             <td>Slow</td>
                             <td>Low</td>
-                            <td>Large-capacity storage for files and applications</td>
+                            <td>Non-volatile</td>
+                            <td>Large-capacity storage for files, applications, and operating systems, bulk storage</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>SSD</td>
                             <td>Fast</td>
                             <td>Medium to High</td>
-                            <td>Fast access to frequently used data, system boot drive</td>
+                            <td>Non-volatile</td>
+                            <td>Fast access to frequently used data, system boot drive, application loading, high-performance computing</td>
                         </tr>
                         <tr>
                             <td>Cloud Storage</td>
                             <td>Medium</td>
                             <td>Variable (subscription-based)</td>
-                            <td>Data backup, file sharing, remote access</td>
+                            <td>Non-volatile</td>
+                            <td>Data backup, file sharing, remote access, on-demand storage, scalability</td>
                         </tr>
                         <tr>
                             <td>Tape Drives</td>
                             <td>Very Slow (Sequential)</td>
                             <td>Very Low</td>
-                            <td>Archiving large volumes of data</td>
+                            <td>Non-volatile</td>
+                            <td>Archiving large volumes of data, long-term backups, disaster recovery</td>
                         </tr>
                     </tbody>
                 </table>
@@ -382,17 +476,61 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    The <strong>Central Processing Unit (CPU)</strong> is the primary component of a computer that processes instructions and performs calculations. It is often referred to as the "brain" of the computer.
+                    The <strong>Central Processing Unit (CPU)</strong> is the core of a computer system, responsible for executing instructions and processing data. It fetches instructions from memory, decodes them, executes them, and writes the results back to memory.  It is the "brain" of the computer.
                 </p>
 
                 <p>
                     <strong>Components of the CPU:</strong>
                 </p>
                 <ul>
-                    <li><strong>Control Unit (CU):</strong> Directs the operations of the CPU by fetching instructions from memory, decoding them, and coordinating the execution of these instructions.</li>
-                    <li><strong>Arithmetic Logic Unit (ALU):</strong> Performs arithmetic operations (addition, subtraction, etc.) and logical operations (AND, OR, NOT).</li>
-                    <li><strong>Registers:</strong> Small, high-speed storage locations within the CPU used to hold data and instructions that are being actively processed.</li>
-                    <li><strong>Cache Memory:</strong> Small, fast memory that stores frequently accessed data and instructions, allowing the CPU to retrieve them quickly without accessing main memory.</li>
+                    <li><strong>Control Unit (CU):</strong>
+                        <ul>
+                            <li>Directs and coordinates all CPU operations.</li>
+                            <li>Fetches instructions from main memory.</li>
+                            <li>Decodes the instructions (interprets what the instruction is).</li>
+                            <li>Controls the flow of data within the CPU.</li>
+                            <li>Sends control signals to other components, such as the ALU and registers, to execute instructions.</li>
+                            <li>It acts like a manager, ensuring that instructions are executed in the correct sequence.</li>
+                            <li>Example:  The CU fetches an instruction like "ADD A, B, C" from memory, decodes it to understand it means "add the values in registers A and B and store the result in register C", and then signals the ALU to perform the addition.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arithmetic Logic Unit (ALU):</strong>
+                        <ul>
+                            <li>Performs all arithmetic and logical operations.</li>
+                            <li><strong>Arithmetic Operations:</strong> Addition, subtraction, multiplication, division.</li>
+                            <li><strong>Logical Operations:</strong> AND, OR, NOT, comparisons (equal to, greater than, less than).</li>
+                            <li>The CU sends the data and the operation to be performed to the ALU.</li>
+                            <li>The ALU performs the operation and sends the result back to the CU.</li>
+                            <li>Example: If the instruction is "ADD A, B, C", the ALU adds the values in registers A and B and sends the sum to the CU.  If the instruction is "IF A > B", the ALU compares the values in A and B and sends a true/false value to the CU.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Registers:</strong>
+                        <ul>
+                            <li>Small, high-speed storage locations within the CPU.</li>
+                            <li>Used to hold data and instructions that the CPU is currently working on.</li>
+                            <li>Provide very fast access to data, significantly faster than accessing main memory.</li>
+                            <li>Types of Registers:
+                                <ul>
+                                    <li><strong>Instruction Register (IR):</strong> Holds the current instruction being executed.</li>
+                                    <li><strong>Program Counter (PC):</strong> Holds the address of the next instruction to be fetched.</li>
+                                    <li><strong>Memory Address Register (MAR):</strong> Holds the address of the memory location being accessed.</li>
+                                    <li><strong>Memory Data Register (MDR):</strong> Holds the data being read from or written to memory.</li>
+                                    <li><strong>Accumulator (AC):</strong> Holds the intermediate results of calculations.</li>
+                                </ul>
+                            </li>
+                            <li>Example:  When the CPU is adding two numbers, the numbers might be temporarily stored in registers before being sent to the ALU, and the result might be stored in another register.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cache Memory:</strong>
+                        <ul>
+                            <li>A small, fast memory located between the CPU and main memory.</li>
+                            <li>Stores frequently accessed data and instructions.</li>
+                            <li>Reduces the average time it takes the CPU to access memory.</li>
+                            <li>Works on the principle of locality of reference (data that has been accessed recently is likely to be accessed again soon).</li>
+                            <li>Levels of Cache: L1, L2, L3 (L1 is the fastest and smallest, L3 is the slowest and largest).</li>
+                            <li>Example:  If the CPU repeatedly needs the same data, it will be stored in the cache.  The CPU can then access it from the cache much faster than from main memory.</li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <div class="diagram">
@@ -404,12 +542,17 @@
                     <strong>Data Flow in the CPU:</strong>
                 </p>
                 <ol>
-                    <li>The Control Unit fetches an instruction from main memory.</li>
-                    <li>The Control Unit decodes the instruction to determine what operation needs to be performed.</li>
-                    <li>If the instruction involves data, the Control Unit retrieves the data from registers or main memory.</li>
-                    <li>The ALU performs the arithmetic or logical operation.</li>
-                    <li>The result is stored in a register or main memory.</li>
-                    <li>The Control Unit fetches the next instruction.</li>
+                    <li><strong>Fetch:</strong> The Control Unit fetches the next instruction from main memory. The address of the next instruction is in the Program Counter (PC). The instruction is loaded into the Instruction Register (IR).  The PC is incremented to point to the next instruction.</li>
+                    <li><strong>Decode:</strong> The Control Unit decodes the instruction in the Instruction Register (IR) to determine what operation needs to be performed and what data is needed.</li>
+                    <li><strong>Execute:</strong>
+                        <ul>
+                            <li>The Control Unit sends signals to the ALU and registers to perform the operation.</li>
+                            <li>If the instruction involves data in memory, the Control Unit uses the Memory Address Register (MAR) to specify the memory location and the Memory Data Register (MDR) to hold the data.</li>
+                            <li>The ALU performs the arithmetic or logical operation on the data in the registers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Write Back:</strong> The result of the execution is written back to a register or main memory. The Control Unit determines where the result should be stored.</li>
+                    <li>The process repeats, starting from step 1 (Fetch), for the next instruction.</li>
                 </ol>
             </div>
         </section>
@@ -421,29 +564,87 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    Computers have become indispensable tools in various fields, revolutionizing the way we live, work, and interact. Here are some key applications:
+                    Computers have become integral to nearly every aspect of modern life, transforming how we conduct business, educate ourselves, manage our health, and entertain ourselves.
+                </p>
+
+                <p>
+                    Here's a detailed look at computer applications across various sectors:
                 </p>
 
                 <ul>
                     <li><strong>Education:</strong>
-                        <p>Computers are used for online learning, educational software, research, and administrative tasks.  Digital learning platforms provide interactive and accessible education.  Virtual reality (VR) and augmented reality (AR) are increasingly used to enhance the learning experience.</p>
-                        <p>Example: Coursera, Khan Academy, virtual labs.</p>
+                        <p>Computers have revolutionized education, making learning more accessible, interactive, and personalized.
+                        </p>
+                        <ul>
+                            <li><strong>Online Learning Platforms:</strong> Deliver courses and educational materials over the internet, allowing students to learn remotely.
+                                <p>Example: Coursera, edX, Udacity, Khan Academy, Moodle.</p>
+                            </li>
+                            <li><strong>Interactive Whiteboards:</strong> Enhance classroom instruction with digital displays and touch-screen capabilities.</li>
+                            <li><strong>Educational Software:</strong> Provide interactive simulations, tutorials, and exercises to supplement traditional learning.
+                                 <p>Example:  Duolingo (language learning), interactive anatomy software.</p>
+                            </li>
+                             <li><strong>Virtual and Augmented Reality (VR/AR):</strong> Create immersive learning experiences, such as virtual field trips or interactive 3D models.</li>
+                            <li><strong>Learning Management Systems (LMS):</strong> Help educators manage courses, track student progress, and deliver assessments.
+                                <p>Example: Blackboard, Canvas.</p>
+                        </ul>
+                        <p>Example: A student taking an online course on quantum physics through Coursera, interacting with simulations and virtual labs.</p>
                     </li>
                     <li><strong>Business:</strong>
-                        <p>Computers are used for managing operations, marketing, customer relationship management, accounting, and data analysis. E-commerce has transformed how businesses operate and reach customers.  Supply chain management systems rely heavily on computers.</p>
-                        <p>Example:  Salesforce (CRM), SAP (ERP), online advertising platforms.</p>
+                        <p>Computers are essential for managing business operations, improving efficiency, and driving growth.</p>
+                        <ul>
+                            <li><strong>Enterprise Resource Planning (ERP) Systems:</strong> Integrate various business functions, such as accounting, human resources, and supply chain management, into a single system.
+                                <p>Example: SAP, Oracle ERP.</p>
+                            </li>
+                            <li><strong>Customer Relationship Management (CRM) Systems:</strong> Help businesses manage customer interactions, track sales, and improve customer service.
+                                <p>Example: Salesforce, HubSpot.</p>
+                            </li>
+                            <li><strong>E-commerce Platforms:</strong> Enable businesses to sell products and services online.
+                                <p>Example: Shopify, Magento.</p>
+                            </li>
+                            <li><strong>Business Intelligence (BI) Tools:</strong> Analyze data to provide insights and support decision-making.
+                                <p>Example:  Tableau, Power BI.</p>
+                            </li>
+                            <li><strong>Digital Marketing:</strong>  Utilizing computers and internet to promote products.
+                                 <p>Example: Social Media Marketing, Search Engine Optimization (SEO)</p>
+                        </ul>
+                        <p>Example: A retail company using Salesforce to track customer interactions, manage marketing campaigns, and analyze sales data.</p>
                     </li>
                     <li><strong>Healthcare:</strong>
-                        <p>Computers aid in medical diagnosis, patient monitoring, electronic health records, telemedicine, and research.  They help in analyzing medical images, developing new drugs, and personalizing treatment.</p>
-                        <p>Example:  Electronic Health Records (EHR) systems, MRI and CT scan machines, telemedicine platforms.</p>
+                        <p>Computers play a critical role in improving patient care, advancing medical research, and managing healthcare operations.</p>
+                        <ul>
+                            <li><strong>Electronic Health Records (EHR) Systems:</strong> Store and manage patient medical information digitally, improving accessibility and care coordination.</li>
+                            <li><strong>Medical Imaging:</strong> Computers are used in technologies like MRI, CT scans, and X-rays to create detailed images of the human body.</li>
+                            <li><strong>Telemedicine:</strong> Enables remote consultations, diagnosis, and treatment, improving access to healthcare in underserved areas.</li>
+                            <li><strong>Robotic Surgery:</strong> Assist surgeons with minimally invasive procedures, improving precision and recovery times.</li>
+                            <li><strong>Drug Discovery and Research:</strong> Computers are used to analyze vast amounts of data, model biological processes, and accelerate the development of new drugs and treatments.</li>
+                        </ul>
+                        <p>Example: A doctor using a telemedicine platform to consult with a patient remotely, reviewing their electronic health records and medical images.</p>
                     </li>
                     <li><strong>Banking:</strong>
-                        <p>Computers facilitate online banking, automated teller machines (ATMs), electronic fund transfers, and fraud detection.  They provide customers with convenient access to financial services and improve the efficiency of banking operations.</p>
-                        <p>Example:  Online banking portals, mobile banking apps, ATM networks.</p>
+                        <p>Computers have transformed the banking industry, providing customers with convenient access to financial services and improving operational efficiency.</p>
+                        <ul>
+                            <li><strong>Online Banking:</strong> Allows customers to manage their accounts, transfer funds, and pay bills online.</li>
+                            <li><strong>Automated Teller Machines (ATMs):</strong> Provide 24/7 access to basic banking services.</li>
+                            <li><strong>Fraud Detection Systems:</strong> Use algorithms to identify and prevent fraudulent transactions.</li>
+                            <li><strong>High-Frequency Trading:</strong>  Computers are used to execute a large number of trades in fractions of a second.</li>
+                            <li><strong>Mobile Banking Apps:</strong> Enable customers to perform banking tasks using smartphones and tablets.</li>
+                        </ul>
+                        <p>Example: A customer using a mobile banking app to check their account balance, transfer funds, and pay bills.</p>
                     </li>
                     <li><strong>Entertainment:</strong>
-                        <p>Computers are used for creating and consuming digital media, including music, movies, video games, and streaming services.  They power special effects in films, create immersive gaming experiences, and enable interactive entertainment.</p>
-                        <p>Example:  Netflix, Spotify, video game consoles, animation software.</p>
+                        <p>Computers have revolutionized the entertainment industry, creating new forms of media and transforming how we consume and interact with entertainment.</p>
+                        <ul>
+                            <li><strong>Digital Media Creation:</strong> Computers are used to create and edit images, audio, and video, powering the production of movies, music, and video games.
+                                <p>Example: Adobe Photoshop, Pro Tools, Blender.</p>
+                            </li>
+                            <li><strong>Video Games:</strong> Computers and consoles provide interactive gaming experiences, with increasingly realistic graphics and immersive gameplay.</li>
+                            <li><strong>Streaming Services:</strong> Deliver on-demand access to movies, TV shows, and music.
+                                <p>Example: Netflix, Disney+, Spotify.</p>
+                            </li>
+                            <li><strong>Special Effects:</strong> Computers are used to create stunning visual effects in films and television shows.</li>
+                            <li><strong>Virtual Reality (VR) and Augmented Reality (AR):</strong> Create immersive entertainment experiences, such as VR games and AR-enhanced attractions.</li>
+                        </ul>
+                        <p>Example: A user playing an immersive virtual reality game on a VR headset connected to a computer.</p>
                     </li>
                 </ul>
 
@@ -461,17 +662,45 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    An <strong>Internet Service Provider (ISP)</strong> is an organization that provides services for accessing, using, or participating in the Internet. ISPs connect users to the internet through various technologies.
+                    An <strong>Internet Service Provider (ISP)</strong> is a company or organization that provides individuals and other organizations with access to the Internet.  ISPs act as intermediaries, connecting users to the vast network of the internet.
                 </p>
 
                 <p>
-                    <strong>Types of ISPs:</strong>
+                    <strong>Types of ISPs:</strong>  ISPs use various technologies to deliver internet access to their customers.
                 </p>
                 <ul>
-                    <li><strong>Dial-up:</strong> Uses telephone lines to establish a connection.  Slow and outdated.</li>
-                    <li><strong>Broadband:</strong> High-speed internet access using technologies like DSL, cable, or fiber.</li>
-                    <li><strong>Fiber:</strong> Uses fiber-optic cables to provide extremely high-speed internet access.</li>
-                    <li><strong>Satellite:</strong> Provides internet access via satellite, often used in rural or remote areas.</li>
+                    <li><strong>Dial-up:</strong>
+                        <ul>
+                            <li>Uses traditional telephone lines to establish a connection.</li>
+                            <li>Slow data transfer speeds (up to 56 kbps).</li>
+                            <li>Largely outdated and rarely used today.</li>
+                            <li>Example:  Connecting to the internet using a traditional 56k modem.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Broadband:</strong> High-speed internet access that is always on.
+                        <ul>
+                            <li><strong>DSL (Digital Subscriber Line):</strong> Uses existing telephone lines but transmits data at higher frequencies than voice calls.
+                                <p>Example:  ADSL, VDSL.</p>
+                            </li>
+                            <li><strong>Cable:</strong> Uses the same coaxial cables that deliver cable television.
+                                 <p>Example:  Comcast Xfinity, Spectrum.</p>
+                            </li>
+                            <li><strong>Fiber:</strong> Transmits data through thin glass or plastic fibers using light signals, providing extremely high speeds.
+                                 <p>Example:  Verizon FiOS, Google Fiber.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Wireless:</strong>
+                        <ul>
+                            <li><strong>Wi-Fi:</strong> Provides internet access within a limited range using radio waves.
+                                <p>Example: Home Wi-Fi networks, public Wi-Fi hotspots.</p>
+                            </li>
+                            <li><strong>Mobile:</strong> Uses cellular networks (3G, 4G, 5G) to provide internet access to mobile devices.
+                                <p>Example:  Internet access provided by mobile carriers like AT&T, Verizon, T-Mobile.</p>
+                            </li>
+                            <li><strong>Satellite:</strong> Transmits data to and from a satellite orbiting the Earth.  Often used in rural or remote areas where other options are limited.</li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <div class="diagram">
@@ -483,11 +712,18 @@
                     <strong>How ISPs Work:</strong>
                 </p>
                 <ol>
-                    <li>Users connect their devices (computers, smartphones) to the ISP's network through a modem or router.</li>
-                    <li>The modem or router sends data requests to the ISP's servers.</li>
-                    <li>The ISP's servers route the data to the appropriate destination on the internet.</li>
-                    <li>The destination server sends the requested data back to the ISP.</li>
-                    <li>The ISP forwards the data to the user's device.</li>
+                    <li><strong>User Connection:</strong> A user connects their device (computer, smartphone, etc.) to the ISP's network. This connection can be wired (e.g., Ethernet cable, DSL line) or wireless (e.g., Wi-Fi, cellular).  A modem or router is often used to facilitate this connection.</li>
+                    <li><strong>Authentication:</strong> The ISP verifies the user's credentials (username and password, or other authentication methods) to ensure they are an authorized subscriber.</li>
+                    <li><strong>Data Transmission:</strong>
+                        <ul>
+                            <li><strong>Downstream:</strong> When a user requests data (e.g., loads a web page), the request is sent from their device to the ISP's servers. The ISP then forwards this request to the appropriate server on the internet.  The server sends the requested data back to the ISP, which then transmits it to the user's device.</li>
+                            <li><strong>Upstream:</strong> When a user sends data (e.g., sends an email, uploads a file), the data is transmitted from their device to the ISP's servers, which then route it to its destination on the internet.</li>
+                         </ul>
+                    </li>
+                    <li><strong>IP Addressing:</strong> The ISP assigns an IP address to the user's device, allowing it to communicate with other devices and servers on the internet.  This IP address can be static (permanent) or dynamic (assigned temporarily).</li>
+                    <li><strong>Routing:</strong> The ISP uses routers to direct data packets between the user's network and the broader internet.  Routers examine the destination IP address of each packet and forward it along the most efficient path.</li>
+                    <li><strong>Network Infrastructure:</strong> ISPs maintain a complex network infrastructure, including high-bandwidth connections, servers, routers, and other equipment, to ensure reliable and high-speed internet access.  They connect to larger networks, including Tier 1 providers, to exchange internet traffic.</li>
+                    <li><strong>Services:</strong>  ISPs provide various services, including internet access, email accounts, web hosting, and other related services.</li>
                 </ol>
             </div>
         </section>
@@ -502,16 +738,41 @@
                     <strong>URL (Uniform Resource Locator):</strong>
                 </p>
                 <p>
-                    A URL is the address of a specific resource on the World Wide Web. It provides a way to locate and access web pages, images, videos, and other online content.
+                    A <strong>URL</strong> is a text string that provides a standardized way to locate a resource on the World Wide Web.  It is essentially the address of a specific piece of information on the internet.  Every unique resource on the web (web page, image, video, etc.) has a unique URL.
                 </p>
-                 <p>
+                <p>
                     <strong>Components of a URL:</strong>
-                 </p>
-                 <ul>
-                    <li><strong>Protocol:</strong>  Indicates how the data is transferred (e.g., HTTP, HTTPS).</li>
-                    <li><strong>Domain:</strong>  The name of the website (e.g., www.example.com).</li>
-                    <li><strong>Path:</strong>    Specifies the location of the resource on the server (e.g., /page1.html).</li>
-                 </ul>
+                </p>
+                <ul>
+                    <li><strong>Protocol:</strong> Specifies the method used to access the resource.
+                        <ul>
+                            <li><strong>HTTP (Hypertext Transfer Protocol):</strong> The foundation of data communication for the World Wide Web.</li>
+                            <li><strong>HTTPS (Hypertext Transfer Protocol Secure):</strong> A secure version of HTTP that encrypts data transmission for enhanced security.  Used for sensitive information like login credentials and financial transactions.</li>
+                            <li><strong>FTP (File Transfer Protocol):</strong> Used for transferring files between a client and a server.</li>
+                            <li>Example:  In the URL "https://www.example.com/page1.html", "https://" is the protocol.</li>
+                        </ul>
+                     </li>
+                    <li><strong>Domain Name:</strong> Identifies the web server hosting the resource.
+                        <ul>
+                            <li>Consists of a hostname (e.g., "www") and a top-level domain (TLD) (e.g., ".com", ".org", ".net").</li>
+                            <li>The Domain Name System (DNS) translates the domain name into an IP address, which is a numerical address that computers use to locate each other on the internet.</li>
+                            <li>Example:  In the URL "https://www.example.com/page1.html", "www.example.com" is the domain name.</li>
+                         </ul>
+                    </li>
+                    <li><strong>Path:</strong> Specifies the location of the resource within the file system on the web server.
+                        <ul>
+                            <li>Indicates the specific directory and filename of the resource.</li>
+                             <li>Example:  In the URL "https://www.example.com/page1.html", "/page1.html" is the path.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Query String (Optional):</strong>  A part of the URL that contains data to be passed to a web application or script.
+                         <ul>
+                            <li>Follows a question mark (?) and consists of one or more key-value pairs.</li>
+                            <li>Example: "https://www.example.com/search?q=java&page=2"  Here, "q=java&page=2" is the query string.</li>
+                         </ul>
+                    </li>
+                </ul>
+
                 <div class="diagram">
                     <img src="url_diagram.png" alt="URL Diagram">
                     <figcaption>Uniform Resource Locator (URL) Diagram</figcaption>
@@ -521,25 +782,37 @@
                     <strong>WWW (World Wide Web):</strong>
                 </p>
                 <p>
-                    The World Wide Web is a system of interconnected documents and other resources, linked by hyperlinks and URLs, that are accessed via the Internet. It is a collection of web pages, images, videos, and other digital content that can be accessed using a web browser.  The WWW is built on top of the Internet.
+                    The <strong>World Wide Web (WWW)</strong> is a system of interconnected hypertext documents and other resources accessed via the Internet.
+                    It is a way of accessing information over the internet.
                 </p>
+                <p>
+                    Key aspects of the WWW:
+                </p>
+                <ul>
+                    <li><strong>Hypertext:</strong> Documents contain hyperlinks, which are clickable connections to other documents or resources.</li>
+                    <li><strong>Web Browsers:</strong> Software applications used to access and display web pages (e.g., Chrome, Firefox, Safari).</li>
+                    <li><strong>Web Servers:</strong> Store and deliver web pages and other resources to web browsers.</li>
+                    <li><strong>HTML (Hypertext Markup Language):</strong> The standard language for creating web pages.</li>
+                    <li>The WWW is built on top of the Internet. The Internet is the global network infrastructure that enables communication, while the WWW is a collection of content accessed over that infrastructure using protocols like HTTP and HTTPS.</li>
+                </ul>
 
                 <p>
                     <strong>Multimedia:</strong>
                 </p>
                 <p>
-                    Multimedia is content that combines different forms of media, such as text, audio, images, video, and interactive elements.  It enhances communication and provides a richer user experience.
+                    <strong>Multimedia</strong> is the presentation of information using a combination of different content forms.  It integrates various media types to create a richer and more engaging user experience.
                 </p>
                 <p>
                     <strong>Examples of Multimedia:</strong>
                 </p>
-                 <ul>
-                    <li>Images (JPEG, PNG)</li>
-                    <li>Audio (MP3, WAV)</li>
-                    <li>Video (MP4, AVI)</li>
-                    <li>Animations (GIF, WebM)</li>
-                    <li>Interactive content (games, simulations)</li>
-                 </ul>
+                <ul>
+                    <li><strong>Text:</strong>  Written words and symbols.</li>
+                    <li><strong>Images:</strong>  Still visual representations (photographs, illustrations).  Formats include JPEG, PNG, GIF.</li>
+                    <li><strong>Audio:</strong>  Sound, including speech, music, and sound effects.  Formats include MP3, WAV, AAC.</li>
+                    <li><strong>Video:</strong>  Moving visual images.  Formats include MP4, AVI, MOV.</li>
+                    <li><strong>Animation:</strong>  The process of creating moving images. Formats include GIF, WebM, and various video formats.</li>
+                    <li><strong>Interactive Content:</strong>  Media that allows users to participate and control the experience, such as games, simulations, and interactive presentations.</li>
+                </ul>
             </div>
         </section>
 
@@ -550,34 +823,63 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    <strong>File Transfer Protocol (FTP)</strong> is a standard network protocol used for transferring files between a client and a server over a computer network.  It is commonly used to upload files to a web server or download files from a server.
+                    <strong>File Transfer Protocol (FTP)</strong> is a standard network protocol used to transfer files between a client and a server over a TCP/IP network, such as the Internet.  It is designed for transferring files efficiently and reliably.
                 </p>
 
                 <p>
                     <strong>How FTP Works:</strong>
                 </p>
                 <p>
-                    FTP involves two main components:
+                    FTP establishes two separate connections between the client and the server:
                 </p>
                 <ul>
-                    <li><strong>FTP Client:</strong> A software application installed on the user's computer used to connect to the FTP server.</li>
-                    <li><strong>FTP Server:</strong> A server that stores the files and allows clients to access them.</li>
+                    <li><strong>Control Connection (Port 21):</strong> Used for sending commands and receiving responses, such as login information, directory navigation, and file transfer requests.</li>
+                    <li><strong>Data Connection (Port 20, or dynamically assigned ports):</strong> Used for the actual transfer of file data.  This connection can be established in either active or passive mode.</li>
                 </ul>
 
                 <p>
-                    **Step-by-Step Example of Uploading a File using FTP:**
+                    FTP involves two main components:
                 </p>
-                 <ol>
-                    <li>The user opens an FTP client and enters the FTP server's address, username, and password.</li>
-                    <li>The FTP client establishes a connection with the FTP server.</li>
-                    <li>The user navigates to the local directory on their computer where the file to be uploaded is located.</li>
-                    <li>The user navigates to the directory on the FTP server where the file should be uploaded.</li>
-                    <li>The user selects the file to upload and initiates the upload process.</li>
-                    <li>The FTP client sends the file to the FTP server.</li>
-                    <li>The FTP server receives the file and stores it in the specified directory.</li>
-                    <li>The FTP client confirms that the file has been successfully uploaded.</li>
-                    <li>The user closes the FTP connection.</li>
-                 </ol>
+                <ul>
+                    <li><strong>FTP Client:</strong> A software application installed on the user's computer that initiates the connection to the FTP server, sends commands, and receives files.
+                        <p>Examples: FileZilla, Cyberduck, command-line FTP client.</p>
+                     </li>
+                    <li><strong>FTP Server:</strong> A server that runs FTP server software and stores the files that clients can access.  It listens for connection requests from clients and responds to their commands.</li>
+                </ul>
+
+                <p>
+                    <strong>Step-by-Step Example of Uploading a File using FTP (using an FTP client like FileZilla):</strong>
+                </p>
+                <ol>
+                    <li><strong>Open FTP Client:</strong> The user opens their FTP client software (e.g., FileZilla).</li>
+                    <li><strong>Enter Connection Details:</strong> The user enters the following information to connect to the FTP server:
+                        <ul>
+                            <li><strong>Host/Server:</strong> The domain name or IP address of the FTP server (e.g., ftp.example.com, 192.168.1.100).</li>
+                            <li><strong>Username:</strong> The username for the FTP account on the server.</li>
+                            <li><strong>Password:</strong> The password for the FTP account.</li>
+                            <li><strong>Port:</strong> The port number (usually 21 for the control connection).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Establish Connection:</strong> The FTP client sends a connection request to the FTP server. The server authenticates the user using the provided username and password.</li>
+                    <li><strong>Navigate Local and Remote Directories:</strong>
+                        <ul>
+                            <li>The FTP client displays two panels: one showing the local file system on the user's computer and the other showing the file system on the FTP server.</li>
+                            <li>The user navigates to the directory on their local computer where the file to be uploaded is located.</li>
+                            <li>The user navigates to the directory on the FTP server where the file should be uploaded.</li>
+                         </ul>
+                    </li>
+                    <li><strong>Initiate Upload:</strong> The user selects the file to be uploaded from their local file system and clicks an "Upload" button or drags and drops the file to the server directory panel.</li>
+                    <li><strong>Transfer Data:</strong>
+                        <ul>
+                            <li>The FTP client sends a command to the FTP server to initiate the file transfer.</li>
+                            <li>The FTP client establishes a data connection with the FTP server.</li>
+                            <li>The FTP client sends the file data to the FTP server over the data connection.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Server Receives and Stores File:</strong> The FTP server receives the file data and stores it in the specified directory on its file system.</li>
+                    <li><strong>Transfer Confirmation:</strong> The FTP server sends a confirmation message to the FTP client indicating that the file has been successfully uploaded.</li>
+                    <li><strong>Close Connection:</strong> The user closes the FTP connection in the FTP client.  This closes both the control and data connections.</li>
+                </ol>
             </div>
         </section>
 
@@ -588,5 +890,95 @@
             </div>
             <div class="accordion-content">
                 <p>
-                    <strong>Electronic Commerce (E-commerce
+                    <strong>Electronic Commerce (E-commerce)</strong> refers to the buying and selling of goods and services, the transfer of money, and the transmission of data over an electronic network, primarily the Internet.  It encompasses a wide range of online business activities.
+                </p>
+
+                <p>
+                    <strong>Key aspects of e-commerce:</strong>
+                </p>
+                <ul>
+                    <li><strong>Online Transactions:</strong> Buying and selling of products or services through online platforms.</li>
+                    <li><strong>Digital Payments:</strong> Electronic transfer of funds between parties.</li>
+                    <li><strong>Data Exchange:</strong> Sharing information between businesses and customers.</li>
+                    <li><strong>Accessibility:</strong> E-commerce platforms are accessible from anywhere with an internet connection.</li>
+                    <li><strong>Automation:</strong> Many e-commerce processes are automated, such as order processing, inventory management, and shipping.</li>
+                </ul>
+
+                <p>
+                    <strong>Different Types of E-commerce:</strong>
+                </p>
+                <ul>
+                    <li><strong>B2B (Business-to-Business):</strong>
+                        <ul>
+                            <li>Transactions between businesses.</li>
+                            <li>Involves companies selling products or services to other companies.</li>
+                            <li>Often involves larger order volumes, negotiated pricing, and long-term relationships.</li>
+                            <li>Focuses on raw materials, components, specialized services.</li>
+                            <li>Example: A manufacturer selling parts to another company that uses them to assemble a final product.  Alibaba is a prominent B2B platform.</li>
+                            <li>Sample Transaction: A car manufacturer purchasing tires from a tire supplier.</li>
+                        </ul>
+                    </li>
+                    <li><strong>B2C (Business-to-Consumer):</strong>
+                        <ul>
+                            <li>Transactions between businesses and individual consumers.</li>
+                            <li>Involves businesses selling products or services directly to end-users.</li>
+                            <li>Most common type of e-commerce that people are familiar with.</li>
+                            <li>Focuses on retail, online shopping.</li>
+                            <li>Example:  A customer buying clothes from an online retailer.  Amazon is a major B2C platform.</li>
+                            <li>Sample Transaction: An individual purchasing a book from an online bookstore.</li>
+                        </ul>
+                    </li>
+                    <li><strong>C2C (Consumer-to-Consumer):</strong>
+                        <ul>
+                            <li>Transactions between individual consumers.</li>
+                            <li>Involves consumers selling products or services to other consumers.</li>
+                            <li>Often facilitated by a third-party platform.</li>
+                            <li>Focuses on online marketplaces, auctions.</li>
+                            <li>Example:  An individual selling a used car to another individual through an online marketplace. eBay and Etsy are examples of C2C platforms.</li>
+                            <li>Sample Transaction: A person selling a used bicycle to another person on eBay.</li>
+                        </ul>
+                    </li>
+                     <li><strong>C2B (Consumer-to-Business):</strong>
+                        <ul>
+                            <li>Transactions between individual consumers and businesses.</li>
+                            <li>Involves consumers offering products or services to businesses.</li>
+                            <li>Less common than other types.</li>
+                            <li>Focuses on freelance work, influencer marketing, feedback.</li>
+                            <li>Example: A freelance graphic designer creating a logo for a company.  A consumer providing feedback on a product in exchange for compensation.</li>
+                            <li>Sample Transaction: A photographer selling a photo to a stock photo agency.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="diagram">
+                    <img src="ecommerce_flowchart.png" alt="E-commerce Transaction Flowchart">
+                    <figcaption>E-commerce Transaction Flowchart</figcaption>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
+</body>
+</html>
 
